@@ -19,10 +19,12 @@ https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru
 1. Откройте AmneziaVPN
 2. Нажмите на подключение -> **Настройки подключения**
 3. Перейдите в раздел **Split Tunneling**
-4. Выберите режим: **«Адреса из списка НЕ идут через VPN»**
-5. Нажмите ⋮ -> **Заменить список сайтов**
-6. Выберите скачанный `ru-bypass.json`
-7. Включите split tunneling и подключитесь
+4. Выберите **Site-based split tunneling**
+5. Выберите режим: **Addresses from the list should not be accessed via VPN**
+6. Нажмите ⋮, потом **Import**
+7. Выберите: **Replace site list**
+8. Выберите скачанный `ru-bypass.json`
+9. Включите split tunneling и подключитесь
 
 ## Источники
 
