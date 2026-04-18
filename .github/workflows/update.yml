@@ -1,0 +1,80 @@
+name: Update Russian IP lists
+
+on:
+  # Каждый день в 06:00 UTC (09:00 МСК)
+  schedule:
+    - cron: "0 6 * * *"
+
+  workflow_dispatch:
+
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/update.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    name: Update Russian IP lists
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Download zones and generate ru-bypass.json
+        run: bash scripts/update.sh --compact
+
+      - name: Check if lists changed
+        id: diff
+        run: |
+          git add lists/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push updated lists
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          ENTRY_COUNT=$(node -e "
+            const f = require('fs').readFileSync('lists/ru-bypass.json', 'utf8');
+            console.log(JSON.parse(f).length);
+          ")
+
+          TODAY=$(date -u '+%Y-%m-%d')
+
+          git commit -m "chore: update Russian IP lists [${TODAY}] (${ENTRY_COUNT} CIDR)"
+          git push
+
+      - name: No changes detected
+        if: steps.diff.outputs.changed == 'false'
+        run: echo "Списки не изменились, коммит не нужен."
+
+      - name: Create release
+        if: steps.diff.outputs.changed == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "lists-${{ github.run_number }}"
+          name: "Обновление списков #${{ github.run_number }}"
+          body: |
+            Автоматическое обновление IP-списков
+
+            ## Источники
+            - [ipdeny.com](https://www.ipdeny.com/ipblocks/)
+            - [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)
+          files: lists/ru-bypass.json
+          make_latest: true
