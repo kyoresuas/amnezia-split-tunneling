@@ -6,7 +6,12 @@
       "2gis.com",
       "api.2gis.ru",
       "catalog.api.2gis.ru",
-      "maps.api.2gis.ru"
+      "maps.api.2gis.ru",
+      "tile0.maps.2gis.com",
+      "tile1.maps.2gis.com",
+      "tile2.maps.2gis.com",
+      "tile3.maps.2gis.com",
+      "origin-tile0.maps.2gis.com"
     ]
   },
   {

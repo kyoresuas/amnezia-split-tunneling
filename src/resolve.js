@@ -124,7 +124,7 @@ function ipToInt(cidr) {
 const sorted = [...prefixes].sort((a, b) => ipToInt(a) - ipToInt(b));
 
 const header = [
-  "# services.zone - CIDR российских сервисов)",
+  "# services.zone - CIDR российских сервисов",
   `# Обновлено: ${new Date().toISOString()}`,
   `# Сервисов: ${services.length} | Доменов: ${domains.length} | CIDR: ${sorted.length}`,
   "",
