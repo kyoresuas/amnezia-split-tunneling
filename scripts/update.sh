@@ -11,10 +11,10 @@ REPO_DIR="$(dirname "$SCRIPT_DIR")"
 # Директория списков
 LISTS_DIR="$REPO_DIR/lists"
 
-# ipdeny url
-IPDENY_URL="https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone"
+# URL IPdeny
+IPDENY_BASE="https://www.ipdeny.com/ipblocks/data/aggregated"
 
-# mobile url
+# URL escapingworm/russia-whitelist
 MOBILE_URL="https://raw.githubusercontent.com/escapingworm/russia-whitelist/refs/heads/main/ru-whitelist-cidr.txt"
 
 COMPACT_FLAG=""
@@ -41,23 +41,28 @@ info "Node.js: $(node --version)"
 
 mkdir -p "$LISTS_DIR"
 
-info "Скачиваю ru-aggregated.zone..."
-curl -fsSL --retry 3 --retry-delay 2 \
-  -o "$LISTS_DIR/ru-aggregated.zone" \
-  "$IPDENY_URL" \
-  && success "ru-aggregated.zone обновлен" \
-  || error "Не удалось скачать ru-aggregated.zone"
+download() {
+  local name="$1" url="$2" dest="$3" required="${4:-false}"
+  info "Скачиваю ${name}..."
+  if curl -fsSL --retry 3 --retry-delay 2 -o "$dest" "$url"; then
+    success "${name} обновлён"
+  elif [[ "$required" == "true" ]]; then
+    error "Не удалось скачать ${name}"
+  else
+    warn "Не удалось скачать ${name}"
+    rm -f "$dest"
+  fi
+}
 
-info "Скачиваю ru-mobile.zone..."
-curl -fsSL --retry 3 --retry-delay 2 \
-  -o "$LISTS_DIR/ru-mobile.zone" \
-  "$MOBILE_URL" \
-  && success "ru-mobile.zone обновлен" \
-  || warn "Не удалось скачать ru-mobile.zone (пропускаем)"
+download "ru-aggregated.zone" "$IPDENY_BASE/ru-aggregated.zone" "$LISTS_DIR/ru-aggregated.zone" true
+download "kz-aggregated.zone" "$IPDENY_BASE/kz-aggregated.zone" "$LISTS_DIR/kz-aggregated.zone"
+download "ru-mobile.zone"     "$MOBILE_URL"                     "$LISTS_DIR/ru-mobile.zone"
 
 INPUT_FILES=()
 [[ -f "$LISTS_DIR/ru-aggregated.zone" ]] && INPUT_FILES+=("$LISTS_DIR/ru-aggregated.zone")
+[[ -f "$LISTS_DIR/kz-aggregated.zone" ]] && INPUT_FILES+=("$LISTS_DIR/kz-aggregated.zone")
 [[ -f "$LISTS_DIR/ru-mobile.zone"     ]] && INPUT_FILES+=("$LISTS_DIR/ru-mobile.zone")
+[[ -f "$LISTS_DIR/custom.zone"        ]] && INPUT_FILES+=("$LISTS_DIR/custom.zone")
 
 if [[ ${#INPUT_FILES[@]} -eq 0 ]]; then
   error "Нет входных файлов для генерации"

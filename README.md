@@ -28,10 +28,15 @@ https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru
 
 ## Источники
 
-| Источник | Что содержит |
-|---|---|
-| [ipdeny.com](https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone) | IP-блоки, выделенные России |
-| [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist) | IP мобильных операторов РФ |
+| Источник                                                                              | Что содержит               |
+| ------------------------------------------------------------------------------------- | -------------------------- |
+| [ipdeny.com — RU](https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone) | IP-блоки России            |
+| [ipdeny.com — KZ](https://www.ipdeny.com/ipblocks/data/aggregated/kz-aggregated.zone) | IP-блоки Казахстана        |
+| [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)     | IP мобильных операторов РФ |
+
+## Что-то не работает?
+
+Если какой-то российский сервис всё равно идёт через VPN - [создайте issue](https://github.com/kyoresuas/amnezia-split-tunneling/issues/new), укажите название сервиса и(или) домен.
 
 ## Ручное обновление
 
