@@ -10,7 +10,9 @@ on:
   push:
     branches: [main]
     paths:
+      - "src/**"
       - "scripts/**"
+      - "config/**"
       - ".github/workflows/update.yml"
 
 permissions:

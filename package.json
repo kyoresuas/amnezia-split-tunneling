@@ -1,0 +1,11 @@
+{
+  "name": "amnezia-split-tunneling",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node src/generate.js -o lists/ru-bypass.json lists/zones/*.zone",
+    "update": "bash scripts/update.sh",
+    "resolve": "node src/resolve.js"
+  }
+}

@@ -6,10 +6,13 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Директория репозитория
-REPO_DIR="$(dirname "$SCRIPT_DIR")"
+ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Директория зон
+ZONES_DIR="$ROOT/lists/zones"
 
 # Директория списков
-LISTS_DIR="$REPO_DIR/lists"
+LISTS_DIR="$ROOT/lists"
 
 # URL IPdeny
 IPDENY_BASE="https://www.ipdeny.com/ipblocks/data/aggregated"
@@ -39,7 +42,7 @@ command -v curl >/dev/null 2>&1 || error "curl не найден"
 
 info "Node.js: $(node --version)"
 
-mkdir -p "$LISTS_DIR"
+mkdir -p "$ZONES_DIR"
 
 download() {
   local name="$1" url="$2" dest="$3" required="${4:-false}"
@@ -54,22 +57,24 @@ download() {
   fi
 }
 
-download "ru-aggregated.zone" "$IPDENY_BASE/ru-aggregated.zone" "$LISTS_DIR/ru-aggregated.zone" true
-download "kz-aggregated.zone" "$IPDENY_BASE/kz-aggregated.zone" "$LISTS_DIR/kz-aggregated.zone"
-download "ru-mobile.zone"     "$MOBILE_URL"                     "$LISTS_DIR/ru-mobile.zone"
+download "ru.zone" "$IPDENY_BASE/ru-aggregated.zone" "$ZONES_DIR/ru.zone" true
+download "kz.zone" "$IPDENY_BASE/kz-aggregated.zone" "$ZONES_DIR/kz.zone" true
+download "mobile.zone" "$MOBILE_URL" "$ZONES_DIR/mobile.zone" true
+
+info "Резолвинг российских сервисов..."
+node "$ROOT/src/resolve.js" \
+  --config "$ROOT/config/services.json" \
+  --output "$ZONES_DIR/services.zone" 2>&1
 
 INPUT_FILES=()
-[[ -f "$LISTS_DIR/ru-aggregated.zone" ]] && INPUT_FILES+=("$LISTS_DIR/ru-aggregated.zone")
-[[ -f "$LISTS_DIR/kz-aggregated.zone" ]] && INPUT_FILES+=("$LISTS_DIR/kz-aggregated.zone")
-[[ -f "$LISTS_DIR/ru-mobile.zone"     ]] && INPUT_FILES+=("$LISTS_DIR/ru-mobile.zone")
-[[ -f "$LISTS_DIR/custom.zone"        ]] && INPUT_FILES+=("$LISTS_DIR/custom.zone")
+for zone in ru kz mobile services custom; do
+  [[ -f "$ZONES_DIR/${zone}.zone" ]] && INPUT_FILES+=("$ZONES_DIR/${zone}.zone")
+done
 
-if [[ ${#INPUT_FILES[@]} -eq 0 ]]; then
-  error "Нет входных файлов для генерации"
-fi
+[[ ${#INPUT_FILES[@]} -eq 0 ]] && error "Нет входных файлов для генерации"
 
 info "Генерирую ru-bypass.json..."
-node "$SCRIPT_DIR/generate.mjs" \
+node "$ROOT/src/generate.js" \
   $COMPACT_FLAG \
   -o "$LISTS_DIR/ru-bypass.json" \
   "${INPUT_FILES[@]}" 2>&1
@@ -78,7 +83,6 @@ ENTRY_COUNT=$(node -e "
   const f = require('fs').readFileSync('$LISTS_DIR/ru-bypass.json', 'utf8');
   console.log(JSON.parse(f).length);
 ")
-
 FILE_SIZE=$(du -sh "$LISTS_DIR/ru-bypass.json" | cut -f1)
 
 echo ""
