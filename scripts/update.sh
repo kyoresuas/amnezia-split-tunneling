@@ -67,7 +67,7 @@ node "$ROOT/src/resolve.js" \
   --output "$ZONES_DIR/services.zone" 2>&1
 
 INPUT_FILES=()
-for zone in ru kz mobile services custom; do
+for zone in ru kz mobile services cdn custom; do
   [[ -f "$ZONES_DIR/${zone}.zone" ]] && INPUT_FILES+=("$ZONES_DIR/${zone}.zone")
 done
 
