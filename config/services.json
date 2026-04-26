@@ -1,236 +1,255 @@
-[
-  {
-    "name": "2GIS",
-    "domains": [
-      "2gis.ru",
-      "2gis.com",
-      "api.2gis.ru",
-      "catalog.api.2gis.ru",
-      "maps.api.2gis.ru",
-      "tile0.maps.2gis.com",
-      "tile1.maps.2gis.com",
-      "tile2.maps.2gis.com",
-      "tile3.maps.2gis.com",
-      "origin-tile0.maps.2gis.com"
-    ]
-  },
-  {
-    "name": "Авито",
-    "domains": [
-      "avito.ru",
-      "api.avito.ru",
-      "m.avito.ru",
-      "cdn.avito.ru",
-      "static.avito.ru"
-    ]
-  },
-  {
-    "name": "VK",
-    "domains": [
-      "vk.com",
-      "vk.ru",
-      "api.vk.com",
-      "vk.me",
-      "vkvideo.ru",
-      "vkplay.ru",
-      "vkuser.net"
-    ]
-  },
-  {
-    "name": "Яндекс",
-    "domains": [
-      "yandex.ru",
-      "yandex.net",
-      "yandex.com",
-      "ya.ru",
-      "yastatic.net",
-      "maps.yandex.ru",
-      "disk.yandex.ru",
-      "mail.yandex.ru",
-      "market.yandex.ru",
-      "kinopoisk.ru",
-      "auto.ru",
-      "dzen.ru",
-      "alice.yandex.ru"
-    ]
-  },
-  {
-    "name": "Сбербанк",
-    "domains": [
-      "sberbank.ru",
-      "online.sberbank.ru",
-      "sbbol.ru",
-      "sber.ru",
-      "sbermarket.ru"
-    ]
-  },
-  {
-    "name": "Т-Банк",
-    "domains": [
-      "tbank.ru",
-      "tinkoff.ru",
-      "api.tinkoff.ru",
-      "business.tinkoff.ru"
-    ]
-  },
-  {
-    "name": "Альфа-Банк",
-    "domains": ["alfabank.ru", "api.alfabank.ru"]
-  },
-  {
-    "name": "ВТБ",
-    "domains": ["vtb.ru", "online.vtb.ru"]
-  },
-  {
-    "name": "Газпромбанк",
-    "domains": ["gazprombank.ru"]
-  },
-  {
-    "name": "Ozon",
-    "domains": ["ozon.ru", "api.ozon.ru", "cdn.ozon.ru", "ozon.travel"]
-  },
-  {
-    "name": "Wildberries",
-    "domains": [
-      "wb.ru",
-      "wildberries.ru",
-      "basket-01.wbbasket.ru",
-      "wbstatic.net"
-    ]
-  },
-  {
-    "name": "Lamoda",
-    "domains": ["lamoda.ru"]
-  },
-  {
-    "name": "Госуслуги",
-    "domains": [
-      "gosuslugi.ru",
-      "esia.gosuslugi.ru",
-      "lk.gosuslugi.ru",
-      "pos.gosuslugi.ru",
-      "epgu.gosuslugi.ru"
-    ]
-  },
-  {
-    "name": "Налоговая",
-    "domains": ["nalog.ru", "lkfl.nalog.ru", "lkip.nalog.ru", "lkul.nalog.ru"]
-  },
-  {
-    "name": "Мос.ру",
-    "domains": ["mos.ru", "api.mos.ru"]
-  },
-  {
-    "name": "МВД",
-    "domains": ["mvd.ru", "xn--b1aew.xn--p1ai"]
-  },
-  {
-    "name": "Росреестр",
-    "domains": ["rosreestr.gov.ru", "lk.rosreestr.ru"]
-  },
-  {
-    "name": "Почта России",
-    "domains": ["pochta.ru", "tracking.pochta.ru"]
-  },
-  {
-    "name": "РЖД",
-    "domains": ["rzd.ru", "ticket.rzd.ru", "pass.rzd.ru"]
-  },
-  {
-    "name": "Rutube",
-    "domains": ["rutube.ru"]
-  },
-  {
-    "name": "Mail.ru",
-    "domains": [
-      "mail.ru",
-      "cloud.mail.ru",
-      "news.mail.ru",
-      "my.mail.ru",
-      "ok.ru",
-      "odnoklassniki.ru",
-      "max.ru",
-      "tamtam.chat"
-    ]
-  },
-  {
-    "name": "hh.ru",
-    "domains": ["hh.ru", "api.hh.ru", "m.hh.ru"]
-  },
-  {
-    "name": "Циан",
-    "domains": ["cian.ru", "api.cian.ru"]
-  },
-  {
-    "name": "Хабр",
-    "domains": ["habr.com", "habrahabr.ru"]
-  },
-  {
-    "name": "МТС",
-    "domains": ["mts.ru", "lk.mts.ru", "api.mts.ru"]
-  },
-  {
-    "name": "Билайн",
-    "domains": ["beeline.ru", "my.beeline.ru"]
-  },
-  {
-    "name": "МегаФон",
-    "domains": ["megafon.ru", "lk.megafon.ru"]
-  },
-  {
-    "name": "Т2 (Теле2)",
-    "domains": ["t2.ru", "tele2.ru", "lk.t2.ru"]
-  },
-  {
-    "name": "Rustore",
-    "domains": ["rustore.ru", "backapi.rustore.ru"]
-  },
-  {
-    "name": "AliExpress RU",
-    "domains": ["aliexpress.ru", "ae01.alicdn.com"]
-  },
-  {
-    "name": "Youla",
-    "domains": ["youla.ru"]
-  },
-  {
-    "name": "Skillbox",
-    "domains": ["skillbox.ru", "go.skillbox.ru"]
-  },
-  {
-    "name": "Skillfactory",
-    "domains": ["skillfactory.ru"]
-  },
-  {
-    "name": "Учи.ру",
-    "domains": ["uchi.ru"]
-  },
-  {
-    "name": "Сферум",
-    "domains": ["sferum.ru", "api.sferum.ru"]
-  },
-  {
-    "name": "Сбис",
-    "domains": ["saby.ru", "sbis.ru", "online.sbis.ru"]
-  },
-  {
-    "name": "Леруа Мерлен",
-    "domains": ["leroymerlin.ru"]
-  },
-  {
-    "name": "Магнит",
-    "domains": ["magnit.ru", "dostavka.magnit.ru"]
-  },
-  {
-    "name": "ГИБДД",
-    "domains": ["gibdd.ru", "xn--90adear.xn--p1ai"]
-  },
-  {
-    "name": "Мосэнергосбыт",
-    "domains": ["mosenergosbyt.ru"]
-  },
-  {
-    "name": "Кинопоиск",
-    "domains": ["kinopoisk.ru", "api.kinopoisk.ru"]
-  }
-]
+{
+  "services": [
+    {
+      "name": "2GIS",
+      "domains": [
+        "2gis.ru",
+        "2gis.com",
+        "api.2gis.ru",
+        "catalog.api.2gis.ru",
+        "maps.api.2gis.ru",
+        "tile0.maps.2gis.com",
+        "tile1.maps.2gis.com",
+        "tile2.maps.2gis.com",
+        "tile3.maps.2gis.com",
+        "origin-tile0.maps.2gis.com"
+      ]
+    },
+    {
+      "name": "Авито",
+      "domains": [
+        "avito.ru",
+        "api.avito.ru",
+        "m.avito.ru",
+        "cdn.avito.ru",
+        "static.avito.ru"
+      ]
+    },
+    {
+      "name": "VK",
+      "domains": [
+        "vk.com",
+        "vk.ru",
+        "api.vk.com",
+        "vk.me",
+        "vkvideo.ru",
+        "vkplay.ru",
+        "vkuser.net"
+      ]
+    },
+    {
+      "name": "Яндекс",
+      "domains": [
+        "yandex.ru",
+        "yandex.net",
+        "yandex.com",
+        "ya.ru",
+        "yastatic.net",
+        "maps.yandex.ru",
+        "disk.yandex.ru",
+        "mail.yandex.ru",
+        "market.yandex.ru",
+        "kinopoisk.ru",
+        "auto.ru",
+        "dzen.ru",
+        "alice.yandex.ru"
+      ]
+    },
+    {
+      "name": "Сбербанк",
+      "domains": [
+        "sberbank.ru",
+        "online.sberbank.ru",
+        "sbbol.ru",
+        "sber.ru",
+        "sbermarket.ru"
+      ]
+    },
+    {
+      "name": "Т-Банк",
+      "domains": [
+        "tbank.ru",
+        "tinkoff.ru",
+        "api.tinkoff.ru",
+        "business.tinkoff.ru"
+      ]
+    },
+    {
+      "name": "Альфа-Банк",
+      "domains": ["alfabank.ru", "api.alfabank.ru"]
+    },
+    {
+      "name": "ВТБ",
+      "domains": ["vtb.ru", "online.vtb.ru"]
+    },
+    {
+      "name": "Газпромбанк",
+      "domains": ["gazprombank.ru"]
+    },
+    {
+      "name": "Ozon",
+      "domains": ["ozon.ru", "api.ozon.ru", "cdn.ozon.ru", "ozon.travel"]
+    },
+    {
+      "name": "Wildberries",
+      "domains": [
+        "wb.ru",
+        "wildberries.ru",
+        "basket-01.wbbasket.ru",
+        "wbstatic.net"
+      ]
+    },
+    {
+      "name": "Lamoda",
+      "domains": ["lamoda.ru"]
+    },
+    {
+      "name": "Госуслуги",
+      "domains": [
+        "gosuslugi.ru",
+        "esia.gosuslugi.ru",
+        "lk.gosuslugi.ru",
+        "pos.gosuslugi.ru",
+        "epgu.gosuslugi.ru"
+      ]
+    },
+    {
+      "name": "Налоговая",
+      "domains": ["nalog.ru", "lkfl.nalog.ru", "lkip.nalog.ru", "lkul.nalog.ru"]
+    },
+    {
+      "name": "Мос.ру",
+      "domains": ["mos.ru", "api.mos.ru"]
+    },
+    {
+      "name": "МВД",
+      "domains": ["mvd.ru", "xn--b1aew.xn--p1ai"]
+    },
+    {
+      "name": "Росреестр",
+      "domains": ["rosreestr.gov.ru", "lk.rosreestr.ru"]
+    },
+    {
+      "name": "Почта России",
+      "domains": ["pochta.ru", "tracking.pochta.ru"]
+    },
+    {
+      "name": "РЖД",
+      "domains": ["rzd.ru", "ticket.rzd.ru", "pass.rzd.ru"]
+    },
+    {
+      "name": "Rutube",
+      "domains": ["rutube.ru"]
+    },
+    {
+      "name": "Mail.ru",
+      "domains": [
+        "mail.ru",
+        "cloud.mail.ru",
+        "news.mail.ru",
+        "my.mail.ru",
+        "ok.ru",
+        "odnoklassniki.ru",
+        "max.ru",
+        "tamtam.chat"
+      ]
+    },
+    {
+      "name": "hh.ru",
+      "domains": ["hh.ru", "api.hh.ru", "m.hh.ru"]
+    },
+    {
+      "name": "Циан",
+      "domains": ["cian.ru", "api.cian.ru"]
+    },
+    {
+      "name": "Хабр",
+      "domains": ["habr.com", "habrahabr.ru"]
+    },
+    {
+      "name": "МТС",
+      "domains": ["mts.ru", "lk.mts.ru", "api.mts.ru"]
+    },
+    {
+      "name": "Билайн",
+      "domains": ["beeline.ru", "my.beeline.ru"]
+    },
+    {
+      "name": "МегаФон",
+      "domains": ["megafon.ru", "lk.megafon.ru"]
+    },
+    {
+      "name": "Т2 (Теле2)",
+      "domains": ["t2.ru", "tele2.ru", "lk.t2.ru"]
+    },
+    {
+      "name": "Rustore",
+      "domains": ["rustore.ru", "backapi.rustore.ru"]
+    },
+    {
+      "name": "AliExpress RU",
+      "domains": ["aliexpress.ru", "ae01.alicdn.com"]
+    },
+    {
+      "name": "Youla",
+      "domains": ["youla.ru"]
+    },
+    {
+      "name": "Skillbox",
+      "domains": ["skillbox.ru", "go.skillbox.ru"]
+    },
+    {
+      "name": "Skillfactory",
+      "domains": ["skillfactory.ru"]
+    },
+    {
+      "name": "Учи.ру",
+      "domains": ["uchi.ru"]
+    },
+    {
+      "name": "Сферум",
+      "domains": ["sferum.ru", "api.sferum.ru"]
+    },
+    {
+      "name": "Сбис",
+      "domains": ["saby.ru", "sbis.ru", "online.sbis.ru"]
+    },
+    {
+      "name": "Леруа Мерлен",
+      "domains": ["leroymerlin.ru"]
+    },
+    {
+      "name": "Магнит",
+      "domains": ["magnit.ru", "dostavka.magnit.ru"]
+    },
+    {
+      "name": "ГИБДД",
+      "domains": ["gibdd.ru", "xn--90adear.xn--p1ai"]
+    },
+    {
+      "name": "Мосэнергосбыт",
+      "domains": ["mosenergosbyt.ru"]
+    },
+    {
+      "name": "Кинопоиск",
+      "domains": ["kinopoisk.ru", "api.kinopoisk.ru"]
+    }
+  ],
+  "asns": [
+    { "asn": 13238, "name": "Yandex" },
+    { "asn": 208722, "name": "Yandex Cloud" },
+    { "asn": 47764, "name": "Mail.ru / VK" },
+    { "asn": 35423, "name": "Sberbank" },
+    { "asn": 205638, "name": "Tinkoff" },
+    { "asn": 42437, "name": "Alfa-Bank" },
+    { "asn": 8359, "name": "MTS" },
+    { "asn": 3216, "name": "VimpelCom (Beeline)" },
+    { "asn": 31133, "name": "MegaFon" },
+    { "asn": 41330, "name": "Tele2" },
+    { "asn": 49505, "name": "Selectel" },
+    { "asn": 197695, "name": "Reg.ru" },
+    { "asn": 61251, "name": "Wildberries" },
+    { "asn": 210644, "name": "Ozon" },
+    { "asn": 200976, "name": "Avito" }
+  ]
+}

@@ -1,29 +1,39 @@
 import { fileURLToPath } from "url";
 import { log } from "./utils/log.js";
 import { promises as dns } from "dns";
-import { readFileSync, writeFileSync } from "fs";
+import { pLimit } from "./utils/limit.js";
+import { isValidCidr } from "./core/cidr.js";
 import { resolve as resolvePath, dirname, basename } from "path";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolvePath(__dirname, "..");
 
+interface Service {
+  name: string;
+  domains: string[];
+}
+
+interface ConfigObject {
+  services?: Service[];
+  asns?: unknown[];
+}
+
 const args = process.argv.slice(2);
 
-// Config path
 let configPath = resolvePath(ROOT, "config/services.json");
-
-// Output path
 let outputPath = resolvePath(ROOT, "lists/zones/services.zone");
 
 for (let i = 0; i < args.length; i++) {
-  if (args[i] === "--config") configPath = resolvePath(args[++i]);
-  if (args[i] === "--output") outputPath = resolvePath(args[++i]);
+  const a = args[i];
+  if (a === "--config") configPath = resolvePath(args[++i] ?? "");
+  else if (a === "--output") outputPath = resolvePath(args[++i] ?? "");
 }
 
 /**
- * DNS резолвинг
+ * Резолвит IPv4 адрес
  */
-async function resolveIPv4(domain) {
+async function resolveIPv4(domain: string): Promise<string[]> {
   try {
     return await dns.resolve4(domain);
   } catch {
@@ -31,14 +41,13 @@ async function resolveIPv4(domain) {
   }
 }
 
-const prefixCache = new Map();
+const prefixCache = new Map<string, string | null>();
 
 /**
- * Запрос префикса из RIPE Stat API
+ * Получает префикс из RIPE Stat API
  */
-async function fetchPrefix(ip) {
-  if (prefixCache.has(ip)) return prefixCache.get(ip);
-
+async function fetchPrefix(ip: string): Promise<string | null> {
+  if (prefixCache.has(ip)) return prefixCache.get(ip) ?? null;
   try {
     const res = await fetch(
       `https://stat.ripe.net/data/network-info/data.json?resource=${ip}`,
@@ -50,7 +59,12 @@ async function fetchPrefix(ip) {
         signal: AbortSignal.timeout(8000),
       },
     );
-    const prefix = res.ok ? ((await res.json())?.data?.prefix ?? null) : null;
+    if (!res.ok) {
+      prefixCache.set(ip, null);
+      return null;
+    }
+    const json = (await res.json()) as { data?: { prefix?: string } };
+    const prefix = json?.data?.prefix ?? null;
     prefixCache.set(ip, prefix);
     return prefix;
   } catch {
@@ -59,23 +73,11 @@ async function fetchPrefix(ip) {
   }
 }
 
-/**
- * Ограниченный параллелизм
- */
-async function pLimit(fns, concurrency) {
-  const results = new Array(fns.length);
-  let i = 0;
-  const worker = async () => {
-    while (i < fns.length) {
-      const idx = i++;
-      results[idx] = await fns[idx]();
-    }
-  };
-  await Promise.all(Array.from({ length: concurrency }, worker));
-  return results;
-}
+const raw = JSON.parse(readFileSync(configPath, "utf8")) as unknown;
+const services: Service[] = Array.isArray(raw)
+  ? (raw as Service[])
+  : ((raw as ConfigObject).services ?? []);
 
-const services = JSON.parse(readFileSync(configPath, "utf8"));
 const domains = services.flatMap((s) =>
   s.domains.map((d) => ({ domain: d, name: s.name })),
 );
@@ -83,7 +85,7 @@ const domains = services.flatMap((s) =>
 log.info(`Сервисов: ${services.length} | Доменов: ${domains.length}`);
 log.info("Резолвлю домены...");
 
-const resolvedIPs = new Set();
+const resolvedIPs = new Set<string>();
 
 await pLimit(
   domains.map(({ domain, name }) => async () => {
@@ -97,25 +99,22 @@ await pLimit(
 log.ok(`Уникальных IP: ${resolvedIPs.size}`);
 log.info("Запрашиваю CIDR из RIPE Stat API...");
 
-const prefixes = new Set();
+const prefixes = new Set<string>();
 
 await pLimit(
   [...resolvedIPs].map((ip) => async () => {
     const prefix = await fetchPrefix(ip);
-    if (prefix) prefixes.add(prefix);
+    if (prefix && isValidCidr(prefix)) prefixes.add(prefix);
   }),
   5,
 );
 
 log.ok(`Уникальных CIDR: ${prefixes.size}`);
 
-/**
- * Сортировка и запись
- */
-function ipToInt(cidr) {
+function ipToInt(cidr: string): number {
   return (
     cidr
-      .split("/")[0]
+      .split("/")[0]!
       .split(".")
       .reduce((acc, o) => (acc << 8) | parseInt(o, 10), 0) >>> 0
   );
@@ -130,5 +129,7 @@ const header = [
   "",
 ].join("\n");
 
+const outDir = dirname(outputPath);
+if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
 writeFileSync(outputPath, header + sorted.join("\n") + "\n", "utf8");
 log.ok(`Записано ${sorted.length} префиксов -> ${basename(outputPath)}`);

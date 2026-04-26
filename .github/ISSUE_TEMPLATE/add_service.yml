@@ -1,0 +1,34 @@
+name: Добавить российский сервис
+description: Предложить домен или ASN для добавления в список
+title: "[service] "
+labels: ["enhancement"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Название сервиса
+      placeholder: Магнит
+    validations:
+      required: true
+
+  - type: textarea
+    id: domains
+    attributes:
+      label: Домены
+      description: По одному на строку
+      placeholder: |
+        magnit.ru
+        api.magnit.ru
+    validations:
+      required: true
+
+  - type: input
+    id: asn
+    attributes:
+      label: ASN (если известен)
+      placeholder: AS12345
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Почему нужно добавить?

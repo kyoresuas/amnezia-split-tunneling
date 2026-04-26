@@ -39,6 +39,7 @@ error()   { echo -e "${RED}[ERROR]${NC} $*" >&2; exit 1; }
 
 command -v node >/dev/null 2>&1 || error "Node.js не найден"
 command -v curl >/dev/null 2>&1 || error "curl не найден"
+command -v npx  >/dev/null 2>&1 || error "npx не найден"
 
 info "Node.js: $(node --version)"
 
@@ -57,25 +58,34 @@ download() {
   fi
 }
 
+TSX="npx --no-install tsx"
+
 download "ru.zone" "$IPDENY_BASE/ru-aggregated.zone" "$ZONES_DIR/ru.zone" true
 download "kz.zone" "$IPDENY_BASE/kz-aggregated.zone" "$ZONES_DIR/kz.zone" true
 download "mobile.zone" "$MOBILE_URL" "$ZONES_DIR/mobile.zone" true
 
 info "Резолвинг российских сервисов..."
-node "$ROOT/src/resolve.js" \
+$TSX "$ROOT/src/resolve.ts" \
   --config "$ROOT/config/services.json" \
   --output "$ZONES_DIR/services.zone" 2>&1
 
+info "Получаю ASN-префиксы..."
+$TSX "$ROOT/src/asn.ts" \
+  --config "$ROOT/config/services.json" \
+  --output "$ZONES_DIR/services-asn.zone" 2>&1
+
 INPUT_FILES=()
-for zone in ru kz mobile services cdn custom; do
+for zone in ru mobile services services-asn cdn custom; do
   [[ -f "$ZONES_DIR/${zone}.zone" ]] && INPUT_FILES+=("$ZONES_DIR/${zone}.zone")
 done
 
 [[ ${#INPUT_FILES[@]} -eq 0 ]] && error "Нет входных файлов для генерации"
 
 info "Генерирую ru-bypass.json..."
-node "$ROOT/src/generate.js" \
+$TSX "$ROOT/src/generate.ts" \
   $COMPACT_FLAG \
+  --blacklist "$ROOT/config/blacklist.txt" \
+  --stats "$LISTS_DIR/stats.json" \
   -o "$LISTS_DIR/ru-bypass.json" \
   "${INPUT_FILES[@]}" 2>&1
 
@@ -90,4 +100,5 @@ success "Готово!"
 echo -e "   Записей в списке: ${YELLOW}${ENTRY_COUNT}${NC}"
 echo -e "   Размер файла: ${YELLOW}${FILE_SIZE}${NC}"
 echo -e "   Файл: ${CYAN}lists/ru-bypass.json${NC}"
+echo -e "   Метаданные: ${CYAN}lists/stats.json${NC}"
 echo ""

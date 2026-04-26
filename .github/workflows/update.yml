@@ -22,7 +22,7 @@ jobs:
   update:
     name: Update Russian IP lists
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -31,7 +31,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore ASN cache
+        uses: actions/cache@v4
+        with:
+          path: cache/
+          key: asn-cache-${{ github.run_id }}
+          restore-keys: asn-cache-
 
       - name: Download zones and generate ru-bypass.json
         run: bash scripts/update.sh --compact
@@ -52,14 +63,12 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          ENTRY_COUNT=$(node -e "
-            const f = require('fs').readFileSync('lists/ru-bypass.json', 'utf8');
-            console.log(JSON.parse(f).length);
-          ")
-
+          FINAL=$(jq '.finalCidrs' lists/stats.json)
+          ADDED=$(jq '.diff.added' lists/stats.json)
+          REMOVED=$(jq '.diff.removed' lists/stats.json)
           TODAY=$(date -u '+%Y-%m-%d')
 
-          git commit -m "chore: update Russian IP lists [${TODAY}] (${ENTRY_COUNT} CIDR)"
+          git commit -m "chore(lists): update [${TODAY}] · ${FINAL} CIDRs (+${ADDED} / -${REMOVED})"
           git push
 
       - name: No changes detected
@@ -78,5 +87,8 @@ jobs:
             ## Источники
             - [ipdeny.com](https://www.ipdeny.com/ipblocks/)
             - [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)
-          files: lists/ru-bypass.json
+            - [bgpview.io](https://bgpview.io/) / [stat.ripe.net](https://stat.ripe.net/) — ASN-префиксы
+          files: |
+            lists/ru-bypass.json
+            lists/stats.json
           make_latest: true

@@ -1,0 +1,43 @@
+name: Сообщить о проблеме
+description: Трафик идет не туда
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: site
+    attributes:
+      label: Домен / сервис
+      placeholder: example.ru
+    validations:
+      required: true
+
+  - type: input
+    id: ip
+    attributes:
+      label: IP, который вы получаете при резолве
+      description: |
+        Узнайте IP так: `dig +short example.ru @1.1.1.1` или `dig +short example.ru @77.88.8.8`
+      placeholder: 95.213.45.12
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Что не так?
+      options:
+        - Российский сервис идет через VPN (должен напрямую)
+        - Иностранный сервис идет мимо VPN (должен через VPN)
+    validations:
+      required: true
+
+  - type: textarea
+    id: diff
+    attributes:
+      label: Вывод `npm run diff -- <IP>`
+      description: Если есть возможность, вставьте вывод команды
+      render: shell
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Дополнительно
+      description: Любая полезная информация

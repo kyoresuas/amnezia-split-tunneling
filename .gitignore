@@ -6,3 +6,8 @@ node_modules/
 
 # logs
 *.log
+
+# build / cache
+cache/
+dist/
+*.tsbuildinfo

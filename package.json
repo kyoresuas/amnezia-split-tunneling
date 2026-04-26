@@ -1,11 +1,29 @@
 {
   "name": "amnezia-split-tunneling",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20.10.0"
+  },
   "scripts": {
-    "generate": "node src/generate.js -o lists/ru-bypass.json lists/zones/*.zone",
+    "lint": "eslint src tests",
+    "generate": "tsx src/generate.ts",
+    "resolve": "tsx src/resolve.ts",
+    "asn": "tsx src/asn.ts",
+    "diff": "tsx src/diff.ts",
     "update": "bash scripts/update.sh",
-    "resolve": "node src/resolve.js"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "vitest": "^2.1.9",
+    "eslint": "^9.39.4",
+    "typescript": "^5.9.3",
+    "@types/node": "^20.19.39",
+    "@typescript-eslint/parser": "^8.59.0",
+    "@typescript-eslint/eslint-plugin": "^8.59.0"
   }
 }
