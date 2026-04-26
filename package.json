@@ -21,7 +21,7 @@
     "tsx": "^4.21.0",
     "vitest": "^4.1.5",
     "eslint": "^9.39.4",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "@types/node": "^20.19.39",
     "@typescript-eslint/parser": "^8.59.0",
     "@typescript-eslint/eslint-plugin": "^8.59.0"
