@@ -44,5 +44,7 @@ export async function fetchWithRetry(
       }
     }
   }
-  throw new Error(`fetch ${url} не удался после ${retries} попыток`);
+  const detail =
+    lastErr instanceof Error ? lastErr.message : String(lastErr ?? "");
+  throw new Error(`fetch ${url} не удался после ${retries} попыток: ${detail}`);
 }
