@@ -28,13 +28,11 @@ https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru
 
 ## Источники
 
-| Источник                                                                              | Что содержит               |
-| ------------------------------------------------------------------------------------- | -------------------------- |
-| [ipdeny.com — RU](https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone) | IP-блоки России            |
-| [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)     | IP мобильных операторов РФ |
+| Источник                                                                              | Что содержит                  |
+| ------------------------------------------------------------------------------------- | ----------------------------- |
+| [ipdeny.com — RU](https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone) | IP-блоки России               |
+| [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)     | IP мобильных операторов РФ    |
 | [bgpview.io](https://bgpview.io/) / [stat.ripe.net](https://stat.ripe.net/)           | ASN-префиксы крупных сервисов |
-
-> KZ-зона по-прежнему скачивается ради прозрачности (видна в git), но **не входит в финальный список** — слишком много чужих IP.
 
 ## Что-то не работает?
 
@@ -42,32 +40,32 @@ https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru
 
 ```bash
 dig +short example.ru @1.1.1.1
-dig +short example.ru @77.88.8.8 # Яндекс DNS — найдёт RU-CDN
+dig +short example.ru @77.88.8.8 # Яндекс DNS - найдёт RU-CDN
 
 npm run diff -- 95.213.45.12
 ```
 
 Сценарии:
 
-- Российский сервис идёт через VPN — IP не нашёлся ни в одной зоне →
+- Российский сервис идёт через VPN - IP не нашёлся ни в одной зоне ->
   добавьте домен в `config/services.json` или CIDR в `lists/zones/custom.zone`
-- Иностранный сервис идёт мимо VPN — IP нашёлся →
+- Иностранный сервис идёт мимо VPN — IP нашёлся ->
   добавьте его CIDR в `config/blacklist.txt`
 
-Если разобраться не получилось — [создайте issue](https://github.com/kyoresuas/amnezia-split-tunneling/issues/new), укажите название сервиса и(или) домен.
+Если разобраться не получилось - [создайте issue](https://github.com/kyoresuas/amnezia-split-tunneling/issues/new), укажите название сервиса и(или) домен.
 
 ## Кастомизация
 
-| Что сделать                 | Где менять                                 |
-| --------------------------- | ------------------------------------------ |
-| Добавить российский сервис  | `config/services.json` → секция `services` |
-| Добавить организацию по ASN | `config/services.json` → секция `asns`     |
-| Добавить IP вручную         | `lists/zones/custom.zone`                  |
-| Исключить IP из списка      | `config/blacklist.txt`                     |
+| Что сделать                 | Где менять                                  |
+| --------------------------- | ------------------------------------------- |
+| Добавить российский сервис  | `config/services.json` -> секция `services` |
+| Добавить организацию по ASN | `config/services.json` -> секция `asns`     |
+| Добавить IP вручную         | `lists/zones/custom.zone`                   |
+| Исключить IP из списка      | `config/blacklist.txt`                      |
 
 ## Последняя сборка
 
-Метаданные каждой сборки — в [`lists/stats.json`](lists/stats.json):
+Метаданные каждой сборки - в [`lists/stats.json`](lists/stats.json):
 сколько CIDR в каждой зоне, сколько удалено агрегацией, дифф с прошлой.
 
 ## Ручное обновление
