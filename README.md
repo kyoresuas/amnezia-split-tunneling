@@ -26,6 +26,15 @@ https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru
 8. Выберите скачанный `ru-bypass.json`
 9. Включите split tunneling и подключитесь
 
+## Windows: долгое подключение с большим списком
+
+На Windows с крупным split-tunnel списком (в том числе с этим `ru-bypass.json`) иногда очень долго висит этап подключения или оно не завершается - это [известная проблема клиента](https://github.com/amnezia-vpn/amnezia-client/issues/2248).
+
+Пока исправление не вошло в официальный релиз, можно поставить **сборку AmneziaVPN с патчем**:
+
+- [артефакт CI](https://github.com/kyoresuas/amnezia-client/actions/runs/24824833799/artifacts/6597271360)
+- [pull request в `amnezia-client`](https://github.com/amnezia-vpn/amnezia-client/pull/2516) - там описание и обсуждение; после мержа можно снова перейти на обычные сборки Amnezia.
+
 ## Источники
 
 | Источник                                                                              | Что содержит                  |
