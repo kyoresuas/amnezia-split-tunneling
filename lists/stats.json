@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T08:39:37.438Z",
+  "generatedAt": "2026-05-16T07:51:23.590Z",
   "finalCidrs": 8875,
   "zones": {
     "ru.zone": {
@@ -32,6 +32,6 @@
   },
   "diff": {
     "added": 1,
-    "removed": 2
+    "removed": 1
   }
 }
