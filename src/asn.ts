@@ -8,9 +8,9 @@ import {
 import { fileURLToPath } from "url";
 import { log } from "./utils/log.js";
 import { pLimit } from "./utils/limit.js";
-import { isValidCidr } from "./core/cidr.js";
 import { fetchWithRetry } from "./utils/http.js";
-import { resolve as resolvePath, dirname, basename } from "path";
+import { ipToInt, isValidCidr } from "./core/cidr.js";
+import { dirname, basename, resolve as resolvePath } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolvePath(__dirname, "..");
@@ -193,16 +193,6 @@ async function fetchAsn(
 }
 
 /**
- * Конвертирует CIDR в целое число
- */
-function ipToInt(cidr: string): number {
-  const ip = cidr.split("/")[0]!;
-  return (
-    ip.split(".").reduce((acc, o) => (acc << 8) | parseInt(o, 10), 0) >>> 0
-  );
-}
-
-/**
  * Запускает ASN
  */
 export async function runAsn(argv: string[] = process.argv.slice(2)): Promise<{
@@ -232,7 +222,9 @@ export async function runAsn(argv: string[] = process.argv.slice(2)): Promise<{
     for (const p of r.prefixes) allPrefixes.add(p);
   }
 
-  const sorted = [...allPrefixes].sort((a, b) => ipToInt(a) - ipToInt(b));
+  const sorted = [...allPrefixes].sort(
+    (a, b) => ipToInt(a.split("/")[0]!) - ipToInt(b.split("/")[0]!),
+  );
 
   const okCount = results.filter((r) => r.source !== "failed").length;
   const failed = results.filter((r) => r.source === "failed").length;

@@ -1,8 +1,8 @@
 import { fileURLToPath } from "url";
 import { log } from "./utils/log.js";
 import { existsSync, readdirSync, readFileSync } from "fs";
-import { resolve as resolvePath, dirname, join } from "path";
-import { contains, isValidCidr, ipToInt } from "./core/cidr.js";
+import { join, dirname, resolve as resolvePath } from "path";
+import { ipToInt, contains, isValidCidr } from "./core/cidr.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolvePath(__dirname, "..");

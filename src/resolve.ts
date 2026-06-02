@@ -2,9 +2,9 @@ import { fileURLToPath } from "url";
 import { log } from "./utils/log.js";
 import { promises as dns } from "dns";
 import { pLimit } from "./utils/limit.js";
-import { isValidCidr } from "./core/cidr.js";
-import { resolve as resolvePath, dirname, basename } from "path";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import { ipToInt, isValidCidr } from "./core/cidr.js";
+import { dirname, basename, resolve as resolvePath } from "path";
+import { mkdirSync, existsSync, readFileSync, writeFileSync } from "fs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolvePath(__dirname, "..");
@@ -111,16 +111,9 @@ await pLimit(
 
 log.ok(`Уникальных CIDR: ${prefixes.size}`);
 
-function ipToInt(cidr: string): number {
-  return (
-    cidr
-      .split("/")[0]!
-      .split(".")
-      .reduce((acc, o) => (acc << 8) | parseInt(o, 10), 0) >>> 0
-  );
-}
-
-const sorted = [...prefixes].sort((a, b) => ipToInt(a) - ipToInt(b));
+const sorted = [...prefixes].sort(
+  (a, b) => ipToInt(a.split("/")[0]!) - ipToInt(b.split("/")[0]!),
+);
 
 const header = [
   "# services.zone - CIDR российских сервисов",

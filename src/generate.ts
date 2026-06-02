@@ -1,8 +1,14 @@
+import {
+  ipToInt,
+  subtract,
+  aggregate,
+  isValidCidr,
+  isPrivateCidr,
+} from "./core/cidr.js";
 import { fileURLToPath } from "url";
 import { log } from "./utils/log.js";
-import { resolve as resolvePath, dirname, basename } from "path";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
-import { ipToInt, subtract, aggregate, isValidCidr } from "./core/cidr.js";
+import { dirname, basename, resolve as resolvePath } from "path";
+import { mkdirSync, existsSync, readFileSync, writeFileSync } from "fs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolvePath(__dirname, "..");
@@ -13,7 +19,6 @@ interface CliOptions {
   compact: boolean;
   blacklistPath: string | null;
   statsPath: string | null;
-  diffIp: string | null;
 }
 
 interface ZoneStats {
@@ -38,7 +43,6 @@ function parseArgs(argv: string[]): CliOptions {
   let compact = false;
   let blacklistPath: string | null = resolvePath(ROOT, "config/blacklist.txt");
   let statsPath: string | null = resolvePath(ROOT, "lists/stats.json");
-  let diffIp: string | null = null;
 
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -48,11 +52,10 @@ function parseArgs(argv: string[]): CliOptions {
     else if (a === "--no-blacklist") blacklistPath = null;
     else if (a === "--stats") statsPath = resolvePath(argv[++i] ?? "");
     else if (a === "--no-stats") statsPath = null;
-    else if (a === "--diff") diffIp = argv[++i] ?? null;
     else if (typeof a === "string" && !a.startsWith("-")) inputs.push(a);
   }
 
-  return { inputs, output, compact, blacklistPath, statsPath, diffIp };
+  return { inputs, output, compact, blacklistPath, statsPath };
 }
 
 /**
@@ -147,40 +150,6 @@ function diff(
 }
 
 /**
- * Запускает диагностику
- */
-function runDiagnostic(ip: string, opts: CliOptions): void {
-  log.info(`Режим --diff: проверяю IP ${ip}`);
-  const zones = opts.inputs.map((p) => ({
-    name: basename(p),
-    cidrs: parseZone(p),
-  }));
-  const blacklistCidrs =
-    opts.blacklistPath && existsSync(opts.blacklistPath)
-      ? parseBlacklist(opts.blacklistPath)
-      : [];
-  const ipInt = ipToInt(ip);
-  for (const z of zones) {
-    const match = z.cidrs.find((c) => {
-      const a = cidrIp(c);
-      const p = parseInt(c.split("/")[1]!, 10);
-      const size = p === 0 ? 2 ** 32 : 2 ** (32 - p);
-      return ipInt >= a && ipInt < a + size;
-    });
-    if (match) log.ok(`  ${z.name}: найден в ${match}`);
-    else log.info(`  ${z.name}: нет`);
-  }
-  const blMatch = blacklistCidrs.find((c) => {
-    const a = cidrIp(c);
-    const p = parseInt(c.split("/")[1]!, 10);
-    const size = p === 0 ? 2 ** 32 : 2 ** (32 - p);
-    return ipInt >= a && ipInt < a + size;
-  });
-  if (blMatch) log.warn(`  blacklist: ИСКЛЮЧЕН (${blMatch})`);
-  else log.info(`  blacklist: не исключен`);
-}
-
-/**
  * Запускает генерацию
  */
 export async function runGenerate(
@@ -190,14 +159,9 @@ export async function runGenerate(
 
   if (opts.inputs.length === 0) {
     log.error(
-      "Использование: tsx src/generate.ts [--compact] [-o <output.json>] [--blacklist <path>] [--stats <path>] [--diff <IP>] <input.zone> [...]",
+      "Использование: tsx src/generate.ts [--compact] [-o <output.json>] [--blacklist <path>] [--stats <path>] <input.zone> [...]",
     );
     process.exit(1);
-  }
-
-  if (opts.diffIp) {
-    runDiagnostic(opts.diffIp, opts);
-    return;
   }
 
   const zoneStats: Record<string, ZoneStats> = {};
@@ -215,8 +179,14 @@ export async function runGenerate(
   const dupRemoved = beforeDedup - dedup.length;
   if (dupRemoved > 0) log.info(`Удалено дубликатов: ${dupRemoved}`);
 
-  const aggBefore = dedup.length;
-  const aggregated = aggregate(dedup);
+  const publicCidrs = dedup.filter((c) => !isPrivateCidr(c));
+  const privateRemoved = dedup.length - publicCidrs.length;
+  if (privateRemoved > 0) {
+    log.info(`Удалено приватных/bogon-диапазонов: ${privateRemoved}`);
+  }
+
+  const aggBefore = publicCidrs.length;
+  const aggregated = aggregate(publicCidrs);
   const aggAfter = aggregated.length;
   log.info(
     `Агрегация: ${aggBefore} -> ${aggAfter} (сэкономлено ${aggBefore - aggAfter})`,
