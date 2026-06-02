@@ -29,7 +29,7 @@ interface AsnResult {
   asn: number;
   name: string;
   prefixes: string[];
-  source: "cache" | "bgpview" | "ripe" | "failed";
+  source: "cache" | "ripe" | "failed";
   error?: string;
 }
 
@@ -99,27 +99,6 @@ function writeCache(asn: number, prefixes: string[]): void {
 }
 
 /**
- * Fetches prefixes from BGPView
- */
-async function fetchFromBgpview(asn: number): Promise<string[]> {
-  const text = await fetchWithRetry(
-    `https://api.bgpview.io/asn/${asn}/prefixes`,
-    { timeoutMs: 8000, retries: 3 },
-  );
-  const json = JSON.parse(text) as {
-    status?: string;
-    data?: { ipv4_prefixes?: Array<{ prefix?: string }> };
-  };
-  if (json.status && json.status !== "ok") {
-    throw new Error(`bgpview status=${json.status}`);
-  }
-  const list = json.data?.ipv4_prefixes ?? [];
-  return list
-    .map((p) => p.prefix ?? "")
-    .filter((s) => s.length > 0 && isValidCidr(s));
-}
-
-/**
  * Получает префиксы из RIPE
  */
 async function fetchFromRipe(asn: number): Promise<string[]> {
@@ -154,41 +133,18 @@ async function fetchAsn(
   }
 
   try {
-    const prefixes = await fetchFromBgpview(asn);
-    if (prefixes.length === 0) throw new Error("bgpview вернул пустой список");
+    const prefixes = await fetchFromRipe(asn);
+    if (prefixes.length === 0) {
+      log.warn(`AS${asn} ${name}: RIPE вернул пустой список`);
+      return { asn, name, prefixes: [], source: "failed", error: "ripe пусто" };
+    }
     if (useCache) writeCache(asn, prefixes);
     log.ok(`AS${asn} ${name}: ${prefixes.length} CIDR получено`);
-    return { asn, name, prefixes, source: "bgpview" };
-  } catch (errBgp) {
-    const bgpMsg = (errBgp as Error).message;
-    try {
-      const prefixes = await fetchFromRipe(asn);
-      if (prefixes.length === 0) {
-        log.warn(
-          `AS${asn} ${name}: bgpview ${bgpMsg}, RIPE вернул пустой список`,
-        );
-        return {
-          asn,
-          name,
-          prefixes: [],
-          source: "failed",
-          error: `bgpview ${bgpMsg}; ripe пусто`,
-        };
-      }
-      if (useCache) writeCache(asn, prefixes);
-      log.ok(`AS${asn} ${name}: ${prefixes.length} CIDR получено (RIPE)`);
-      return { asn, name, prefixes, source: "ripe" };
-    } catch (errRipe) {
-      const ripeMsg = (errRipe as Error).message;
-      log.warn(`AS${asn} ${name}: bgpview ${bgpMsg}, RIPE ${ripeMsg}`);
-      return {
-        asn,
-        name,
-        prefixes: [],
-        source: "failed",
-        error: `bgpview ${bgpMsg}; ripe ${ripeMsg}`,
-      };
-    }
+    return { asn, name, prefixes, source: "ripe" };
+  } catch (errRipe) {
+    const ripeMsg = (errRipe as Error).message;
+    log.warn(`AS${asn} ${name}: RIPE ${ripeMsg}`);
+    return { asn, name, prefixes: [], source: "failed", error: ripeMsg };
   }
 }
 

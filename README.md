@@ -50,7 +50,7 @@ https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru
 | ------------------------------------------------------------------------------------- | ----------------------------- |
 | [ipdeny.com — RU](https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone) | IP-блоки России               |
 | [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)     | IP мобильных операторов РФ    |
-| [bgpview.io](https://bgpview.io/) / [stat.ripe.net](https://stat.ripe.net/)           | ASN-префиксы крупных сервисов |
+| [stat.ripe.net](https://stat.ripe.net/)                                               | ASN-префиксы крупных сервисов |
 
 ## Что-то не работает?
 

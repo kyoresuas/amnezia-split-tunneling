@@ -87,7 +87,7 @@ jobs:
             ## Источники
             - [ipdeny.com](https://www.ipdeny.com/ipblocks/)
             - [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)
-            - [bgpview.io](https://bgpview.io/) / [stat.ripe.net](https://stat.ripe.net/) — ASN-префиксы
+            - [stat.ripe.net](https://stat.ripe.net/) — ASN-префиксы
           files: |
             lists/ru-bypass.json
             lists/stats.json
