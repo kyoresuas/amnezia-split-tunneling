@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-07-02T08:42:26.705Z",
-  "finalCidrs": 8906,
+  "generatedAt": "2026-07-03T08:49:47.800Z",
+  "finalCidrs": 8909,
   "zones": {
     "ru.zone": {
-      "cidrs": 8624
+      "cidrs": 8626
     },
     "mobile.zone": {
       "cidrs": 88
     },
     "services.zone": {
-      "cidrs": 80
+      "cidrs": 79
     },
     "services-asn.zone": {
       "cidrs": 3213
@@ -26,12 +26,12 @@
     "subtracted": 0
   },
   "aggregation": {
-    "before": 11691,
-    "after": 8906,
-    "saved": 2785
+    "before": 11693,
+    "after": 8909,
+    "saved": 2784
   },
   "diff": {
-    "added": 2,
+    "added": 4,
     "removed": 1
   }
 }
