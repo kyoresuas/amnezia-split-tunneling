@@ -1,23 +1,35 @@
 # Amnezia Split Tunneling
 
-Готовый список российских IP-адресов для раздельного туннелирования в [AmneziaVPN](https://amnezia.org). После импорта российские сервисы работают напрямую, а весь остальной трафик идёт через VPN.
+Готовые списки российских IPv4-адресов для раздельного туннелирования в [AmneziaVPN](https://amnezia.org). После импорта выбранные российские сервисы работают напрямую, а остальной трафик идёт через VPN.
 
 [![Release](https://img.shields.io/github/v/release/kyoresuas/amnezia-split-tunneling?sort=semver&label=release&color=success)](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest)
-[![CIDR](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkyoresuas%2Famnezia-split-tunneling%2Fmain%2Flists%2Fstats.json&query=%24.finalCidrs&label=CIDR&color=blue)](lists/stats.json)
+[![Essential CIDR](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkyoresuas%2Famnezia-split-tunneling%2Fmain%2Flists%2Fessential-stats.json&query=%24.finalCidrs&label=essential%20CIDR&color=success)](lists/essential-stats.json)
+[![Full CIDR](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkyoresuas%2Famnezia-split-tunneling%2Fmain%2Flists%2Fstats.json&query=%24.finalCidrs&label=full%20CIDR&color=blue)](lists/stats.json)
 [![Update](https://github.com/kyoresuas/amnezia-split-tunneling/actions/workflows/update.yml/badge.svg)](https://github.com/kyoresuas/amnezia-split-tunneling/actions/workflows/update.yml)
 [![License](https://img.shields.io/github/license/kyoresuas/amnezia-split-tunneling?color=lightgrey)](LICENSE)
 
-Список **обновляется автоматически каждый день** из официальных источников: банки, госуслуги, маркетплейсы, операторы связи, крупные сервисы и их CDN.
+Списки обновляются автоматически каждый день.
 
-## Зачем это нужно
+## Какой список выбрать
 
-При полном туннелировании весь трафик идет через VPN и российские сервисы (банки, госуслуги, маркетплейсы) блокируют доступ из-за иностранного IP. Split tunneling решает это: российские адреса исключаются из VPN и работают напрямую, остальное идет через туннель.
+| Файл | Что внутри | Когда выбирать |
+| --- | --- | --- |
+| `ru-essential-bypass.json` | Банки, Мир/СБП, ключевые госсервисы, VK, ОК, Mail.ru, MAX, Дзен и Rutube | **Рекомендуется.** Жёсткий лимит сборки — 500 CIDR |
+| `ru-bypass.json` | Полная RU-зона, операторы, CDN и другие сервисы | Только если клиент стабильно обрабатывает несколько тысяч маршрутов |
+
+Если большой `ru-bypass.json` не импортируется, AmneziaVPN зависает при подключении или split tunneling работает нестабильно, используйте компактный `ru-essential-bypass.json`. Он создан специально для клиентов, которые плохо работают с большим числом маршрутов.
+
+Компактный список не включает целиком подсети общих CDN и анти-DDoS-провайдеров. Для таких узлов генератор добавляет точные `/32`, чтобы не выводить из VPN чужие сайты. Поэтому важно использовать свежий ежедневный релиз.
 
 ## Быстрый старт
 
-### 1. Скачайте файл
+### 1. Скачайте рекомендуемый файл
 
-Актуальный `ru-bypass.json` из [последнего релиза](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest):
+```
+https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-essential-bypass.json
+```
+
+Полный вариант доступен по прежнему адресу:
 
 ```
 https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-bypass.json
@@ -25,66 +37,50 @@ https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru
 
 ### 2. Импортируйте в AmneziaVPN
 
-1. Откройте AmneziaVPN
-2. Нажмите на подключение -> **Настройки подключения**
-3. Перейдите в раздел **Split Tunneling**
-4. Выберите **Site-based split tunneling**
-5. Режим: **Addresses from the list should not be accessed via VPN**
-6. Нажмите ⋮, потом **Import**
-7. Выберите **Replace site list**
-8. Укажите скачанный `ru-bypass.json`
-9. Включите split tunneling и подключитесь
+1. Откройте AmneziaVPN.
+2. Нажмите на подключение -> **Настройки подключения**.
+3. Откройте **Split Tunneling** -> **Site-based split tunneling**.
+4. Выберите **Addresses from the list should not be accessed via VPN**.
+5. Нажмите ⋮ -> **Import** -> **Replace site list**.
+6. Выберите скачанный JSON, включите split tunneling и переподключитесь.
+
+В [документации Amnezia](https://docs.amnezia.org/ru/documentation/instructions/vpn-split-tunneling/) указано, что site-based split tunneling работает с IPv4, а домены при добавлении преобразуются в IP. Именно поэтому репозиторий хранит и обновляет уже готовые IP-маршруты.
+
+## Как собран компактный список
+
+- Домены банков сверяются с [реестром Банка России](https://www.cbr.ru/banking_sector/credit/cowebsites/).
+- На дату аудита домены мобильных API сверены с 12 актуальными APK из [RuStore](https://www.rustore.ru/); пакеты и версии зафиксированы в конфиге.
+- DNS проверяется системным резолвером, Google DNS и Cloudflare DNS.
+- Префикс расширяется через [RIPE Stat](https://stat.ripe.net/) только если origin ASN принадлежит целевому сервису; иначе остаётся `/32`.
+- Перед публикацией сборка агрегируется, очищается от приватных/bogon-адресов и проверяется на лимит 500 записей.
+
+Перечень не пытается охватить каждый региональный банк и каждую ведомственную систему: это осознанный компромисс ради низкого числа маршрутов. Состав находится в [`config/essential-services.json`](config/essential-services.json).
 
 ## Windows: долгое подключение с большим списком
 
-На Windows с крупным split-tunnel списком (в том числе с этим `ru-bypass.json`) иногда очень долго висит этап подключения или оно не завершается — это [известная проблема клиента](https://github.com/amnezia-vpn/amnezia-client/issues/2248).
+На Windows полный `ru-bypass.json` может надолго задерживать подключение — это [известная проблема клиента](https://github.com/amnezia-vpn/amnezia-client/issues/2248). Сначала попробуйте компактный список.
 
-Пока исправление не вошло в официальный релиз, можно поставить **сборку AmneziaVPN с патчем**:
+Для полного списка также есть:
 
-- [артефакт CI](https://github.com/kyoresuas/amnezia-client/actions/runs/24824833799/artifacts/6597271360)
-- [pull request в `amnezia-client`](https://github.com/amnezia-vpn/amnezia-client/pull/2516) — там описание и обсуждение; после мержа можно снова перейти на обычные сборки Amnezia.
-
-## Источники
-
-| Источник                                                                              | Что содержит                  |
-| ------------------------------------------------------------------------------------- | ----------------------------- |
-| [ipdeny.com — RU](https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone) | IP-блоки России               |
-| [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)     | IP мобильных операторов РФ    |
-| [stat.ripe.net](https://stat.ripe.net/)                                               | ASN-префиксы крупных сервисов |
+- [артефакт CI с патчем](https://github.com/kyoresuas/amnezia-client/actions/runs/24824833799/artifacts/6597271360);
+- [pull request в `amnezia-client`](https://github.com/amnezia-vpn/amnezia-client/pull/2516).
 
 ## Что-то не работает?
 
-Узнайте IP проблемного сайта и проверьте его в наших списках:
+Узнайте IP проблемного сайта и проверьте его:
 
 ```bash
 dig +short example.ru @1.1.1.1
-dig +short example.ru @77.88.8.8  # Яндекс DNS — найдёт RU-CDN
+dig +short example.ru @77.88.8.8  # Яндекс DNS может увидеть другой RU-CDN
 
 npm run diff -- 95.213.45.12
 ```
 
-Сценарии:
+- Для компактного списка добавьте домен в `config/essential-services.json` и укажите его ASN в `trustedAsns` только если сеть не является общим CDN.
+- Для полного списка добавьте домен в `config/services.json` или CIDR в `lists/zones/custom.zone`.
+- Если иностранный сервис идёт мимо VPN, добавьте его CIDR в `config/blacklist.txt`.
 
-- **Российский сервис идёт через VPN** — IP не нашёлся ни в одной зоне ->
-  добавьте домен в `config/services.json` или CIDR в `lists/zones/custom.zone`
-- **Иностранный сервис идёт мимо VPN** — IP нашёлся ->
-  добавьте его CIDR в `config/blacklist.txt`
-
-Если разобраться не получилось — [создайте issue](https://github.com/kyoresuas/amnezia-split-tunneling/issues/new), укажите название сервиса и(или) домен.
-
-## Кастомизация
-
-| Что сделать                 | Где менять                                  |
-| --------------------------- | ------------------------------------------- |
-| Добавить российский сервис  | `config/services.json` -> секция `services` |
-| Добавить организацию по ASN | `config/services.json` -> секция `asns`     |
-| Добавить IP вручную         | `lists/zones/custom.zone`                   |
-| Исключить IP из списка      | `config/blacklist.txt`                      |
-
-## Последняя сборка
-
-Метаданные каждой сборки — в [`lists/stats.json`](lists/stats.json):
-сколько CIDR в каждой зоне, сколько удалено агрегацией, дифф с прошлой.
+Если разобраться не получилось, [создайте issue](https://github.com/kyoresuas/amnezia-split-tunneling/issues/new) и укажите сервис, домен и IP.
 
 ## Ручное обновление
 
@@ -95,13 +91,14 @@ npm ci
 npm run update
 ```
 
+Команда собирает оба файла. Метаданные находятся в [`lists/essential-stats.json`](lists/essential-stats.json) и [`lists/stats.json`](lists/stats.json).
+
 Полезные команды:
 
 ```bash
 npm test               # тесты CIDR-арифметики и pipeline
 npm run typecheck      # проверка типов TypeScript
-npm run diff -- <IP>   # диагностика: где попал/не попал IP
-npm run asn            # обновить только ASN-префиксы
+npm run diff -- <IP>   # диагностика полного списка
 ```
 
 ## Связаться со мной
@@ -112,5 +109,3 @@ npm run asn            # обновить только ASN-префиксы
 ## Лицензия
 
 MIT — см. файл [`LICENSE`](LICENSE).
-</content>
-</invoke>

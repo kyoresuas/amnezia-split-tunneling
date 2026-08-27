@@ -44,7 +44,7 @@ jobs:
           key: asn-cache-${{ github.run_id }}
           restore-keys: asn-cache-
 
-      - name: Download zones and generate ru-bypass.json
+      - name: Download zones and generate both lists
         run: bash scripts/update.sh --compact
 
       - name: Check if lists changed
@@ -84,11 +84,18 @@ jobs:
           body: |
             Автоматическое обновление IP-списков
 
+            - `ru-essential-bypass.json` — компактный: банки, госуслуги и российские соцсети (не более 500 CIDR)
+            - `ru-bypass.json` — полный список российских адресов
+
             ## Источники
             - [ipdeny.com](https://www.ipdeny.com/ipblocks/)
             - [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)
+            - [Банк России](https://www.cbr.ru/banking_sector/credit/cowebsites/) — официальные домены банков
+            - [RuStore](https://www.rustore.ru/) — домены API мобильных приложений
             - [stat.ripe.net](https://stat.ripe.net/) — ASN-префиксы
           files: |
+            lists/ru-essential-bypass.json
+            lists/essential-stats.json
             lists/ru-bypass.json
             lists/stats.json
           make_latest: true

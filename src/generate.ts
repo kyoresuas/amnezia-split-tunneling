@@ -17,6 +17,7 @@ interface CliOptions {
   inputs: string[];
   output: string;
   compact: boolean;
+  maxEntries: number | null;
   blacklistPath: string | null;
   statsPath: string | null;
 }
@@ -41,6 +42,7 @@ function parseArgs(argv: string[]): CliOptions {
   const inputs: string[] = [];
   let output = resolvePath(ROOT, "lists/ru-bypass.json");
   let compact = false;
+  let maxEntries: number | null = null;
   let blacklistPath: string | null = resolvePath(ROOT, "config/blacklist.txt");
   let statsPath: string | null = resolvePath(ROOT, "lists/stats.json");
 
@@ -48,14 +50,21 @@ function parseArgs(argv: string[]): CliOptions {
     const a = argv[i];
     if (a === "-o" || a === "--output") output = resolvePath(argv[++i] ?? "");
     else if (a === "--compact") compact = true;
-    else if (a === "--blacklist") blacklistPath = resolvePath(argv[++i] ?? "");
-    else if (a === "--no-blacklist") blacklistPath = null;
+    else if (a === "--max-entries") {
+      const value = Number(argv[++i]);
+      if (!Number.isInteger(value) || value <= 0) {
+        throw new Error("--max-entries должен быть положительным целым числом");
+      }
+      maxEntries = value;
+    } else if (a === "--blacklist") {
+      blacklistPath = resolvePath(argv[++i] ?? "");
+    } else if (a === "--no-blacklist") blacklistPath = null;
     else if (a === "--stats") statsPath = resolvePath(argv[++i] ?? "");
     else if (a === "--no-stats") statsPath = null;
     else if (typeof a === "string" && !a.startsWith("-")) inputs.push(a);
   }
 
-  return { inputs, output, compact, blacklistPath, statsPath };
+  return { inputs, output, compact, maxEntries, blacklistPath, statsPath };
 }
 
 /**
@@ -159,7 +168,7 @@ export async function runGenerate(
 
   if (opts.inputs.length === 0) {
     log.error(
-      "Использование: tsx src/generate.ts [--compact] [-o <output.json>] [--blacklist <path>] [--stats <path>] <input.zone> [...]",
+      "Использование: tsx src/generate.ts [--compact] [--max-entries <n>] [-o <output.json>] [--blacklist <path>] [--stats <path>] <input.zone> [...]",
     );
     process.exit(1);
   }
@@ -209,6 +218,12 @@ export async function runGenerate(
   }
 
   const sorted = sortCidrs(afterBlacklist);
+
+  if (opts.maxEntries !== null && sorted.length > opts.maxEntries) {
+    throw new Error(
+      `Лимит превышен: ${sorted.length} записей при максимуме ${opts.maxEntries}`,
+    );
+  }
 
   const oldSet = readOldHostnames(opts.output);
   const diffStats = diff(oldSet, sorted);

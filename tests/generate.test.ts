@@ -117,4 +117,25 @@ describe("generate pipeline", () => {
     expect(statsObj.diff.added).toBe(1);
     expect(statsObj.diff.removed).toBe(0);
   });
+
+  it("не публикует список, превышающий --max-entries", async () => {
+    const zone = writeZone(
+      "z.zone",
+      ["1.0.0.0/24", "2.0.0.0/24", "3.0.0.0/24"].join("\n"),
+    );
+    const output = join(workDir, "essential.json");
+
+    await expect(
+      runGenerate([
+        zone,
+        "-o",
+        output,
+        "--no-blacklist",
+        "--no-stats",
+        "--max-entries",
+        "2",
+      ]),
+    ).rejects.toThrow("Лимит превышен: 3 записей при максимуме 2");
+    expect(existsSync(output)).toBe(false);
+  });
 });

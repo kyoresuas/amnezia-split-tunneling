@@ -14,6 +14,9 @@ ZONES_DIR="$ROOT/lists/zones"
 # Директория списков
 LISTS_DIR="$ROOT/lists"
 
+# Директория зон компактного списка
+ESSENTIAL_ZONES_DIR="$LISTS_DIR/essential-zones"
+
 # URL IPdeny
 IPDENY_BASE="https://www.ipdeny.com/ipblocks/data/aggregated"
 
@@ -43,7 +46,7 @@ command -v npx  >/dev/null 2>&1 || error "npx не найден"
 
 info "Node.js: $(node --version)"
 
-mkdir -p "$ZONES_DIR"
+mkdir -p "$ZONES_DIR" "$ESSENTIAL_ZONES_DIR"
 
 download() {
   local name="$1" url="$2" dest="$3" required="${4:-false}"
@@ -74,6 +77,16 @@ $TSX "$ROOT/src/asn.ts" \
   --config "$ROOT/config/services.json" \
   --output "$ZONES_DIR/services-asn.zone" 2>&1
 
+info "Резолвинг банков, госуслуг и соцсетей..."
+$TSX "$ROOT/src/resolve.ts" \
+  --config "$ROOT/config/essential-services.json" \
+  --output "$ESSENTIAL_ZONES_DIR/services.zone" 2>&1
+
+info "Получаю ASN-префиксы компактного списка..."
+$TSX "$ROOT/src/asn.ts" \
+  --config "$ROOT/config/essential-services.json" \
+  --output "$ESSENTIAL_ZONES_DIR/services-asn.zone" 2>&1
+
 INPUT_FILES=()
 for zone in ru mobile services services-asn cdn custom; do
   [[ -f "$ZONES_DIR/${zone}.zone" ]] && INPUT_FILES+=("$ZONES_DIR/${zone}.zone")
@@ -89,16 +102,30 @@ $TSX "$ROOT/src/generate.ts" \
   -o "$LISTS_DIR/ru-bypass.json" \
   "${INPUT_FILES[@]}" 2>&1
 
+info "Генерирую ru-essential-bypass.json (жёсткий лимит: 500)..."
+$TSX "$ROOT/src/generate.ts" \
+  $COMPACT_FLAG \
+  --max-entries 500 \
+  --blacklist "$ROOT/config/blacklist.txt" \
+  --stats "$LISTS_DIR/essential-stats.json" \
+  -o "$LISTS_DIR/ru-essential-bypass.json" \
+  "$ESSENTIAL_ZONES_DIR/services.zone" \
+  "$ESSENTIAL_ZONES_DIR/services-asn.zone" 2>&1
+
 ENTRY_COUNT=$(node -e "
   const f = require('fs').readFileSync('$LISTS_DIR/ru-bypass.json', 'utf8');
   console.log(JSON.parse(f).length);
 ")
 FILE_SIZE=$(du -sh "$LISTS_DIR/ru-bypass.json" | cut -f1)
+ESSENTIAL_ENTRY_COUNT=$(node -e "
+  const f = require('fs').readFileSync('$LISTS_DIR/ru-essential-bypass.json', 'utf8');
+  console.log(JSON.parse(f).length);
+")
+ESSENTIAL_FILE_SIZE=$(du -sh "$LISTS_DIR/ru-essential-bypass.json" | cut -f1)
 
 echo ""
 success "Готово!"
-echo -e "   Записей в списке: ${YELLOW}${ENTRY_COUNT}${NC}"
-echo -e "   Размер файла: ${YELLOW}${FILE_SIZE}${NC}"
-echo -e "   Файл: ${CYAN}lists/ru-bypass.json${NC}"
-echo -e "   Метаданные: ${CYAN}lists/stats.json${NC}"
+echo -e "   Полный:     ${YELLOW}${ENTRY_COUNT}${NC} записей, ${YELLOW}${FILE_SIZE}${NC} — ${CYAN}lists/ru-bypass.json${NC}"
+echo -e "   Компактный: ${YELLOW}${ESSENTIAL_ENTRY_COUNT}${NC} записей, ${YELLOW}${ESSENTIAL_FILE_SIZE}${NC} — ${CYAN}lists/ru-essential-bypass.json${NC}"
+echo -e "   Метаданные: ${CYAN}lists/stats.json${NC}, ${CYAN}lists/essential-stats.json${NC}"
 echo ""

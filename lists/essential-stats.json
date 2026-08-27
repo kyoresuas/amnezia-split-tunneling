@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-08-27T09:09:18.566Z",
+  "finalCidrs": 305,
+  "zones": {
+    "services.zone": {
+      "cidrs": 187
+    },
+    "services-asn.zone": {
+      "cidrs": 330
+    }
+  },
+  "blacklist": {
+    "rules": 0,
+    "subtracted": 0
+  },
+  "aggregation": {
+    "before": 460,
+    "after": 305,
+    "saved": 155
+  },
+  "diff": {
+    "added": 4,
+    "removed": 4
+  }
+}
