@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T11:59:14.353Z",
+  "generatedAt": "2026-08-30T10:56:03.950Z",
   "finalCidrs": 8799,
   "zones": {
     "ru.zone": {
@@ -12,7 +12,7 @@
       "cidrs": 83
     },
     "services-asn.zone": {
-      "cidrs": 2938
+      "cidrs": 2939
     },
     "cdn.zone": {
       "cidrs": 7
@@ -31,7 +31,7 @@
     "saved": 2635
   },
   "diff": {
-    "added": 3,
-    "removed": 2
+    "added": 1,
+    "removed": 1
   }
 }
