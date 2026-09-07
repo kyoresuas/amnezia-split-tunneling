@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T09:55:51.982Z",
+  "generatedAt": "2026-09-07T11:04:36.046Z",
   "finalCidrs": 307,
   "zones": {
     "services.zone": {
@@ -19,7 +19,7 @@
     "saved": 155
   },
   "diff": {
-    "added": 2,
+    "added": 4,
     "removed": 4
   }
 }
