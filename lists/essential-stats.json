@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-14T11:16:46.299Z",
-  "finalCidrs": 311,
+  "generatedAt": "2026-09-15T10:42:32.944Z",
+  "finalCidrs": 309,
   "zones": {
     "services.zone": {
-      "cidrs": 194
+      "cidrs": 192
     },
     "services-asn.zone": {
       "cidrs": 332
@@ -14,12 +14,12 @@
     "subtracted": 0
   },
   "aggregation": {
-    "before": 469,
-    "after": 311,
+    "before": 467,
+    "after": 309,
     "saved": 158
   },
   "diff": {
-    "added": 5,
-    "removed": 6
+    "added": 3,
+    "removed": 5
   }
 }
