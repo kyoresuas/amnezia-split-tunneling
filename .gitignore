@@ -1,5 +1,5 @@
 # dependencies
-node_modules/
+/node_modules/
 
 # misc
 .DS_Store
@@ -8,11 +8,11 @@ node_modules/
 *.log
 
 # build / cache / artifacts
-dist/
-cache/
-coverage/
-.tools/
+/dist/
+/cache/
+/coverage/
+/.tools/
 *.tsbuildinfo
 
 # release notes are generated
-RELEASE_NOTES.md
+/RELEASE_NOTES.md
