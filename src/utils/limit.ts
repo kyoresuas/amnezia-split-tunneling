@@ -1,20 +1,31 @@
 /**
- * Запускает массив async-функций, держа не более concurrency одновременно
+ * Выполнить async-функции, держа не более concurrency одновременно
  */
-export async function pLimit<T>(
-  fns: Array<() => Promise<T>>,
+export const pLimit = async <T>(
+  fns: ReadonlyArray<() => Promise<T>>,
   concurrency: number,
-): Promise<T[]> {
+): Promise<T[]> => {
   const results = new Array<T>(fns.length);
-  let i = 0;
+  let next = 0;
+
   const worker = async (): Promise<void> => {
-    while (i < fns.length) {
-      const idx = i++;
-      const fn = fns[idx]!;
-      results[idx] = await fn();
+    while (next < fns.length) {
+      const index = next++;
+      const fn = fns[index]!;
+
+      results[index] = await fn();
     }
   };
-  const n = Math.max(1, Math.min(concurrency, fns.length));
-  await Promise.all(Array.from({ length: n }, worker));
+
+  const workers = Math.max(1, Math.min(concurrency, fns.length));
+
+  await Promise.all(Array.from({ length: workers }, worker));
+
   return results;
-}
+};
+
+/**
+ * Подождать указанное число миллисекунд
+ */
+export const sleep = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));

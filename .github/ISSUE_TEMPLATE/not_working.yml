@@ -1,0 +1,56 @@
+name: Сайт идёт через VPN
+description: Адрес из российского сервиса не попал в список
+title: "[Покрытие]: "
+labels:
+  - coverage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Сначала проверьте адрес на странице https://kyoresuas.github.io/amnezia-split-tunneling/#check или командой `npm run check -- домен`.
+
+  - type: input
+    id: domain
+    attributes:
+      label: Домен
+      placeholder: example.ru
+    validations:
+      required: true
+
+  - type: textarea
+    id: ips
+    attributes:
+      label: IP-адреса
+      description: Вывод `dig +short example.ru @1.1.1.1` или адреса из трафика
+      render: text
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Какой уровень используете
+      options:
+        - ru-lite
+        - ru-standard
+        - ru-full
+    validations:
+      required: true
+
+  - type: input
+    id: client
+    attributes:
+      label: Клиент и платформа
+      placeholder: AmneziaVPN 5.0.3 на iOS
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Проверки
+      options:
+        - label: Адреса проверены на сайте или командой check
+          required: true
+        - label: В сообщении нет моих VPN-конфигов и адресов серверов
+          required: true

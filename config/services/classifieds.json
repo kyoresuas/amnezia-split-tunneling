@@ -1,0 +1,128 @@
+{
+  "title": "Объявления и работа",
+  "description": "Авито, Циан и hh.ru",
+  "services": [
+    {
+      "name": "Авито",
+      "tier": "standard",
+      "asns": [
+        {
+          "asn": 201012,
+          "name": "Авито",
+          "holder": "Avito"
+        }
+      ],
+      "domains": [
+        "api.avito.ru",
+        "app-quic.avito.ru",
+        "app.avito.ru",
+        "app.k.avito.ru",
+        "avito.ru",
+        "avito.st",
+        "caravan.k.avito.ru",
+        "cf.avito.ru",
+        "docs.k.avito.ru",
+        "fake.avito.ru",
+        "files.avito.ru",
+        "k.avito.ru",
+        "link.avito.ru",
+        "links.k.avito.ru",
+        "m.avito.ru",
+        "m.k.avito.ru",
+        "p.avito.ru",
+        "sntr.avito.ru",
+        "socket-fallback.avito.ru",
+        "socket.avito.ru",
+        "static.avito.ru",
+        "stats.avito.ru",
+        "support.avito.ru",
+        "www.avito.ru",
+        "www.avito.st"
+      ],
+      "apps": [
+        {
+          "package": "com.avito.android",
+          "version": "233.5",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Циан",
+      "tier": "standard",
+      "domains": [
+        "advertising-best-offer.fin.cian.ru",
+        "api-ote-mobile.fin.cian.ru",
+        "api-public.fin.cian.ru",
+        "api.cian.ru",
+        "cdn-p.cian.site",
+        "cdn.cian.site",
+        "chats.cian.ru",
+        "cian.ru",
+        "cian.site",
+        "f.cian.ru",
+        "files.cian.ru",
+        "fin.cian.ru",
+        "images.cdn-cian.ru",
+        "lkpc.cian.ru",
+        "mobile.cian.ru",
+        "my.cian.ru",
+        "promo.cian.ru",
+        "promo.cian.site",
+        "redirect.cian.ru",
+        "social.cian.ru",
+        "sopr-api.cian.ru",
+        "spb.cian.ru",
+        "static.cdn-cian.ru",
+        "support.cian.ru",
+        "survey.cian.site",
+        "widgets.fin.cian.ru",
+        "wss.cian.ru",
+        "www.cian.ru",
+        "www.fin.cian.ru",
+        "zhk-vesna-aprelevka-i.cian.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.cian.main",
+          "version": "2.445.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "hh.ru",
+      "tier": "standard",
+      "asns": [
+        {
+          "asn": 47724,
+          "name": "HeadHunter",
+          "holder": "HeadHunter"
+        }
+      ],
+      "domains": [
+        "api.hh.ru",
+        "career.hh.ru",
+        "cms.hh.ru",
+        "employer-reviews-front.hh.ru",
+        "feedback.hh.ru",
+        "hh.ru",
+        "hhcdn.ru",
+        "i.hh.ru",
+        "img.hhcdn.ru",
+        "kakdela.hh.ru",
+        "m.hh.ru",
+        "rating.hh.ru",
+        "safety.hh.ru",
+        "www.hh.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.hh.android",
+          "version": "26.36",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    }
+  ]
+}

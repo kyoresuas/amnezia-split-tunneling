@@ -1,26 +1,60 @@
 {
-  "name": "amnezia-split-tunneling",
-  "version": "2.0.0",
+  "name": "ru-direct",
+  "version": "3.0.0",
+  "description": "Готовые списки российских подсетей для раздельного туннелирования: AmneziaVPN, WireGuard, sing-box, Xray, Clash, MikroTik, Keenetic, OpenWrt",
   "private": true,
+  "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyoresuas/amnezia-split-tunneling.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kyoresuas/amnezia-split-tunneling/issues"
+  },
+  "homepage": "https://kyoresuas.github.io/amnezia-split-tunneling/",
+  "keywords": [
+    "amnezia",
+    "amneziavpn",
+    "amneziawg",
+    "split-tunneling",
+    "russia",
+    "cidr",
+    "ipv4",
+    "ipv6",
+    "geoip",
+    "sing-box",
+    "xray",
+    "wireguard",
+    "mikrotik",
+    "keenetic",
+    "openwrt",
+    "clash",
+    "mihomo"
+  ],
   "engines": {
     "node": ">=20.10.0"
   },
   "scripts": {
-    "lint": "eslint src tests",
-    "generate": "tsx src/generate.ts",
-    "resolve": "tsx src/resolve.ts",
-    "asn": "tsx src/asn.ts",
-    "diff": "tsx src/diff.ts",
-    "update": "bash scripts/update.sh",
-    "test": "vitest run",
+    "lint": "npx eslint . --max-warnings=0",
+    "test": "npm run test:typecheck && vitest run",
+    "test:typecheck": "tsc --project tsconfig.json",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "test:coverage": "vitest run --coverage",
+    "update": "tsx src/main.ts update",
+    "generate": "tsx src/main.ts generate",
+    "verify": "tsx src/main.ts verify",
+    "check": "tsx src/main.ts check",
+    "tools": "tsx src/main.ts tools"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
     "@types/node": "^25.6.0",
-    "eslint": "^10.2.1",
+    "@vitest/coverage-v8": "^4.1.5",
+    "eslint": "^9.39.4",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.0",

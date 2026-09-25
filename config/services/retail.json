@@ -1,0 +1,150 @@
+{
+  "title": "Ритейл",
+  "description": "Продуктовые сети и магазины электроники: доставка, карты лояльности и оплата",
+  "services": [
+    {
+      "name": "X5: Пятёрочка и Перекрёсток",
+      "tier": "standard",
+      "asns": [
+        {
+          "asn": 44704,
+          "name": "X5 Group",
+          "holder": "X5"
+        }
+      ],
+      "domains": [
+        "5d.5ka.ru",
+        "5ka.ru",
+        "api.perekrestok.ru",
+        "api.x5.ru",
+        "chizhik-mobile.x5.ru",
+        "dostavka.5ka.ru",
+        "eda.x5.ru",
+        "files.perekrestok.ru",
+        "gp.x5.ru",
+        "gw-cmdm.x5.ru",
+        "gw-el5.x5.ru",
+        "gw-fb5.x5.ru",
+        "gw-tsx.x5.ru",
+        "homepage.5ka.ru",
+        "id.x5.ru",
+        "kaf-gate.x5.ru",
+        "key.x5.ru",
+        "mystery-shopper.x5.ru",
+        "o.5ka.ru",
+        "observability.x5.ru",
+        "perekrestok-mobile.x5.ru",
+        "perekrestok.ru",
+        "sentry.x5.ru",
+        "www.5ka.ru",
+        "www.perekrestok.ru",
+        "www.x5.ru",
+        "x5.ru",
+        "x5m.x5.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.pyaterochka.app.browser",
+          "version": "3.43.0",
+          "auditedAt": "2026-09-25"
+        },
+        {
+          "package": "ru.perekrestok.app",
+          "version": "3.98.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Магнит",
+      "tier": "standard",
+      "domains": [
+        "apteka.magnit.ru",
+        "b2b-portal.magnit.ru",
+        "c2c.magnit.ru",
+        "chat-stream.ya.magnit.ru",
+        "cosmetic.magnit.ru",
+        "design-system-image.prod.ya.magnit.ru",
+        "dostavka.magnit.ru",
+        "event-stream-api.magnit.ru",
+        "fda.middle-api.magnit.ru",
+        "finance-cdn.prod.ya.magnit.ru",
+        "id.magnit.ru",
+        "img-dostavka.magnit.ru",
+        "kontragent.magnit.ru",
+        "legal.magnit.ru",
+        "loans.magnit.ru",
+        "mads-serve.magnit.ru",
+        "mads-track.magnit.ru",
+        "magnit-api-cdn.prod.ya.magnit.ru",
+        "magnit-info.ru",
+        "magnit.ru",
+        "magnitpay.ru",
+        "middle-api.magnit.ru",
+        "mig.magnit.ru",
+        "moy.magnit.ru",
+        "my.magnit.ru",
+        "sentry-mobile.prod.ya.magnit.ru",
+        "www.magnit.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.tander.magnit",
+          "version": "8.122.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Лента",
+      "tier": "standard",
+      "domains": [
+        "api.lenta.com",
+        "lenta.com",
+        "online.lenta.com",
+        "www.lenta.com"
+      ]
+    },
+    {
+      "name": "ВкусВилл",
+      "tier": "standard",
+      "domains": [
+        "api.vkusvill.ru",
+        "mobile.vkusvill.ru",
+        "vkusvill.ru",
+        "www.vkusvill.ru"
+      ]
+    },
+    {
+      "name": "Лемана ПРО",
+      "tier": "standard",
+      "domains": [
+        "api.lemanapro.ru",
+        "lemanapro.ru",
+        "www.lemanapro.ru"
+      ]
+    },
+    {
+      "name": "DNS",
+      "tier": "standard",
+      "domains": [
+        "api.dns-shop.ru",
+        "c.dns-shop.ru",
+        "dns-shop.ru",
+        "www.dns-shop.ru"
+      ]
+    },
+    {
+      "name": "М.Видео и Эльдорадо",
+      "tier": "standard",
+      "domains": [
+        "api.mvideo.ru",
+        "eldorado.ru",
+        "mvideo.ru",
+        "static.mvideo.ru",
+        "www.eldorado.ru",
+        "www.mvideo.ru"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "title": "Путешествия и транспорт",
+  "description": "Aviasales, Туту, РЖД и Аэрофлот",
+  "services": [
+    {
+      "name": "Aviasales",
+      "tier": "standard",
+      "notes": "Инфраструктура Aviasales в основном за рубежом, в списки попадают только российские адреса",
+      "domains": [
+        "aviasales.ru",
+        "hermitage.aviasales.ru",
+        "img.avs.io",
+        "photo.hotellook.com",
+        "tickets-api.aviasales.ru",
+        "www.aviasales.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.aviasales",
+          "version": "7.35.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Туту",
+      "tier": "standard",
+      "domains": [
+        "api-an.tutu.ru",
+        "api-bus.tutu.ru",
+        "app-train-gateway.tutu.ru",
+        "auth.tutu.ru",
+        "avia-api.tutu.ru",
+        "avia-promo-api.tutu.ru",
+        "avia.tutu.ru",
+        "bdui.tutu.ru",
+        "beesender-ptt-api-contact-center.tutu.ru",
+        "benefit-indicator.tutu.ru",
+        "benefits.tutu.ru",
+        "bus.tutu.ru",
+        "calendar.tutu.ru",
+        "car-rent-api.tutu.ru",
+        "chat-widget-bff.tutu.ru",
+        "chatplatform-interactor-info-chat.tutu.ru",
+        "checkout-gw-mobile.tutu.ru",
+        "client-telemetry.tutu.ru",
+        "combo-cart.tutu.ru",
+        "combo-orchestrator.tutu.ru",
+        "config-api.tutu.ru",
+        "config-relay-proxy.tutu.ru",
+        "crm.tutu.ru",
+        "eco-favorites-mobile-gw.tutu.ru",
+        "etrain-gateway.tutu.ru",
+        "features-gateway.tutu.ru",
+        "golden-retriever.tutu.ru",
+        "helpscreenapi.tutu.ru",
+        "hotel.tutu.ru",
+        "hotels-mainpage-gateway.tutu.ru",
+        "hotels-review-gateway.tutu.ru",
+        "hotels-search.tutu.ru",
+        "id.tutu.ru",
+        "informers.tutu.ru",
+        "infoservice.tutu.ru",
+        "landing-api.tutu.ru",
+        "loyalty.tutu.ru",
+        "message-center.tutu.ru",
+        "mindbox.tutu.ru",
+        "my.tutu.ru",
+        "offers-api.tutu.ru",
+        "offers-frontend-logger.tutu.ru",
+        "offers-hotel-api.tutu.ru",
+        "ptt-cdp-gateway.tutu.ru",
+        "ptt.tutu.ru",
+        "push.tutu.ru",
+        "search-history.tutu.ru",
+        "seats-gateway.tutu.ru",
+        "segmentation.tutu.ru",
+        "selections.tutu.ru",
+        "story.tutu.ru",
+        "storyfeed.tutu.ru",
+        "subscription-gateway.tutu.ru",
+        "suggest.tutu.ru",
+        "travel-assistant.tutu.ru",
+        "trip-suggester.tutu.ru",
+        "turbina.tutu.ru",
+        "tutu.ru",
+        "wallet.tutu.ru",
+        "www.tutu.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.tutu.tutu_emp",
+          "version": "3.154.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "РЖД",
+      "tier": "standard",
+      "domains": [
+        "ekmp.rzd.ru",
+        "history.rzd.ru",
+        "pass.rzd.ru",
+        "qrlink.rzd.ru",
+        "rzd-bonus.ru",
+        "rzd.ru",
+        "svzd.rzd.ru",
+        "ticket.rzd.ru",
+        "www.rzd.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.rzd.pass",
+          "version": "2.58.6765",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Аэрофлот",
+      "tier": "standard",
+      "domains": [
+        "aeroflot.ru",
+        "api.aeroflot.ru",
+        "www.aeroflot.ru"
+      ]
+    }
+  ]
+}

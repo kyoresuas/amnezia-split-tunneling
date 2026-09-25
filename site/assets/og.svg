@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="#111c34" stroke="#1f2d4d" stroke-width="2"/>
+  <text x="110" y="220" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="88" font-weight="700" fill="#f8fafc">RU Direct</text>
+  <text x="110" y="300" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="40" fill="#94a3b8">Российские сайты напрямую, остальное через VPN</text>
+  <text x="110" y="420" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="30" fill="#5eead4">AmneziaVPN · WireGuard · sing-box · Xray · Clash · MikroTik · Keenetic · OpenWrt</text>
+  <text x="110" y="500" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="28" fill="#64748b">Обновляется каждый день · MIT · без рекламы</text>
+</svg>

@@ -1,43 +1,33 @@
-name: Сообщить о проблеме
-description: Трафик идет не туда
-title: "[bug] "
-labels: ["bug"]
+name: Ошибка
+description: Файл не импортируется, формат сломан, сборка падает
+title: "[Ошибка]: "
+labels:
+  - bug
 body:
-  - type: input
-    id: site
+  - type: textarea
+    id: description
     attributes:
-      label: Домен / сервис
-      placeholder: example.ru
+      label: Что случилось
     validations:
       required: true
 
   - type: input
-    id: ip
+    id: file
     attributes:
-      label: IP, который вы получаете при резолве
-      description: |
-        Узнайте IP так: `dig +short example.ru @1.1.1.1` или `dig +short example.ru @77.88.8.8`
-      placeholder: 95.213.45.12
+      label: Файл и уровень
+      placeholder: ru-lite.singbox.srs
+    validations:
+      required: true
 
-  - type: dropdown
-    id: kind
+  - type: input
+    id: client
     attributes:
-      label: Что не так?
-      options:
-        - Российский сервис идет через VPN (должен напрямую)
-        - Иностранный сервис идет мимо VPN (должен через VPN)
+      label: Клиент, версия, платформа
     validations:
       required: true
 
   - type: textarea
-    id: diff
+    id: logs
     attributes:
-      label: Вывод `npm run diff -- <IP>`
-      description: Если есть возможность, вставьте вывод команды
+      label: Логи или сообщение об ошибке
       render: shell
-
-  - type: textarea
-    id: extra
-    attributes:
-      label: Дополнительно
-      description: Любая полезная информация

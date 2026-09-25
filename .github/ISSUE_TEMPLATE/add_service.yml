@@ -1,13 +1,14 @@
-name: Добавить российский сервис
-description: Предложить домен или ASN для добавления в список
-title: "[service] "
-labels: ["enhancement"]
+name: Добавить сервис
+description: Сервис или домен, который должен работать напрямую
+title: "[Сервис]: "
+labels:
+  - service
 body:
   - type: input
     id: name
     attributes:
-      label: Название сервиса
-      placeholder: Магнит
+      label: Сервис
+      placeholder: Например, Лента
     validations:
       required: true
 
@@ -15,20 +16,29 @@ body:
     id: domains
     attributes:
       label: Домены
-      description: По одному на строку
-      placeholder: |
-        magnit.ru
-        api.magnit.ru
+      description: По одному в строке. Лучше снятые из трафика приложения, а не только главная страница
+      render: text
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Уровень
+      options:
+        - standard
+        - lite
     validations:
       required: true
 
   - type: input
-    id: asn
+    id: app
     attributes:
-      label: ASN (если известен)
-      placeholder: AS12345
+      label: Приложение
+      description: Пакет и версия из RuStore, если домены снимались с приложения
 
   - type: textarea
-    id: extra
+    id: notes
     attributes:
-      label: Почему нужно добавить?
+      label: Заметки
+      description: Собственные ASN, особенности, ссылки

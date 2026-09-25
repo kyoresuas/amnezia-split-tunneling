@@ -1,0 +1,63 @@
+{
+  "title": "Технологии и сервисы",
+  "description": "RuStore, Хабр, Saby и Битрикс24",
+  "services": [
+    {
+      "name": "RuStore",
+      "tier": "standard",
+      "domains": [
+        "adv.rustore.ru",
+        "apps.rustore.ru",
+        "auth-dg.vkpns.rustore.ru",
+        "auth.vkpns.rustore.ru",
+        "backapi.rustore.ru",
+        "client-api.remote-config.rustore.ru",
+        "rebus.rustore.ru",
+        "rustore.ru",
+        "static.rustore.ru",
+        "stats-dg.rustore.ru",
+        "stats.rustore.ru",
+        "vkpns-dg.rustore.ru",
+        "vkpns-topics-dg.rustore.ru",
+        "vkpns-topics.rustore.ru",
+        "vkpns-universal-dg.rustore.ru",
+        "vkpns-universal.rustore.ru",
+        "vkpns.rustore.ru",
+        "www.rustore.ru"
+      ]
+    },
+    {
+      "name": "Хабр",
+      "tier": "standard",
+      "domains": [
+        "assets.habr.com",
+        "career.habr.com",
+        "habr.com",
+        "habrastorage.org",
+        "qna.habr.com",
+        "www.habr.com"
+      ]
+    },
+    {
+      "name": "Saby и СБИС",
+      "tier": "standard",
+      "domains": [
+        "api.sbis.ru",
+        "online.sbis.ru",
+        "saby.ru",
+        "sbis.ru",
+        "www.saby.ru"
+      ]
+    },
+    {
+      "name": "Битрикс24",
+      "tier": "standard",
+      "domains": [
+        "bitrix.info",
+        "bitrix24.ru",
+        "oauth.bitrix.info",
+        "www.bitrix24.ru"
+      ]
+    }
+  ]
+}

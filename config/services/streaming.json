@@ -1,0 +1,177 @@
+{
+  "title": "Стриминги и ТВ",
+  "description": "Иви, Okko, Wink, KION, START, PREMIER и Витрина ТВ",
+  "services": [
+    {
+      "name": "Иви",
+      "tier": "standard",
+      "asns": [
+        {
+          "asn": 57629,
+          "name": "Иви",
+          "holder": "IVI"
+        }
+      ],
+      "domains": [
+        "api.ivi.ru",
+        "ask.ivi.ru",
+        "c.ivi.ru",
+        "gates.ivi.ru",
+        "groot.ivi.ru",
+        "ivi.ru",
+        "l.ivi.ru",
+        "l1.ivi.ru",
+        "logger.ivi.ru",
+        "o.ivi.ru",
+        "redmine.ivi.ru",
+        "region.dfs.ivi.ru",
+        "rocket.ivi.ru",
+        "special.ivi.ru",
+        "thumbs.dfs.ivi.ru",
+        "w.ivi.ru",
+        "www.ivi.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.ivi.client",
+          "version": "26.8.1",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Okko",
+      "tier": "standard",
+      "asns": [
+        {
+          "asn": 211609,
+          "name": "Okko",
+          "holder": "OKKO"
+        }
+      ],
+      "domains": [
+        "androidtv.okkoapi.tv",
+        "api.okko.tv",
+        "api.okkopretv.ru",
+        "auth.okko.tv",
+        "auth.okkopretv.ru",
+        "clients-static.okko.tv",
+        "eden.okko.tv",
+        "eden.okkopretv.ru",
+        "okko.tv",
+        "okkoapi.tv",
+        "okkopretv.ru",
+        "player.okko.tv",
+        "pre-api-embed.okko.tv",
+        "pre-auth.okko.tv",
+        "pre-clients-static.okko.tv",
+        "pre-player-static.okko.tv",
+        "pre-sberbank.okko.tv",
+        "pre-sport-updates.okkoapi.tv",
+        "pre-stat.okko.tv",
+        "pre-stat2.okko.tv",
+        "pre-static.okko.tv",
+        "sberbank.okko.tv",
+        "smartbox.okko.tv",
+        "sport-updates.okkoapi.tv",
+        "stat.okko.tv",
+        "stat2.okko.tv",
+        "static.okko.tv",
+        "terms.okko.tv",
+        "ws.okko.tv",
+        "ws.okkopretv.ru",
+        "www.okko.tv"
+      ],
+      "apps": [
+        {
+          "package": "ru.more.play",
+          "version": "8.185.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Wink",
+      "tier": "standard",
+      "domains": [
+        "api-ai-agent.wink.ru",
+        "images.iptv.rt.ru",
+        "itv.svc.iptv.rt.ru",
+        "music-events.wink.ru",
+        "pp.svc.iptv.rt.ru",
+        "qaapp-prod.svc.iptv.rt.ru",
+        "wink.rt.ru",
+        "wink.ru",
+        "www.wink.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.rt.video.app.mobile",
+          "version": "1.91.1",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "KION",
+      "tier": "standard",
+      "domains": [
+        "api.udms.kion.ru",
+        "htv-live.kion.ru",
+        "ipc.kion.ru",
+        "kion.ru",
+        "kls.kion.ru",
+        "km.kion.ru",
+        "mdp.kion.ru",
+        "prod.tvh.mts.ru",
+        "services.kion.ru",
+        "static.kion.ru",
+        "top.kion.ru",
+        "udms.kion.ru",
+        "unsub.kion.ru",
+        "waterbase.kion.ru",
+        "www.kion.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.mts.mtstv",
+          "version": "3.1.167.2",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "START",
+      "tier": "standard",
+      "domains": [
+        "api.start.ru",
+        "start.ru",
+        "www.start.ru"
+      ]
+    },
+    {
+      "name": "PREMIER",
+      "tier": "standard",
+      "domains": [
+        "premier.one",
+        "www.premier.one"
+      ]
+    },
+    {
+      "name": "Витрина ТВ",
+      "tier": "standard",
+      "asns": [
+        {
+          "asn": 41718,
+          "name": "Витрина ТВ",
+          "holder": "Vitrina"
+        }
+      ],
+      "domains": [
+        "api-stand.mediavitrina.ru",
+        "mediavitrina.ru",
+        "stat-analytics.mediavitrina.ru"
+      ]
+    }
+  ]
+}

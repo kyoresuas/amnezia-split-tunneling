@@ -7,7 +7,12 @@ node_modules/
 # logs
 *.log
 
-# build / cache
-cache/
+# build / cache / artifacts
 dist/
+cache/
+coverage/
+.tools/
 *.tsbuildinfo
+
+# release notes are generated
+RELEASE_NOTES.md

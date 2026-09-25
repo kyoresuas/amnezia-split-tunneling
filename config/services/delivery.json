@@ -1,0 +1,67 @@
+{
+  "title": "Доставка",
+  "description": "Самокат, Купер и СДЭК",
+  "services": [
+    {
+      "name": "Самокат",
+      "tier": "standard",
+      "domains": [
+        "api.samokat.ru",
+        "biometry.samokat.ru",
+        "chatplatform-widget.samokat.ru",
+        "code-push-api.samokat.ru",
+        "core-colibri-api.samokat.ru",
+        "damcdn.samokat.ru",
+        "digital-assistant.samokat.ru",
+        "error-tracking.samokat.ru",
+        "health.samokat.ru",
+        "payment-public-api-gateway.samokat.ru",
+        "samokat.ru",
+        "showcase-image.samokat.ru",
+        "sting.samokat.ru",
+        "stories.samokat.ru",
+        "www.samokat.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.sbcs.store",
+          "version": "4.17.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Купер",
+      "tier": "standard",
+      "domains": [
+        "api.kuper.ru",
+        "job.sbermarket.ru",
+        "kuper.ru",
+        "rs.kuper.ru",
+        "sbermarket.ru",
+        "sentry-mobile-ingest.kuper.ru",
+        "ssp-gw.kuper.ru",
+        "static.kuper.ru",
+        "stf-gw.kuper.ru",
+        "www.kuper.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.instamart",
+          "version": "17.5.58",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "СДЭК",
+      "tier": "standard",
+      "domains": [
+        "api.cdek.ru",
+        "cdek.ru",
+        "lk.cdek.ru",
+        "www.cdek.ru"
+      ]
+    }
+  ]
+}

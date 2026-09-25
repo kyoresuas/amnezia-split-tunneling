@@ -1,0 +1,204 @@
+{
+  "title": "Госуслуги и госорганы",
+  "description": "Госуслуги, ЕСИА, Госключ, ФНС, ведомства, региональные порталы и Почта России",
+  "services": [
+    {
+      "name": "Госуслуги и Госключ",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 196747,
+          "name": "Электронное правительство",
+          "holder": "Electronic-government"
+        },
+        {
+          "asn": 212575,
+          "name": "Госключ / Internet Trust",
+          "holder": "Internet Trust"
+        }
+      ],
+      "domains": [
+        "af.gosuslugi.ru",
+        "auto.gosuslugi.ru",
+        "bot.gosuslugi.ru",
+        "commission.gosuslugi.ru",
+        "cras.gosuslugi.ru",
+        "do.gosuslugi.ru",
+        "dom.gosuslugi.ru",
+        "download.gosuslugi.ru",
+        "elections.gosuslugi.ru",
+        "eln.gosuslugi.ru",
+        "epgu.gosuslugi.ru",
+        "esia.gosuslugi.ru",
+        "goskey.gosuslugi.ru",
+        "goskey.ru",
+        "gosuslugi.ru",
+        "gu-st.ru",
+        "host1.goskey.ru",
+        "host2.goskey.ru",
+        "knd.gosuslugi.ru",
+        "lk.gosuslugi.ru",
+        "map.gosuslugi.ru",
+        "max.gosuslugi.ru",
+        "oplata.gosuslugi.ru",
+        "pay.gosuslugi.ru",
+        "payment.gosuslugi.ru",
+        "pos.gosuslugi.ru",
+        "roles.gosuslugi.ru",
+        "sign-sdk.gosuslugi.ru",
+        "www.gosuslugi.ru",
+        "www2.gosuslugi.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.rostel",
+          "version": "27.0.1.9810-rustore",
+          "auditedAt": "2026-08-27"
+        },
+        {
+          "package": "ru.gosuslugi.goskey",
+          "version": "2.20.0",
+          "auditedAt": "2026-08-27"
+        }
+      ]
+    },
+    {
+      "name": "ФНС и Мой налог",
+      "tier": "lite",
+      "domains": [
+        "egrul.nalog.ru",
+        "lkfl.nalog.ru",
+        "lkip.nalog.ru",
+        "lkul.nalog.ru",
+        "nalog.gov.ru",
+        "nalog.ru",
+        "npd.nalog.ru",
+        "service.nalog.ru",
+        "www.nalog.gov.ru"
+      ],
+      "apps": [
+        {
+          "package": "com.gnivts.selfemployed",
+          "version": "4.8.1-prod",
+          "auditedAt": "2026-08-27"
+        }
+      ]
+    },
+    {
+      "name": "Федеральные ведомства",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 8291,
+          "name": "RSNet",
+          "holder": "Federal Guard Service"
+        },
+        {
+          "asn": 43797,
+          "name": "RSNet",
+          "holder": "Federal Guard Service"
+        },
+        {
+          "asn": 199922,
+          "name": "Социальный фонд России",
+          "holder": "PENSION AND SOCIAL INSURANCE FUND"
+        }
+      ],
+      "domains": [
+        "cbr.ru",
+        "council.gov.ru",
+        "customs.gov.ru",
+        "digital.gov.ru",
+        "duma.gov.ru",
+        "ebs.ru",
+        "edu.gov.ru",
+        "egisz.rosminzdrav.ru",
+        "es.pfrf.ru",
+        "fedsfm.ru",
+        "fssp.gov.ru",
+        "gibdd.ru",
+        "gov.ru",
+        "government.ru",
+        "kremlin.ru",
+        "lk.rosreestr.ru",
+        "mid.ru",
+        "minfin.gov.ru",
+        "mintrans.gov.ru",
+        "minzdrav.gov.ru",
+        "mvd.ru",
+        "pfr.gov.ru",
+        "pravo.gov.ru",
+        "proverki.gov.ru",
+        "rkn.gov.ru",
+        "rosreestr.gov.ru",
+        "rosstat.gov.ru",
+        "sfr.gov.ru",
+        "torgi.gov.ru",
+        "www.cbr.ru",
+        "xn--80aesfpebagmfblc0a.xn--p1ai",
+        "xn--80ajghhoc2aj1c8b.xn--p1ai",
+        "xn--90adear.xn--p1ai",
+        "xn--b1aew.xn--p1ai",
+        "zakupki.gov.ru"
+      ]
+    },
+    {
+      "name": "Москва и регионы",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 8901,
+          "name": "Московские государственные сервисы",
+          "holder": "Mosgortelecom"
+        }
+      ],
+      "domains": [
+        "api.mos.ru",
+        "emias.info",
+        "emias.mos.ru",
+        "gosuslugi.spb.ru",
+        "login.mos.ru",
+        "mos.ru",
+        "mosreg.ru",
+        "my.mos.ru",
+        "oauth20.mos.ru",
+        "parking.mos.ru",
+        "pgu.spb.ru",
+        "school.mos.ru",
+        "transport.mos.ru",
+        "troika.mos.ru",
+        "uslugi.mosreg.ru",
+        "uslugi.tatarstan.ru",
+        "www.mos.ru"
+      ]
+    },
+    {
+      "name": "Почта России",
+      "tier": "lite",
+      "domains": [
+        "abox.pochta.ru",
+        "finance.pochta.ru",
+        "market.pochta.ru",
+        "mobile.pochta.ru",
+        "mobileapp.russianpost.ru",
+        "otpravka.pochta.ru",
+        "passport.pochta.ru",
+        "pochta-jam.wfmt.ru",
+        "pochta.ru",
+        "podpiska.pochta.ru",
+        "russianpost.ru",
+        "telegramma.pochta.ru",
+        "tracking.pochta.ru",
+        "www.pochta.ru",
+        "zakaznoe.pochta.ru"
+      ],
+      "apps": [
+        {
+          "package": "com.octopod.russianpost.client.android",
+          "version": "26.7.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    }
+  ]
+}

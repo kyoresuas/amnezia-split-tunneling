@@ -1,0 +1,345 @@
+{
+  "title": "Яндекс",
+  "description": "Поиск, Карты, Go, Маркет, Музыка, Кинопоиск, Еда, Диск, Почта и Cloud",
+  "services": [
+    {
+      "name": "Кинопоиск",
+      "tier": "standard",
+      "domains": [
+        "api.kinopoisk.ru",
+        "api.ott.kinopoisk.ru",
+        "avatars.mds.yandex.net",
+        "graphql.kinopoisk.ru",
+        "hd.kinopoisk.ru",
+        "kinopoisk.ru",
+        "kpmobile-public.s3.yandex.net",
+        "log.strm.yandex.ru",
+        "ma.kinopoisk.ru",
+        "ott-kp.yandex.ru",
+        "payment-widget.plus.kinopoisk.ru",
+        "runtime.strm.yandex.ru",
+        "strm.yandex.ru",
+        "tickets.widget.kinopoisk.ru",
+        "www.kinopoisk.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.kinopoisk",
+          "version": "7.105.2",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Яндекс Маркет",
+      "tier": "standard",
+      "domains": [
+        "aff.market.yandex.ru",
+        "baobab.market.yandex.ru",
+        "beru.ru",
+        "business.market.yandex.ru",
+        "gaming.market.yandex.ru",
+        "ipa-pre.market.yandex.ru",
+        "ipa.market.yandex.ru",
+        "ipa.touch.market.yandex.ru",
+        "m.beru.ru",
+        "m.market.yandex.ru",
+        "m.pokupki.market.yandex.ru",
+        "market.yandex.ru",
+        "marketapp.integration.market.yandex.ru",
+        "media-adv.market.yandex.ru",
+        "pay.yandex.ru",
+        "pokupki.market.yandex.ru",
+        "www.market.yandex.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.beru.android",
+          "version": "2026.36.2.c",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Яндекс Go",
+      "tier": "standard",
+      "domains": [
+        "carsharing.s3.yandex.net",
+        "go.yandex",
+        "mob-manager-aws.mob.taxi.yandex.net",
+        "mob-manager.taxi.yandex.net",
+        "passport-authproxy.taxi.yandex.net",
+        "stable.carsharing.yandex.net",
+        "tanker.s3.yandex.net",
+        "taxi.yandex.ru",
+        "tc.mobile.yandex.net",
+        "yandex.taxi",
+        "ymetrica1.com"
+      ],
+      "apps": [
+        {
+          "package": "ru.yandex.taxi",
+          "version": "5.95.1",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Яндекс Карты",
+      "tier": "standard",
+      "domains": [
+        "api-maps.yandex.ru",
+        "core-renderer-tiles.maps.yandex.net",
+        "man.proxy.mob.maps.yandex.net",
+        "maps.yandex.ru",
+        "mobile-maps-common.s3.yandex.net",
+        "mobmaps-proxy-api-ext-bb.maps.yandex.net",
+        "proxy.mob.maps.yandex.net",
+        "proxy.mob.virtual.maps.yandex.net",
+        "static-maps.yandex.ru",
+        "uz.mob.maps.yandex.net"
+      ],
+      "apps": [
+        {
+          "package": "ru.yandex.yandexmaps",
+          "version": "30.9.1",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Яндекс Музыка",
+      "tier": "standard",
+      "domains": [
+        "api.music.yandex.net",
+        "avatars.yandex.net",
+        "mobile.api.music.yandex.net",
+        "music-custom-wave-media.music.yandex.net",
+        "music-divkit.music.yandex.net",
+        "music.yandex.ru",
+        "ws.api.music.yandex.net",
+        "ynison.music.yandex.net"
+      ],
+      "apps": [
+        {
+          "package": "ru.yandex.music",
+          "version": "2026.09.3",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Яндекс Еда и Лавка",
+      "tier": "standard",
+      "domains": [
+        "app.lavka.yandex.ru",
+        "eats-superapp-authproxy.eda.yandex.net",
+        "eda.yandex",
+        "eda.yandex.ru",
+        "grocery-authproxy.lavka.yandex.net",
+        "lavka.yandex.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.foodfox.client",
+          "version": "26.37.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Auto.ru",
+      "tier": "standard",
+      "domains": [
+        "auto.ru",
+        "sso.auto.ru",
+        "www.auto.ru"
+      ]
+    },
+    {
+      "name": "Яндекс",
+      "tier": "standard",
+      "asns": [
+        {
+          "asn": 13238,
+          "name": "Яндекс",
+          "holder": "YANDEX"
+        },
+        {
+          "asn": 208398,
+          "name": "Яндекс, основные префиксы через Edge Technology Plus",
+          "holder": "Edge Technology"
+        },
+        {
+          "asn": 200350,
+          "name": "Yandex Cloud",
+          "holder": "Yandex.Cloud"
+        },
+        {
+          "asn": 215013,
+          "name": "Yandex Cloud CDN",
+          "holder": "Yandex.Cloud"
+        }
+      ],
+      "domains": [
+        "1core-report-renderer-prod.storage.yandexcloud.net",
+        "300.ya.ru",
+        "4help-center-attachments-prod.storage.yandexcloud.net",
+        "ads-preview.website.yandexcloud.net",
+        "adsdk.yandex.ru",
+        "afisha.yandex.ru",
+        "alice.yandex.ru",
+        "am.applink.pay.yandex.ru",
+        "an.yandex.ru",
+        "api-stable.deploy.dsp.yandex.net",
+        "api.acquisition-gwe.plus.yandex.net",
+        "api.browser.yandex.net",
+        "api.browser.yandex.ru",
+        "api.divpro.yandex.ru",
+        "api.events.plus.yandex.net",
+        "api.lbs.yandex.net",
+        "api.messenger.yandex.net",
+        "api.messenger.yandex.ru",
+        "api.mt.yandex.net",
+        "api.ott.yandex.net",
+        "api.plus.yandex.net",
+        "api.weather.yandex.ru",
+        "api.yastatic.net",
+        "app.tanker.yandex.net",
+        "app.uaas.yandex.ru",
+        "appmetrica.yandex.ru",
+        "apteki.yandex.ru",
+        "authproxy.prod.yb.yandex.net",
+        "autofill.id.yandex.ru",
+        "backend.messenger.yandex.net",
+        "bank.yandex.ru",
+        "bar-navig.yandex.ru",
+        "blogs.yandex.ru",
+        "brofarm.yandex.ru",
+        "browser-api.store.yandex.net",
+        "browser-resources.s3.yandex.net",
+        "browser.mobile.yandex.net",
+        "browser.pay.yandex.ru",
+        "browser.translate.yandex.net",
+        "browser.yandex.net",
+        "browser.yandex.ru",
+        "business.taxi.yandex.ru",
+        "business.yandex.ru",
+        "calendar.yandex.ru",
+        "cards.edadeal.yandex.ru",
+        "care.yandex.ru",
+        "cdn-sport.kp.yandex.net",
+        "checkout-bdui.plus.yandex.net",
+        "chromecast.ott.yandex.ru",
+        "cid.yandex.net",
+        "clck.yandex.net",
+        "clck.yandex.ru",
+        "cloud-api.yandex.net",
+        "cloud.yandex.ru",
+        "common-partner-api.mediabilling.yandex.net",
+        "common.dot.dns.yandex.net",
+        "crash-reports.browser.yandex.net",
+        "cv-browser.yandex.net",
+        "dialogs.yandex.ru",
+        "dictionary.yandex.net",
+        "diehard.yandex.net",
+        "diehard.yandex.ru",
+        "disk.yandex.ru",
+        "docs.yandex.ru",
+        "docviewer.yandex.ru",
+        "dostavka.yandex.ru",
+        "dr-authproxy-mtls.prod.yb.yandex.net",
+        "dr-authproxy.prod.yb.yandex.net",
+        "droideka.smarttv.yandex.net",
+        "eda.integration.market.yandex.ru",
+        "egw.home-gateway.plus.yandex.net",
+        "egw.pull-formats.plet.yandex.net",
+        "electro-authproxy.delivery.yandex.net",
+        "enterprise.static-maps.yandex.ru",
+        "external-api.mediabilling.yandex.ru",
+        "external-api.mt.mediabilling.yandex.ru",
+        "external-api.pixel.plus.yandex.net",
+        "extmaps-api.yandex.net",
+        "favicon.yandex.net",
+        "feedback.browser.yandex.ru",
+        "files.messenger.yandex.net",
+        "files.messenger.yandex.ru",
+        "forms-ext-api.yandex.ru",
+        "forms.yandex.net",
+        "forms.yandex.ru",
+        "frontend.vh.yandex.ru",
+        "games.s3.yandex.net",
+        "games.yandex.ru",
+        "geocode-maps.yandex.ru",
+        "help-frontend.taxi.yandex.ru",
+        "help.yandex.ru",
+        "hs.yandex.ru",
+        "id.ya.ru",
+        "id.yandex.ru",
+        "images.messenger.yandex.net",
+        "images.ya.ru",
+        "images.yandex.ru",
+        "img-dostavka.storage.yandexcloud.net",
+        "img-fotki.yandex.ru",
+        "ingest.monium.yandex.net",
+        "iot-cloud.quasar.yandex.net",
+        "iot.quasar.yandex.ru",
+        "login.yandex.ru",
+        "m.legal.yandex.ru",
+        "m.maps.yandex.ru",
+        "m.news.yandex.ru",
+        "m.pogoda.yandex.ru",
+        "m.taxi.yandex.ru",
+        "m.video.yandex.ru",
+        "mail.yandex.ru",
+        "mapi.vs.market.yandex.net",
+        "mc.yandex.ru",
+        "mobile-maps-tools.s3.yandex.net",
+        "mobile.yamobile.yandex.net",
+        "mobile.yandex.net",
+        "mobile.yandex.ru",
+        "mobpayment.yandex.net",
+        "oauth.yandex.ru",
+        "passport.yandex.ru",
+        "pay.ya.ru",
+        "payment-widget.plus.yandex.net",
+        "payment-widget.plus.yandex.ru",
+        "plus.yandex.ru",
+        "push.yandex.ru",
+        "s3.mds.yandex.net",
+        "s3.yandex.net",
+        "sba.search.yandex.net",
+        "smartcaptcha.yandexcloud.net",
+        "sso.passport.yandex.ru",
+        "sso.password.yandex.ru",
+        "sso.ya.ru",
+        "st.kp.yandex.net",
+        "startup.mobile.yandex.net",
+        "storage.ape.yandex.net",
+        "storage.mds.yandex.net",
+        "storage.yandexcloud.net",
+        "strm.yandex.net",
+        "translate.yandex.ru",
+        "uniproxy.alice.yandex.net",
+        "video-full-screen.s3.yandex.net",
+        "video.yandex.ru",
+        "wallet.yandex.ru",
+        "www.yandex.ru",
+        "ya.ru",
+        "yabank.yandex.ru",
+        "yabs.yandex.ru",
+        "yandex.net",
+        "yandex.ru",
+        "yastat.net",
+        "yastatic.net"
+      ],
+      "apps": [
+        {
+          "package": "ru.yandex.searchplugin",
+          "version": "26.80",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    }
+  ]
+}

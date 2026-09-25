@@ -1,0 +1,81 @@
+{
+  "title": "Платёжные системы",
+  "description": "Мир, СБП, ЮMoney, QR-платежи: оплата и переводы без VPN",
+  "services": [
+    {
+      "name": "Мир и СБП",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 21292,
+          "name": "НСПК",
+          "holder": "National system of payment cards"
+        },
+        {
+          "asn": 41185,
+          "name": "НСПК",
+          "holder": "National system of payment cards"
+        },
+        {
+          "asn": 41187,
+          "name": "НСПК / СБП",
+          "holder": "National system of payment cards"
+        },
+        {
+          "asn": 50339,
+          "name": "НСПК",
+          "holder": "National system of payment cards"
+        },
+        {
+          "asn": 60967,
+          "name": "НСПК",
+          "holder": "National system of payment cards"
+        }
+      ],
+      "domains": [
+        "nspk.ru",
+        "privetmir.ru",
+        "qr.nspk.ru",
+        "sbp.nspk.ru",
+        "sub.nspk.ru",
+        "www.nspk.ru",
+        "www.privetmir.ru"
+      ]
+    },
+    {
+      "name": "ЮMoney и ЮKassa",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 43247,
+          "name": "ЮMoney",
+          "holder": "YooMoney"
+        }
+      ],
+      "domains": [
+        "api.yookassa.ru",
+        "certs.yoomoney.ru",
+        "fl.yoomoney.ru",
+        "git.yoomoney.ru",
+        "sdk.yookassa.ru",
+        "static.yoomoney.ru",
+        "www.yookassa.ru",
+        "www.yoomoney.ru",
+        "yookassa.ru",
+        "yoomoney.ru"
+      ]
+    },
+    {
+      "name": "QR-платежи",
+      "tier": "lite",
+      "notes": "Шлюзы Плати QR и SafePay, встречаются в приложениях Сбера, Ozon и WB",
+      "domains": [
+        "ift.platiecom.ru",
+        "platiecom.ru",
+        "platiqr.ru",
+        "safepayonline.ru",
+        "www.platiqr.ru"
+      ]
+    }
+  ]
+}

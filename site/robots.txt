@@ -1,0 +1,45 @@
+User-agent: *
+Allow: /
+
+# Поисковые системы
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: YandexBot
+User-agent: Applebot
+User-agent: DuckDuckBot
+Allow: /
+
+# ИИ-поиск с цитированием
+User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: DuckAssistBot
+User-agent: Amzn-SearchBot
+User-agent: MistralAI-Index
+User-agent: YandexAdditional
+User-agent: YandexAdditionalBot
+User-agent: Google-CloudVertexBot
+Allow: /
+
+# Переходы по запросу пользователя
+User-agent: ChatGPT-User
+User-agent: Claude-User
+User-agent: Perplexity-User
+User-agent: MistralAI-User
+User-agent: Amzn-User
+User-agent: meta-externalfetcher
+Allow: /
+
+# Обучение моделей
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: Amazonbot
+User-agent: CCBot
+User-agent: MistralAI-Training
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://kyoresuas.github.io/amnezia-split-tunneling/sitemap.xml

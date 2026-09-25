@@ -1,0 +1,69 @@
+{
+  "description": "Guard: подсети и автономные системы, которым не место в списках. Внешние списки скачиваются при сборке и вычитаются из всех уровней, forbiddenAsns запрещены в config/services",
+  "sources": [
+    {
+      "name": "Cloudflare IPv4",
+      "url": "https://www.cloudflare.com/ips-v4",
+      "format": "text"
+    },
+    {
+      "name": "Cloudflare IPv6",
+      "url": "https://www.cloudflare.com/ips-v6",
+      "format": "text"
+    },
+    {
+      "name": "Amazon Web Services",
+      "url": "https://ip-ranges.amazonaws.com/ip-ranges.json",
+      "format": "aws"
+    },
+    {
+      "name": "Fastly",
+      "url": "https://api.fastly.com/public-ip-list",
+      "format": "fastly"
+    },
+    {
+      "name": "Google",
+      "url": "https://www.gstatic.com/ipranges/goog.json",
+      "format": "google"
+    }
+  ],
+  "cidrs": [
+    "76.76.19.0/24",
+    "76.76.21.0/24",
+    "9.9.9.0/24",
+    "149.112.112.0/24",
+    "208.67.220.0/24",
+    "208.67.222.0/24",
+    "2620:fe::/48",
+    "2620:119:35::/48",
+    "2620:119:53::/48"
+  ],
+  "forbiddenAsns": [
+    { "asn": 210644, "name": "Aeza" },
+    { "asn": 61251, "name": "Host4Biz" },
+    { "asn": 49505, "name": "Selectel" },
+    { "asn": 197695, "name": "Reg.ru" },
+    { "asn": 9123, "name": "Timeweb" },
+    { "asn": 198610, "name": "Beget" },
+    { "asn": 13335, "name": "Cloudflare" },
+    { "asn": 16509, "name": "Amazon" },
+    { "asn": 14618, "name": "Amazon" },
+    { "asn": 15169, "name": "Google" },
+    { "asn": 396982, "name": "Google Cloud" },
+    { "asn": 54113, "name": "Fastly" },
+    { "asn": 20940, "name": "Akamai" },
+    { "asn": 8075, "name": "Microsoft" },
+    { "asn": 24940, "name": "Hetzner" },
+    { "asn": 16276, "name": "OVH" },
+    { "asn": 14061, "name": "DigitalOcean" },
+    { "asn": 199524, "name": "G-Core" },
+    { "asn": 57724, "name": "DDoS-Guard" },
+    { "asn": 197068, "name": "Qrator" },
+    { "asn": 51115, "name": "HLL / Qrator" },
+    { "asn": 201776, "name": "Servicepipe" },
+    { "asn": 57363, "name": "CDNvideo" },
+    { "asn": 1299, "name": "Arelion" },
+    { "asn": 3356, "name": "Lumen" },
+    { "asn": 174, "name": "Cogent" }
+  ]
+}

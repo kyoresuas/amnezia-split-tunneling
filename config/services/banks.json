@@ -1,0 +1,555 @@
+{
+  "title": "Банки",
+  "description": "Мобильные и интернет-банки: приложения и сайты работают напрямую, СМС и push доходят без VPN",
+  "services": [
+    {
+      "name": "Сбербанк",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 35237,
+          "name": "Сбербанк",
+          "holder": "Sberbank"
+        },
+        {
+          "asn": 43396,
+          "name": "Сбербанк Новосибирск",
+          "holder": "Sberbank"
+        },
+        {
+          "asn": 44408,
+          "name": "Сбербанк Самара",
+          "holder": "Sberbank"
+        },
+        {
+          "asn": 45000,
+          "name": "Сбербанк Екатеринбург",
+          "holder": "Sberbank"
+        },
+        {
+          "asn": 47457,
+          "name": "Сбербанк Балаково",
+          "holder": "Sberbank"
+        },
+        {
+          "asn": 60122,
+          "name": "Сбербанк VDI",
+          "holder": "Sberbank"
+        },
+        {
+          "asn": 205161,
+          "name": "Сбербанк Санкт-Петербург",
+          "holder": "Sberbank"
+        },
+        {
+          "asn": 206673,
+          "name": "Сбербанк-Телеком",
+          "holder": "Sberbank-Telecom"
+        },
+        {
+          "asn": 42974,
+          "name": "Сбербанк-АСТ",
+          "holder": "Sberbank-AST"
+        }
+      ],
+      "domains": [
+        "3dsec.sberbank.ru",
+        "api.spasibosb.ru",
+        "cdn-app.sberdevices.ru",
+        "cdn.sberbank.ru",
+        "cdn.sberdevices.ru",
+        "cfg1.online.sberbank.ru",
+        "cfg2.online.sberbank.ru",
+        "cfg3.online.sberbank.ru",
+        "cms-res.iftonline.sberbank.ru",
+        "cms-res.online.sberbank.ru",
+        "cms-res.psionline.sberbank.ru",
+        "crash.ant.sberbank.ru",
+        "ddp-web.online.sberbank.ru",
+        "ext.clickstream.sberbank.ru",
+        "geo1.online.sberbank.ru",
+        "id-ift.sber.ru",
+        "id-psi.sber.ru",
+        "id.sber.ru",
+        "ihub.devices.sberbank.ru",
+        "metrics.prom.third-party-app.sberdevices.ru",
+        "mpsbol.ant.sberbank.ru",
+        "nlp2.devices.sberbank.ru",
+        "nlp2vps.online.sberbank.ru",
+        "node1.online.sberbank.ru",
+        "node2.online.sberbank.ru",
+        "node3.online.sberbank.ru",
+        "online.sberbank.ru",
+        "payments.sberbank.ru",
+        "profile.sber.ru",
+        "pushhistory.sberbank-tele.com",
+        "pushmarketing.sberbank-tele.com",
+        "pushserver.sberbank-tele.com",
+        "res.online.sberbank.ru",
+        "salute.sber.ru",
+        "sber.ru",
+        "sberbank-tele.com",
+        "sberbank.com",
+        "sberbank.ru",
+        "sberdevices.ru",
+        "sberkids.sberbank.ru",
+        "sberprime.sber.ru",
+        "sbi.sberbank.ru",
+        "sbrf.ru",
+        "securepayments.sberbank.ru",
+        "selfupdate.sberbank.ru",
+        "smartmarket.online.sberbank.ru",
+        "smartpay.ecom.sberbank.ru",
+        "sp.devices.sberbank.ru",
+        "stat.online.sberbank.ru",
+        "talos-res.online.sberbank.ru",
+        "va-res.online.sberbank.ru",
+        "vc-backend.sberdevices.ru",
+        "www.sberbank.com",
+        "www.sberbank.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.sberbankmobile",
+          "version": "17.12.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Т-Банк",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 43399,
+          "name": "Т-Банк",
+          "holder": "TBANK"
+        },
+        {
+          "asn": 12686,
+          "name": "Росбанк / Т-Банк",
+          "holder": "TBANK"
+        }
+      ],
+      "domains": [
+        "api-common-gw.t-bank-app.ru",
+        "api-common-gw.tbank.ru",
+        "api-invest-gw.t-bank-app.ru",
+        "api-payments-p.t-bank-app.ru",
+        "api.t-bank-app.ru",
+        "api.tbank.ru",
+        "api.tinkoff.ru",
+        "as.t-bank-app.ru",
+        "brands-prod.cdn-tinkoff.ru",
+        "business.tinkoff.ru",
+        "cdn.t-bank-app.ru",
+        "cdn.t-static.ru",
+        "cdn.tbank.ru",
+        "certs.t-bank-app.ru",
+        "certs.t-bank-app.su",
+        "cfg.t-bank-app.ru",
+        "cs-api.t-bank-app.ru",
+        "dco2.t-bank-app.ru",
+        "feed.t-bank-app.ru",
+        "feed.tbank.ru",
+        "id.t-bank-app.ru",
+        "id.tbank.ru",
+        "id.tinkoff.ru",
+        "loyalty-api.t-bank-app.ru",
+        "mb-main-bff.t-bank-app.ru",
+        "mobile-bank.cdn-tinkoff.ru",
+        "mobile-core-prod.cdn-tinkoff.ru",
+        "operations.t-bank-app.ru",
+        "push-history-api.t-bank-app.ru",
+        "search.t-bank-app.ru",
+        "secured-openapi.tbank.ru",
+        "static.tinkoff.ru",
+        "t-bank-app.ru",
+        "tapi.t-bank-app.ru",
+        "tbank.ru",
+        "tinkoff.ru",
+        "tpay.t-bank-app.ru",
+        "webview.t-bank-app.ru",
+        "www.tbank.ru",
+        "www.tinkoff.ru"
+      ],
+      "apps": [
+        {
+          "package": "com.idamob.tinkoff.android",
+          "version": "8.1.0",
+          "auditedAt": "2026-08-27"
+        }
+      ]
+    },
+    {
+      "name": "ВТБ",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 24823,
+          "name": "ВТБ",
+          "holder": "VTB"
+        },
+        {
+          "asn": 41226,
+          "name": "ВТБ Superbank",
+          "holder": "VTB"
+        },
+        {
+          "asn": 41430,
+          "name": "РНКБ / ВТБ",
+          "holder": "VTB"
+        },
+        {
+          "asn": 41551,
+          "name": "ВТБ",
+          "holder": "VTB"
+        }
+      ],
+      "domains": [
+        "android-mb.vtb.ru",
+        "async-online4.vtb.ru",
+        "chat1.vtb.ru",
+        "headless-cms.vtb.ru",
+        "online.vtb.ru",
+        "prod-digr-mtls.vtb.ru",
+        "push.vtb.ru",
+        "sso-app5.vtb.ru",
+        "sso-mb.vtb.ru",
+        "vtb.ru",
+        "vtb24.ru",
+        "vtbmobile.ru",
+        "www.vtb.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.vtb24.mobilebanking.android",
+          "version": "20.15.1.3",
+          "auditedAt": "2026-08-27"
+        }
+      ]
+    },
+    {
+      "name": "Альфа-Банк",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 15632,
+          "name": "Альфа-Банк",
+          "holder": "Alfa-Bank"
+        },
+        {
+          "asn": 59840,
+          "name": "Альфа-Банк / Балтийский",
+          "holder": "Alfa-Bank"
+        }
+      ],
+      "domains": [
+        "alfa-mobile.alfabank.ru",
+        "alfa.me",
+        "alfabank.com",
+        "alfabank.gcdn.co",
+        "alfabank.ru",
+        "anketa.alfabank.ru",
+        "click.alfabank.ru",
+        "mobile.auth.alfabank.ru",
+        "online.alfabank.ru",
+        "private.auth.alfabank.ru",
+        "spp.alfabank.ru",
+        "www.alfabank.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.alfabank.mobile.android",
+          "version": "12.58.03",
+          "auditedAt": "2026-08-27"
+        }
+      ]
+    },
+    {
+      "name": "Газпромбанк",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 35022,
+          "name": "Газпромбанк",
+          "holder": "Gazprombank"
+        },
+        {
+          "asn": 48033,
+          "name": "Газпромбанк",
+          "holder": "Gazprombank"
+        },
+        {
+          "asn": 51536,
+          "name": "Газпромбанк Красноярск",
+          "holder": "Gazprombank"
+        }
+      ],
+      "domains": [
+        "auth.online.gpb.ru",
+        "chat.online.gpb.ru",
+        "dbo.online.gpb.ru",
+        "gazprombank.ru",
+        "gpb.ru",
+        "gpbmobile.ru",
+        "ib.online.gpb.ru",
+        "mob.cdn.gpb.ru",
+        "online.gpb.ru",
+        "onlineapi.gpb.ru",
+        "p2p.online.gpb.ru",
+        "rates.online.gpb.ru",
+        "static.online.gpb.ru",
+        "web.online.gpb.ru",
+        "www.gazprombank.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.gazprombank.android.mobilebank.app",
+          "version": "6.4.2",
+          "auditedAt": "2026-08-27"
+        }
+      ]
+    },
+    {
+      "name": "Совкомбанк и Халва",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 51136,
+          "name": "Совкомбанк / Хоум Банк",
+          "holder": "Sovkombank"
+        },
+        {
+          "asn": 197258,
+          "name": "Совкомбанк",
+          "holder": "Sovkombank"
+        },
+        {
+          "asn": 209973,
+          "name": "Совкомбанк Москва",
+          "holder": "Sovkombank"
+        }
+      ],
+      "domains": [
+        "api.halvacard.ru",
+        "dbo.sovcombank.ru",
+        "flow.halvacard.ru",
+        "go.halvacard.ru",
+        "halvacard.ru",
+        "prod-api.sovcombank.ru",
+        "pwa.sovcombank.ru",
+        "sovcombank.ru",
+        "www.sovcombank.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.sovcomcard.halva.v1",
+          "version": "7.28.0-gms",
+          "auditedAt": "2026-08-27"
+        }
+      ]
+    },
+    {
+      "name": "ПСБ",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 42231,
+          "name": "ПСБ",
+          "holder": "Promsvyazbank"
+        }
+      ],
+      "domains": [
+        "ib.psbank.ru",
+        "psb.ru",
+        "psbank.ru",
+        "www.psbank.ru"
+      ]
+    },
+    {
+      "name": "Россельхозбанк",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 41615,
+          "name": "Россельхозбанк",
+          "holder": "Russian Agricultural Bank"
+        }
+      ],
+      "domains": [
+        "online.rshb.ru",
+        "rshb.ru",
+        "www.rshb.ru"
+      ]
+    },
+    {
+      "name": "МКБ",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 39267,
+          "name": "МКБ",
+          "holder": "Credit Bank of Moscow"
+        },
+        {
+          "asn": 50464,
+          "name": "МКБ",
+          "holder": "Credit bank of Moscow"
+        },
+        {
+          "asn": 202273,
+          "name": "МКБ",
+          "holder": "Credit bank of Moscow"
+        }
+      ],
+      "domains": [
+        "mkb.ru",
+        "online.mkb.ru",
+        "www.mkb.ru"
+      ]
+    },
+    {
+      "name": "Райффайзенбанк",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 31174,
+          "name": "Райффайзенбанк",
+          "holder": "RAIFFEISENBANK"
+        }
+      ],
+      "domains": [
+        "online.raiffeisen.ru",
+        "raiffeisen.ru",
+        "www.raiffeisen.ru"
+      ]
+    },
+    {
+      "name": "Банк Санкт-Петербург",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 24913,
+          "name": "Банк Санкт-Петербург",
+          "holder": "Bank Saint Petersburg"
+        }
+      ],
+      "domains": [
+        "bspb.ru",
+        "i.bspb.ru",
+        "www.bspb.ru"
+      ]
+    },
+    {
+      "name": "Ак Барс Банк",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 201757,
+          "name": "Ак Барс Банк",
+          "holder": "Ak Bars"
+        }
+      ],
+      "domains": [
+        "akbars.ru",
+        "online.akbars.ru",
+        "www.akbars.ru"
+      ]
+    },
+    {
+      "name": "Банк ДОМ.РФ",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 60343,
+          "name": "Банк ДОМ.РФ",
+          "holder": "DOM.RF"
+        }
+      ],
+      "domains": [
+        "domrfbank.ru",
+        "online.domrfbank.ru",
+        "www.domrfbank.ru"
+      ]
+    },
+    {
+      "name": "Банк Россия",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 50640,
+          "name": "Банк Россия",
+          "holder": "AB ROSSIYA"
+        },
+        {
+          "asn": 196796,
+          "name": "Банк Россия",
+          "holder": "AB ROSSIYA"
+        },
+        {
+          "asn": 210113,
+          "name": "Банк Россия",
+          "holder": "AB ROSSIYA"
+        },
+        {
+          "asn": 212254,
+          "name": "Банк Россия",
+          "holder": "AB ROSSIYA"
+        }
+      ],
+      "domains": [
+        "abr.ru",
+        "www.abr.ru"
+      ]
+    },
+    {
+      "name": "Другие банки",
+      "tier": "lite",
+      "notes": "Банки без собственных ASN: только точные адреса",
+      "domains": [
+        "absolutbank.ru",
+        "app.unicredit.ru",
+        "bankiros.ru",
+        "bcs-bank.ru",
+        "centrinvest.ru",
+        "dbo-dengi.online",
+        "expobank.ru",
+        "i.tochka.com",
+        "lockobank.ru",
+        "modulbank.ru",
+        "mtsbank.ru",
+        "my.modulbank.ru",
+        "my.pochtabank.ru",
+        "novikom.ru",
+        "online.mtsbank.ru",
+        "open.ru",
+        "otpbank.ru",
+        "pochtabank.ru",
+        "rencredit.ru",
+        "rncb.ru",
+        "rosbank.ru",
+        "smpbank.ru",
+        "tkbbank.ru",
+        "tochka.com",
+        "ubrr.ru",
+        "unicredit.ru",
+        "uralsib.ru",
+        "www.absolutbank.ru",
+        "www.centrinvest.ru",
+        "www.expobank.ru",
+        "www.mtsbank.ru",
+        "www.novikom.ru",
+        "www.open.ru",
+        "www.otpbank.ru",
+        "www.pochtabank.ru",
+        "www.rncb.ru",
+        "www.smpbank.ru",
+        "www.tkbbank.ru",
+        "www.ubrr.ru",
+        "www.uralsib.ru",
+        "zenit.ru"
+      ]
+    }
+  ]
+}

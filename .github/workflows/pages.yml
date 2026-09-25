@@ -1,0 +1,57 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "llms.txt"
+      - ".github/workflows/pages.yml"
+
+  workflow_call:
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Prepare site
+        run: |
+          set -euo pipefail
+          mkdir -p public
+          cp -R site/. public/
+          cp llms.txt public/llms.txt
+          GENERATED_AT=$(curl -fsS -m 20 "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/release/manifest.json" | jq -r '.generatedAt' || true)
+          if [ -z "${GENERATED_AT:-}" ] || [ "$GENERATED_AT" = "null" ]; then
+            GENERATED_AT=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+          fi
+          find public -type f \( -name '*.html' -o -name '*.xml' -o -name '*.txt' \) \
+            -exec sed -i "s/{{GENERATED_AT}}/${GENERATED_AT}/g" {} +
+          echo "generatedAt=${GENERATED_AT}"
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

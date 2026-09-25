@@ -1,9 +1,9 @@
-name: Update Russian IP lists
+name: Update lists
 
 on:
-  # Каждый день в 06:00 UTC (09:00 МСК)
   schedule:
-    - cron: "0 6 * * *"
+    # Каждый день в 03:00 UTC (06:00 МСК)
+    - cron: "0 3 * * *"
 
   workflow_dispatch:
 
@@ -11,18 +11,29 @@ on:
     branches: [main]
     paths:
       - "src/**"
-      - "scripts/**"
       - "config/**"
+      - "package.json"
+      - "package-lock.json"
       - ".github/workflows/update.yml"
+
+concurrency:
+  group: update
+  cancel-in-progress: false
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+env:
+  RELEASE_TAG: latest
+  RELEASE_BRANCH: release
 
 jobs:
   update:
-    name: Update Russian IP lists
+    name: Build and publish
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
@@ -31,71 +42,111 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version-file: ".nvmrc"
-          cache: "npm"
+          node-version-file: .nvmrc
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Restore ASN cache
+      - name: Restore network cache
         uses: actions/cache@v5
         with:
           path: cache/
-          key: asn-cache-${{ github.run_id }}
-          restore-keys: asn-cache-
+          key: network-cache-${{ github.run_id }}
+          restore-keys: network-cache-
 
-      - name: Download zones and generate both lists
-        run: bash scripts/update.sh --compact
+      - name: Restore tools
+        uses: actions/cache@v5
+        with:
+          path: .tools/
+          key: tools-${{ runner.os }}-${{ hashFiles('src/contracts/sources/sources.contract.ts') }}
 
-      - name: Check if lists changed
+      - name: Download sing-box and mihomo
+        run: npm run tools
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build all lists
+        run: npm run update
+
+      - name: Check for changes
         id: diff
         run: |
-          git add lists/
-          if git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+          set -euo pipefail
+          # Сравниваем только данные: подсети и домены. Заголовки с датой меняются каждый день
+          CHANGED=true
+          if git ls-remote --exit-code --heads origin "$RELEASE_BRANCH" >/dev/null 2>&1; then
+            git fetch --depth=1 origin "$RELEASE_BRANCH"
+            git show "origin/$RELEASE_BRANCH:SHA256SUMS" 2>/dev/null | grep -E '\.(ipv4|ipv6|domains)\.txt$' > /tmp/prev.sums || true
+            grep -E '\.(ipv4|ipv6|domains)\.txt$' dist/SHA256SUMS > /tmp/next.sums
+            if [ -s /tmp/prev.sums ] && cmp -s /tmp/prev.sums /tmp/next.sums; then
+              CHANGED=false
+            fi
           fi
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            CHANGED=true
+          fi
+          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
+          echo "Изменения: $CHANGED"
 
-      - name: Commit and push updated lists
+      - name: Publish release branch
         if: steps.diff.outputs.changed == 'true'
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          FINAL=$(jq '.finalCidrs' lists/stats.json)
-          ADDED=$(jq '.diff.added' lists/stats.json)
-          REMOVED=$(jq '.diff.removed' lists/stats.json)
+          set -euo pipefail
           TODAY=$(date -u '+%Y-%m-%d')
+          LITE=$(jq -r '.tiers["ru-lite"].ipv4' dist/manifest.json)
+          STANDARD=$(jq -r '.tiers["ru-standard"].ipv4' dist/manifest.json)
+          FULL=$(jq -r '.tiers["ru-full"].ipv4' dist/manifest.json)
+          WORKTREE=$(mktemp -d)
+          git worktree add --detach "$WORKTREE"
+          cd "$WORKTREE"
+          git checkout --orphan "$RELEASE_BRANCH"
+          git rm -rfq . >/dev/null 2>&1 || true
+          cp -R "$GITHUB_WORKSPACE/dist/." .
+          printf '# Ветка release\n\nГотовые файлы последней сборки. Обновляется ботом, править вручную бессмысленно.\n' > README.md
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "chore(lists): ${TODAY} · lite ${LITE} · standard ${STANDARD} · full ${FULL}"
+          git push --force origin "$RELEASE_BRANCH"
+          cd "$GITHUB_WORKSPACE"
+          git worktree remove --force "$WORKTREE"
 
-          git commit -m "chore(lists): update [${TODAY}] · ${FINAL} CIDRs (+${ADDED} / -${REMOVED})"
-          git push
-
-      - name: No changes detected
-        if: steps.diff.outputs.changed == 'false'
-        run: echo "Списки не изменились, коммит не нужен."
-
-      - name: Create release
+      - name: Publish rolling release
         if: steps.diff.outputs.changed == 'true'
-        uses: softprops/action-gh-release@v3
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          TODAY=$(date -u '+%Y-%m-%d')
+          if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --title "Списки от ${TODAY}" --notes-file RELEASE_NOTES.md --latest
+          fi
+          gh release upload "$RELEASE_TAG" dist/* --clobber
+          gh release edit "$RELEASE_TAG" --title "Списки от ${TODAY}" --notes-file RELEASE_NOTES.md --latest
+          git push --force origin "HEAD:refs/tags/$RELEASE_TAG"
+
+      - name: Purge jsDelivr cache
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          for file in $(ls dist); do
+            curl -fsS -m 20 "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@${RELEASE_BRANCH}/${file}" >/dev/null || true
+          done
+
+      - name: Upload manifest for pages
+        if: steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
         with:
-          tag_name: "lists-${{ github.run_number }}"
-          name: "Обновление списков #${{ github.run_number }}"
-          body: |
-            Автоматическое обновление IP-списков
+          name: manifest
+          path: dist/manifest.json
+          retention-days: 1
 
-            - `ru-essential-bypass.json` — компактный: банки, госуслуги и российские соцсети (не более 500 CIDR)
-            - `ru-bypass.json` — полный список российских адресов
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
 
-            ## Источники
-            - [ipdeny.com](https://www.ipdeny.com/ipblocks/)
-            - [escapingworm/russia-whitelist](https://github.com/escapingworm/russia-whitelist)
-            - [Банк России](https://www.cbr.ru/banking_sector/credit/cowebsites/) — официальные домены банков
-            - [RuStore](https://www.rustore.ru/) — домены API мобильных приложений
-            - [stat.ripe.net](https://stat.ripe.net/) — ASN-префиксы
-          files: |
-            lists/ru-essential-bypass.json
-            lists/essential-stats.json
-            lists/ru-bypass.json
-            lists/stats.json
-          make_latest: true
+  pages:
+    name: Deploy site
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    uses: ./.github/workflows/pages.yml
+    secrets: inherit

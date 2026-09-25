@@ -1,0 +1,261 @@
+{
+  "title": "Соцсети и мессенджеры",
+  "description": "VK, Одноклассники, Mail.ru, MAX, Сферум, Дзен, Rutube и TenChat",
+  "services": [
+    {
+      "name": "VK",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 47541,
+          "name": "VK Санкт-Петербург",
+          "holder": "VK"
+        },
+        {
+          "asn": 47542,
+          "name": "VK Москва CDN",
+          "holder": "VK"
+        },
+        {
+          "asn": 47764,
+          "name": "VK / ОК / MAX / Mail.ru",
+          "holder": "VK"
+        },
+        {
+          "asn": 28709,
+          "name": "VK региональный CDN",
+          "holder": "VK"
+        },
+        {
+          "asn": 62243,
+          "name": "VK Санкт-Петербург CDN",
+          "holder": "VK"
+        }
+      ],
+      "cidrs": [
+        {
+          "cidr": "213.248.110.64/26",
+          "reason": "Российский диапазон VK анонсируется через AS1299 Arelion и не попадает в RU-зону; найден в трафике iOS-приложения"
+        },
+        {
+          "cidr": "91.219.224.0/22",
+          "reason": "VK Cloud Solutions: зарегистрирован как KZ, страна в whois RU"
+        },
+        {
+          "cidr": "212.233.72.0/21",
+          "reason": "VK Cloud Solutions: зарегистрирован как KZ, страна в whois RU"
+        },
+        {
+          "cidr": "212.233.88.0/21",
+          "reason": "VK Cloud Solutions: зарегистрирован как KZ, страна в whois RU"
+        },
+        {
+          "cidr": "212.233.120.0/22",
+          "reason": "VK Cloud Solutions: зарегистрирован как KZ, страна в whois RU"
+        }
+      ],
+      "domains": [
+        "ads.vk.com",
+        "api.vk.com",
+        "api.vk.ru",
+        "apisdk.live.vkvideo.ru",
+        "id.vk.com",
+        "id.vk.ru",
+        "im.vk.com",
+        "limits.vk.com",
+        "live.vkvideo.ru",
+        "login.vk.com",
+        "m.vk.com",
+        "m.vk.ru",
+        "m.vkvideo.ru",
+        "maps.vk.com",
+        "music.vk.com",
+        "music.vk.ru",
+        "oauth.vk.com",
+        "persiq.vk.com",
+        "pp.userapi.com",
+        "pubsub.live.vkvideo.ru",
+        "queuev4.vk.com",
+        "st.vk.com",
+        "stat.vk.com",
+        "static.vk.ru",
+        "stats.vk-portal.net",
+        "sun9-72.userapi.com",
+        "tracker-api.vk-analytics.ru",
+        "ts.tracker-api.vk-analytics.ru",
+        "userapi.com",
+        "vk-portal.net",
+        "vk.cc",
+        "vk.com",
+        "vk.link",
+        "vk.me",
+        "vk.ru",
+        "vkforms.ru",
+        "vkmessenger.app",
+        "vkmessenger.com",
+        "vkplay.ru",
+        "vkuser.net",
+        "vkuseraudio.com",
+        "vkuseraudio.net",
+        "vkuserlive.net",
+        "vkuserphoto.ru",
+        "vkuservideo.com",
+        "vkuservideo.net",
+        "vkvideo.ru",
+        "www.vk.com"
+      ],
+      "apps": [
+        {
+          "package": "com.vkontakte.android",
+          "version": "8.192",
+          "auditedAt": "2026-08-27"
+        }
+      ]
+    },
+    {
+      "name": "Одноклассники и Mail.ru",
+      "tier": "lite",
+      "domains": [
+        "account.mail.ru",
+        "ad.mail.ru",
+        "api.mycdn.me",
+        "api.ok.ru",
+        "api2.ok.ru",
+        "auth.mail.ru",
+        "clientapi.mail.ru",
+        "connect.ok.ru",
+        "fsa.mail.ru",
+        "go.imgsmail.ru",
+        "go.mail.ru",
+        "i.okcdn.ru",
+        "imgsmail.ru",
+        "m.ok.ru",
+        "mail.ru",
+        "mobile.ok.ru",
+        "my.mail.ru",
+        "mycdn.me",
+        "o2.mail.ru",
+        "oauth.mail.ru",
+        "odnoklassniki.ru",
+        "ok.ru",
+        "okcdn.ru",
+        "r.mradx.net",
+        "sdk.mail.ru",
+        "st.mycdn.me",
+        "st.okcdn.ru",
+        "suggests.go.mail.ru",
+        "touch.mail.ru",
+        "trk.mail.ru",
+        "tv.mail.ru",
+        "tv.ok.ru",
+        "uvapi.okcdn.ru",
+        "www.mail.ru",
+        "www.ok.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.ok.android",
+          "version": "26.8.25",
+          "auditedAt": "2026-08-27"
+        }
+      ]
+    },
+    {
+      "name": "MAX и Сферум",
+      "tier": "lite",
+      "domains": [
+        "api-tg.oneme.ru",
+        "api.sferum.ru",
+        "api2.oneme.ru",
+        "download.max.ru",
+        "go.max.ru",
+        "help.max.ru",
+        "legal.max.ru",
+        "max.ru",
+        "sferum.ru",
+        "st.max.ru",
+        "tamtam.chat",
+        "web.sferum.ru",
+        "www.max.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.oneme.app",
+          "version": "26.33.1",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Дзен",
+      "tier": "lite",
+      "domains": [
+        "532121.ms.dzen.ru",
+        "542121.ms.dzen.ru",
+        "552121.ms.dzen.ru",
+        "avatars.dzeninfra.ru",
+        "cdn.dzen.ru",
+        "clck.dzen.ru",
+        "default.zen.zeta.dzen.ru",
+        "dzen.ru",
+        "m.dzen.ru",
+        "m.zen.yandex.ru",
+        "passport.dzen.ru",
+        "rum.dzen.ru",
+        "s3.dzeninfra.ru",
+        "sso.dzen.ru",
+        "suggest.dzen.ru",
+        "telemetry.dzen.ru",
+        "www.dzen.ru",
+        "zen-dl.s3.dzeninfra.ru",
+        "zen-music.s3.dzeninfra.ru",
+        "zen.yandex.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.zen.android",
+          "version": "26.9.1",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Rutube",
+      "tier": "lite",
+      "asns": [
+        {
+          "asn": 207353,
+          "name": "Rutube / Ruform",
+          "holder": "Ruform"
+        }
+      ],
+      "domains": [
+        "ac.rutube.ru",
+        "goya.rutube.ru",
+        "log.rutube.ru",
+        "pic.rutube.ru",
+        "promo.rutubelist.ru",
+        "rutube.ru",
+        "static.rutube.ru",
+        "studio.rutube.ru",
+        "u.rutube.ru",
+        "www.rutube.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.rutube.app",
+          "version": "31.16.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "TenChat",
+      "tier": "lite",
+      "domains": [
+        "tenchat.ru",
+        "www.tenchat.ru"
+      ]
+    }
+  ]
+}

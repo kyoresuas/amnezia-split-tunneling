@@ -1,0 +1,219 @@
+{
+  "title": "Операторы связи",
+  "description": "Личные кабинеты, оплата, Mobile ID и push операторов. Абонентские сети целиком в full через RU-зону",
+  "services": [
+    {
+      "name": "МТС",
+      "tier": "standard",
+      "domains": [
+        "api.a.mts.ru",
+        "api.bonds.mts.ru",
+        "api.memory.mts.ru",
+        "api.mt.mts.ru",
+        "api.mts.ru",
+        "api.mtsdengi.ru",
+        "app.uipltf.mts.ru",
+        "auth.ssl.mts.ru",
+        "b2b.mts.ru",
+        "calls2cc-ws.mts.ru",
+        "cashback.mts.ru",
+        "cashback.ssl.mts.ru",
+        "cm.a.mts.ru",
+        "cms.developers.mts.ru",
+        "content.goodok.mts.ru",
+        "devices.ssl.mts.ru",
+        "dom.ssl.mts.ru",
+        "e-burg.mts.ru",
+        "eds.htv-lab.mts.ru",
+        "family-api.mts.ru",
+        "freecom-app.mts.ru",
+        "geocenter.mts.ru",
+        "htv-dragnview.mts.ru",
+        "htv-eds.mts.ru",
+        "htv-status.mts.ru",
+        "htv-vsc-moscow2.mts.ru",
+        "id.mts.ru",
+        "idgw.mobileid.mts.ru",
+        "lapis.cashback.mts.ru",
+        "lapis.new-cashback.mts.ru",
+        "lk-b2b.mts.ru",
+        "lk-subscribe.mts.ru",
+        "lk.mts.ru",
+        "lk.stv.mts.ru",
+        "lk.ug.mts.ru",
+        "lkmgts.mts.ru",
+        "login.mts.ru",
+        "m-api.a.mts.ru",
+        "m-cm.a.mts.ru",
+        "m.support.mts.ru",
+        "m2mgis.mts.ru",
+        "mari-el.mts.ru",
+        "media.mts.ru",
+        "mts-service.mts.ru",
+        "mts.ru",
+        "mtsdengi.ru",
+        "mymts.geocenter.mts.ru",
+        "online-chat.mts.ru",
+        "pay.mts.ru",
+        "payment.mts.ru",
+        "push.mts.ru",
+        "sdk.mts.ru",
+        "static.cashback.mts.ru",
+        "static.mt.mts.ru",
+        "static.mts.ru",
+        "static.mtsdengi.ru",
+        "static.ssl.mts.ru",
+        "staticpayment.ssl.mts.ru",
+        "tvoyfintech.online-chat.mts.ru",
+        "www.mts.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.mts.mymts",
+          "version": "6.75",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Билайн",
+      "tier": "standard",
+      "domains": [
+        "0rub.beeline.ru",
+        "ai-assistant.beeline.ru",
+        "alfa.beeline.ru",
+        "api.beeline.ru",
+        "api.partnerka.beeline.ru",
+        "balance.beeline.ru",
+        "beeline.ru",
+        "beelinenow.ru",
+        "dl-pl.beeline.ru",
+        "dl-t.beeline.ru",
+        "idphydra-int.beeline.ru",
+        "idphydra.beeline.ru",
+        "idplogin-int.beeline.ru",
+        "idplogin.beeline.ru",
+        "idpxbr-int.beeline.ru",
+        "idpxbr.beeline.ru",
+        "idpxbrs-int.beeline.ru",
+        "idpxbrs.beeline.ru",
+        "iem-int-idp-hydra.beeline.ru",
+        "iem-int-idp-login.beeline.ru",
+        "miniapp.beeline.ru",
+        "mob-t.beeline.ru",
+        "moskva.beeline.ru",
+        "my.beeline.ru",
+        "ocp2.beeline.ru",
+        "privet.beeline.ru",
+        "sentry-relay.beeline.ru",
+        "sl-t.beeline.ru",
+        "spb.beeline.ru",
+        "static.beeline.ru",
+        "toggles-pl.beeline.ru",
+        "toggles-st.beeline.ru",
+        "www.beeline.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.beeline.services",
+          "version": "5.47.5",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "МегаФон",
+      "tier": "standard",
+      "domains": [
+        "api.megafon.ru",
+        "azure.api.megafon.ru",
+        "ducip.megafon.ru",
+        "gold.api.megafon.ru",
+        "grey.api.megafon.ru",
+        "job.megafon.ru",
+        "lk.megafon.ru",
+        "megafon.ru",
+        "mobileid.megafon.ru",
+        "money.megafon.ru",
+        "moscow.megafon.ru",
+        "red.api.megafon.ru",
+        "shop.megafon.ru",
+        "stavropol.shop.megafon.ru",
+        "whocalls.megafon.ru",
+        "www.megafon.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.megafon.mlk",
+          "version": "4.69.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "T2",
+      "tier": "standard",
+      "cidrs": [
+        {
+          "cidr": "194.176.96.0/24",
+          "reason": "Mobile ID и оплата T2: he-mc.t2.ru, oplata.t2.ru, AS13116; абонентские сети оператора целиком не добавляем"
+        }
+      ],
+      "domains": [
+        "ai-tools.t2.ru",
+        "api.t2.ru",
+        "apps.t2.ru",
+        "disk.t2.ru",
+        "esim.t2.ru",
+        "f.t2.ru",
+        "forest.t2.ru",
+        "gigaback.t2.ru",
+        "he-mc.t2.ru",
+        "he-mc.tele2.ru",
+        "he.t2.ru",
+        "lk.t2.ru",
+        "m-c.t2.ru",
+        "miaproject.t2.ru",
+        "msk.t2.ru",
+        "no-minuses.t2.ru",
+        "onlinetradein.t2.ru",
+        "oplata.t2.ru",
+        "rate.t2.ru",
+        "s3.t2.ru",
+        "selection.t2.ru",
+        "spb.t2.ru",
+        "sso.t2.ru",
+        "stavropol.t2.ru",
+        "t2.ru",
+        "tele2.ru",
+        "terminal.oplata.t2.ru",
+        "topup.t2.ru",
+        "u.t2.ru",
+        "unlim-roaming.t2.ru",
+        "voicea2p.s3.t2.ru",
+        "www.t2.ru",
+        "www.tele2.ru",
+        "x2-forever.t2.ru"
+      ],
+      "apps": [
+        {
+          "package": "ru.tele2.mytele2",
+          "version": "6.49.0",
+          "auditedAt": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "name": "Ростелеком",
+      "tier": "standard",
+      "domains": [
+        "api.rt.ru",
+        "company.rt.ru",
+        "lk.rt.ru",
+        "rostelecom.ru",
+        "rt.ru",
+        "www.rt.ru"
+      ]
+    }
+  ]
+}

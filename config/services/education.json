@@ -1,0 +1,33 @@
+{
+  "title": "Образование",
+  "description": "Учи.ру, Skillbox и Skillfactory",
+  "services": [
+    {
+      "name": "Учи.ру",
+      "tier": "standard",
+      "domains": [
+        "static.uchi.ru",
+        "uchi.ru",
+        "www.uchi.ru"
+      ]
+    },
+    {
+      "name": "Skillbox",
+      "tier": "standard",
+      "domains": [
+        "go.skillbox.ru",
+        "skillbox.ru",
+        "www.skillbox.ru"
+      ]
+    },
+    {
+      "name": "Skillfactory",
+      "tier": "standard",
+      "domains": [
+        "lms.skillfactory.ru",
+        "skillfactory.ru",
+        "www.skillfactory.ru"
+      ]
+    }
+  ]
+}
