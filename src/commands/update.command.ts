@@ -61,14 +61,14 @@ export const runUpdate = async (
   }
 
   const zones = new ZonesService(ripe, cache);
-  const build = new BuildService(
-    categories,
-    config.loadExclude(),
+  const build = new BuildService({
     dns,
     ripe,
     guard,
     zones,
-  );
+    exclude: config.loadExclude(),
+    categories,
+  });
   const result = await build.build();
 
   appLogger.step("Форматы");

@@ -75,14 +75,14 @@ const categories: IServiceCategory[] = [
 
 describe("BuildService", () => {
   it("собирает уровни: префиксы ASN только российские, /32 для чужих сетей, guard и bogon вычитаются", async () => {
-    const build = new BuildService(
-      categories,
-      [{ cidr: "5.61.16.0/24", comment: "" }],
+    const build = new BuildService({
       dns,
       ripe,
       guard,
       zones,
-    );
+      exclude: [{ cidr: "5.61.16.0/24", comment: "" }],
+      categories,
+    });
     const result = await build.build();
 
     const lite = result.tiers[Tier.LITE];
@@ -127,7 +127,14 @@ describe("BuildService", () => {
         ],
       },
     ];
-    const build = new BuildService(many, [], dns, ripe, guard, zones);
+    const build = new BuildService({
+      dns,
+      ripe,
+      guard,
+      zones,
+      exclude: [],
+      categories: many,
+    });
 
     await expect(build.build()).rejects.toThrow(/лимите 500/);
   });

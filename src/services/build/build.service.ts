@@ -22,18 +22,43 @@ import { SourcesContract } from "@/contracts/sources";
 import { IService, IExcludeEntry, IServiceCategory } from "@/types/config";
 import { IZone, ITierData, IBuildResult, IServiceRoutes } from "@/types/build";
 
+export interface IBuildDeps {
+  // Резолвер доменов
+  dns: DnsService;
+  // Клиент RIPE Stat
+  ripe: RipeService;
+  // Чужие сети, которые вычитаются
+  guard: GuardService;
+  // Зона страны
+  zones: ZonesService;
+  // Подсети, которые обязаны идти через VPN
+  exclude: IExcludeEntry[];
+  // Категории сервисов
+  categories: IServiceCategory[];
+}
+
 /**
  * Сборка уровней: сервисы, зона страны, guard, исключения, лимиты
  */
 export class BuildService {
-  constructor(
-    private readonly dns: DnsService,
-    private readonly ripe: RipeService,
-    private readonly guard: GuardService,
-    private readonly zones: ZonesService,
-    private readonly exclude: IExcludeEntry[],
-    private readonly categories: IServiceCategory[],
-  ) {}
+  private readonly dns: DnsService;
+  private readonly ripe: RipeService;
+  private readonly guard: GuardService;
+  private readonly zones: ZonesService;
+  private readonly exclude: IExcludeEntry[];
+  private readonly categories: IServiceCategory[];
+
+  /**
+   * Принять зависимости объектом, чтобы порядок полей не имел значения
+   */
+  constructor(deps: IBuildDeps) {
+    this.dns = deps.dns;
+    this.ripe = deps.ripe;
+    this.guard = deps.guard;
+    this.zones = deps.zones;
+    this.exclude = deps.exclude;
+    this.categories = deps.categories;
+  }
 
   /**
    * Подсеть целиком внутри зоны страны
