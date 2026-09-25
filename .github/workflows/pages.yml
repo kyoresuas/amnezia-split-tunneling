@@ -48,7 +48,7 @@ jobs:
           echo "generatedAt=${GENERATED_AT}"
 
       - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: public
 
