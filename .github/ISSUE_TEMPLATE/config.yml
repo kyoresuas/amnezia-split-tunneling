@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Уязвимость
-    url: https://github.com/kyoresuas/amnezia-split-tunneling/security/policy
+    url: https://github.com/kyoresuas/ru-direct/security/policy
     about: "Чужая сеть в списке или обход guard: сообщите приватно"
   - name: Вопрос по использованию
     url: https://t.me/stercuss

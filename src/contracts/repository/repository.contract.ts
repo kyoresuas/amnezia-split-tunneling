@@ -2,7 +2,7 @@
 const OWNER = "kyoresuas";
 
 // Имя репозитория на GitHub
-const NAME = "amnezia-split-tunneling";
+const NAME = "ru-direct";
 
 /**
  * Координаты проекта. При переименовании репозитория менять только здесь

@@ -6,7 +6,7 @@
 
 - Семантика: адреса из списка идут напрямую, мимо VPN; всё остальное через VPN. В sing-box и Clash это правило direct, в WireGuard исключение из AllowedIPs.
 - Имена файлов одинаковые во всех источниках и не меняются: `<tier>.<client>.<ext>`, где tier это ru-lite, ru-standard или ru-full. Например ru-lite.amnezia.json, ru-standard.singbox.srs, ru-full.mikrotik.rsc.
-- Стабильные адреса: https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/<file> (без кэша), https://cdn.jsdelivr.net/gh/kyoresuas/amnezia-split-tunneling@release/<file> (CDN), https://raw.githubusercontent.com/kyoresuas/amnezia-split-tunneling/release/<file>.
+- Стабильные адреса: https://github.com/kyoresuas/ru-direct/releases/latest/download/<file> (без кэша), https://cdn.jsdelivr.net/gh/kyoresuas/ru-direct@release/<file> (CDN), https://raw.githubusercontent.com/kyoresuas/ru-direct/release/<file>.
 - manifest.json рядом со списками описывает каждый файл: размер, SHA-256, число подсетей и доменов, дата сборки, изменения за сутки.
 - Формат AmneziaVPN: JSON-массив объектов {"hostname": "<CIDR>", "ip": ""}. Только IPv4. Вариант с доменами добавляет {"hostname": "<domain>", "ips": [...]}.
 - Список закрывает серверную проверку по IP. Баннер «выключите VPN» в приложениях Ozon и Wildberries на Android вызван детектом tun-интерфейса на устройстве и списком не лечится.
@@ -14,24 +14,24 @@
 
 ## Скачать
 
-- [Страница скачивания](https://kyoresuas.github.io/amnezia-split-tunneling/): выбор клиента и уровня, ссылки, инструкции, проверка адреса
-- [ru-lite.amnezia.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-lite.amnezia.json): рекомендуемый список для AmneziaVPN
-- [ru-standard.amnezia.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-standard.amnezia.json): с маркетплейсами и Яндексом
-- [ru-full.amnezia.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-full.amnezia.json): вся российская зона
-- [manifest.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/manifest.json): описание всех файлов и статистика
-- [Все файлы релиза](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest): 27 форматов для трёх уровней
+- [Страница скачивания](https://kyoresuas.github.io/ru-direct/): выбор клиента и уровня, ссылки, инструкции, проверка адреса
+- [ru-lite.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-lite.amnezia.json): рекомендуемый список для AmneziaVPN
+- [ru-standard.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-standard.amnezia.json): с маркетплейсами и Яндексом
+- [ru-full.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-full.amnezia.json): вся российская зона
+- [manifest.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/manifest.json): описание всех файлов и статистика
+- [Все файлы релиза](https://github.com/kyoresuas/ru-direct/releases/latest): 27 форматов для трёх уровней
 
 ## Документация
 
-- [README](https://raw.githubusercontent.com/kyoresuas/amnezia-split-tunneling/main/README.md): выбор уровня, импорт в AmneziaVPN, что список закрывает и что нет, FAQ
-- [README на английском](https://raw.githubusercontent.com/kyoresuas/amnezia-split-tunneling/main/README_EN.md)
-- [AGENTS.md](https://raw.githubusercontent.com/kyoresuas/amnezia-split-tunneling/main/AGENTS.md): архитектура, команды, правила правки конфигов
+- [README](https://raw.githubusercontent.com/kyoresuas/ru-direct/main/README.md): выбор уровня, импорт в AmneziaVPN, что список закрывает и что нет, FAQ
+- [README на английском](https://raw.githubusercontent.com/kyoresuas/ru-direct/main/README_EN.md)
+- [AGENTS.md](https://raw.githubusercontent.com/kyoresuas/ru-direct/main/AGENTS.md): архитектура, команды, правила правки конфигов
 - [Split tunneling в документации Amnezia](https://docs.amnezia.org/ru/documentation/instructions/vpn-split-tunneling/)
 
 ## Конфигурация и источники
 
-- [config/services](https://github.com/kyoresuas/amnezia-split-tunneling/tree/main/config/services): состав уровней по категориям, домены, ASN, аудированные приложения
-- [config/guard.json](https://raw.githubusercontent.com/kyoresuas/amnezia-split-tunneling/main/config/guard.json): чужие сети, которые вычитаются
+- [config/services](https://github.com/kyoresuas/ru-direct/tree/main/config/services): состав уровней по категориям, домены, ASN, аудированные приложения
+- [config/guard.json](https://raw.githubusercontent.com/kyoresuas/ru-direct/main/config/guard.json): чужие сети, которые вычитаются
 - [RIPE Stat](https://stat.ripe.net/): зона страны и проверка ASN
 - [RuStore](https://www.rustore.ru/): приложения, из которых снимались домены
 
@@ -39,4 +39,4 @@
 
 - [Исследование детекта VPN в приложениях](https://rks.global/ru/research/vpn-detection/): почему баннер «выключите VPN» не зависит от списка
 - [Проблема Windows-клиента Amnezia с большими списками](https://github.com/amnezia-vpn/amnezia-client/issues/2248)
-- [Issues](https://github.com/kyoresuas/amnezia-split-tunneling/issues): запрос на добавление сервиса
+- [Issues](https://github.com/kyoresuas/ru-direct/issues): запрос на добавление сервиса

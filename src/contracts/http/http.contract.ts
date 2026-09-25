@@ -6,7 +6,7 @@ import { TimeContract } from "@/contracts/time";
 export const HttpContract = {
   // User-Agent для внешних сервисов
   USER_AGENT:
-    "amnezia-split-tunneling (https://github.com/kyoresuas/amnezia-split-tunneling)",
+    "ru-direct (https://github.com/kyoresuas/ru-direct)",
   // Число повторов при ошибке
   RETRIES: 3,
   // Пауза между повторами

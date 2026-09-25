@@ -1,5 +1,5 @@
 Contact: mailto:hey@kyoresuas.com
 Expires: 2027-09-25T00:00:00.000Z
 Preferred-Languages: ru, en
-Canonical: https://kyoresuas.github.io/amnezia-split-tunneling/.well-known/security.txt
-Policy: https://github.com/kyoresuas/amnezia-split-tunneling/blob/main/SECURITY.md
+Canonical: https://kyoresuas.github.io/ru-direct/.well-known/security.txt
+Policy: https://github.com/kyoresuas/ru-direct/blob/main/SECURITY.md

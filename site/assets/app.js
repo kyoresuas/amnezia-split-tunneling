@@ -4,7 +4,7 @@
   // Координаты репозитория
   const REPO = {
     owner: "kyoresuas",
-    name: "amnezia-split-tunneling",
+    name: "ru-direct",
     branch: "release",
   };
 

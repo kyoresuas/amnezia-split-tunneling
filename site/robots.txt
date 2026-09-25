@@ -42,4 +42,4 @@ User-agent: MistralAI-Training
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://kyoresuas.github.io/amnezia-split-tunneling/sitemap.xml
+Sitemap: https://kyoresuas.github.io/ru-direct/sitemap.xml

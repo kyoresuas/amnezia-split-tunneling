@@ -6,22 +6,22 @@ Ready-made lists of Russian networks and domains for VPN split tunneling. Banks,
 
 ## Download
 
-**[Download page](https://kyoresuas.github.io/amnezia-split-tunneling/)**: pick a client and a tier, get a button, a subscription URL and import steps. The page also checks whether an address is on a list.
+**[Download page](https://kyoresuas.github.io/ru-direct/)**: pick a client and a tier, get a button, a subscription URL and import steps. The page also checks whether an address is on a list.
 
 For AmneziaVPN right away:
 
 | Tier | Contents | File |
 | --- | --- | --- |
-| **ru-lite** | Banks, Mir and SBP payments, Gosuslugi, tax service, ministries, VK, OK, Mail.ru, MAX, Dzen, Rutube. Up to 500 prefixes, works in any client. **Recommended** | [ru-lite.amnezia.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-lite.amnezia.json) |
-| **ru-standard** | Lite plus Ozon, Wildberries, Yandex, Avito, 2GIS, carriers, streaming, delivery, retail, travel. Up to 2000 prefixes | [ru-standard.amnezia.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-standard.amnezia.json) |
-| **ru-full** | Standard plus the whole Russian address space from RIPE. Thousands of prefixes, routers and desktops only | [ru-full.amnezia.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-full.amnezia.json) |
+| **ru-lite** | Banks, Mir and SBP payments, Gosuslugi, tax service, ministries, VK, OK, Mail.ru, MAX, Dzen, Rutube. Up to 500 prefixes, works in any client. **Recommended** | [ru-lite.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-lite.amnezia.json) |
+| **ru-standard** | Lite plus Ozon, Wildberries, Yandex, Avito, 2GIS, carriers, streaming, delivery, retail, travel. Up to 2000 prefixes | [ru-standard.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-standard.amnezia.json) |
+| **ru-full** | Standard plus the whole Russian address space from RIPE. Thousands of prefixes, routers and desktops only | [ru-full.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-full.amnezia.json) |
 
-Every format is attached to the [latest release](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest). File names are identical across all sources:
+Every format is attached to the [latest release](https://github.com/kyoresuas/ru-direct/releases/latest). File names are identical across all sources:
 
 ```text
-https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/<file>
-https://cdn.jsdelivr.net/gh/kyoresuas/amnezia-split-tunneling@release/<file>
-https://raw.githubusercontent.com/kyoresuas/amnezia-split-tunneling/release/<file>
+https://github.com/kyoresuas/ru-direct/releases/latest/download/<file>
+https://cdn.jsdelivr.net/gh/kyoresuas/ru-direct@release/<file>
+https://raw.githubusercontent.com/kyoresuas/ru-direct/release/<file>
 ```
 
 The first URL is never cached, the second is a CDN for client subscriptions, the third lags by up to five minutes. Checksums live in `SHA256SUMS`, every file is described in `manifest.json`.
@@ -77,7 +77,7 @@ AmneziaVPN is IPv4 only, so IPv6 traffic to Russian sites goes through the tunne
 
 ### A site still goes through the VPN
 
-Check the address on the [site](https://kyoresuas.github.io/amnezia-split-tunneling/#check) or locally with `npm run check -- example.ru`. If it is missing, open an [issue](https://github.com/kyoresuas/amnezia-split-tunneling/issues/new/choose) or send a pull request to `config/services`.
+Check the address on the [site](https://kyoresuas.github.io/ru-direct/#check) or locally with `npm run check -- example.ru`. If it is missing, open an [issue](https://github.com/kyoresuas/ru-direct/issues/new/choose) or send a pull request to `config/services`.
 
 ### Why are Cloudflare, AWS or hosting providers not included?
 
@@ -120,7 +120,7 @@ Please verify the network before transferring cryptocurrency.
 
 ## Contact
 
-- [GitHub Issues](https://github.com/kyoresuas/amnezia-split-tunneling/issues)
+- [GitHub Issues](https://github.com/kyoresuas/ru-direct/issues)
 - Telegram: [@stercuss](https://t.me/stercuss)
 - Email: [hey@kyoresuas.com](mailto:hey@kyoresuas.com)
 

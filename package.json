@@ -7,12 +7,12 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kyoresuas/amnezia-split-tunneling.git"
+    "url": "git+https://github.com/kyoresuas/ru-direct.git"
   },
   "bugs": {
-    "url": "https://github.com/kyoresuas/amnezia-split-tunneling/issues"
+    "url": "https://github.com/kyoresuas/ru-direct/issues"
   },
-  "homepage": "https://kyoresuas.github.io/amnezia-split-tunneling/",
+  "homepage": "https://kyoresuas.github.io/ru-direct/",
   "keywords": [
     "amnezia",
     "amneziavpn",

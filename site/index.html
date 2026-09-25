@@ -10,13 +10,13 @@
     />
     <link
       rel="canonical"
-      href="https://kyoresuas.github.io/amnezia-split-tunneling/"
+      href="https://kyoresuas.github.io/ru-direct/"
     />
     <link rel="describedby" href="llms.txt" />
     <link
       rel="alternate"
       type="text/markdown"
-      href="https://raw.githubusercontent.com/kyoresuas/amnezia-split-tunneling/main/README.md"
+      href="https://raw.githubusercontent.com/kyoresuas/ru-direct/main/README.md"
     />
     <link
       rel="icon"
@@ -33,11 +33,11 @@
     />
     <meta
       property="og:url"
-      content="https://kyoresuas.github.io/amnezia-split-tunneling/"
+      content="https://kyoresuas.github.io/ru-direct/"
     />
     <meta
       property="og:image"
-      content="https://kyoresuas.github.io/amnezia-split-tunneling/assets/og.svg"
+      content="https://kyoresuas.github.io/ru-direct/assets/og.svg"
     />
     <meta property="og:locale" content="ru_RU" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -60,18 +60,18 @@
         "@graph": [
           {
             "@type": "Dataset",
-            "@id": "https://kyoresuas.github.io/amnezia-split-tunneling/#dataset",
+            "@id": "https://kyoresuas.github.io/ru-direct/#dataset",
             "name": "RU Direct: российские подсети и домены для раздельного туннелирования",
             "alternateName": [
               "ru-lite",
               "ru-standard",
               "ru-full",
-              "amnezia-split-tunneling"
+              "ru-direct"
             ],
             "description": "Ежедневно обновляемые списки российских IPv4 и IPv6 подсетей и доменов для split tunneling. Три уровня: ru-lite (банки, платежи, госуслуги, соцсети, до 500 подсетей), ru-standard (плюс маркетплейсы, Яндекс, Авито, 2ГИС, операторы, стриминги, до 2000) и ru-full (вся российская зона по данным RIPE). Форматы: AmneziaVPN, WireGuard AllowedIPs, sing-box rule-set, Xray geoip.dat и geosite.dat, Clash и Mihomo, Surge и Shadowrocket, Quantumult X, MikroTik, Keenetic, OpenWrt, скрипты route. Источники: RIPE Stat, DNS, аудит приложений из RuStore. Чужие CDN и anycast вычитаются.",
-            "url": "https://kyoresuas.github.io/amnezia-split-tunneling/",
-            "sameAs": "https://github.com/kyoresuas/amnezia-split-tunneling",
-            "identifier": "https://github.com/kyoresuas/amnezia-split-tunneling",
+            "url": "https://kyoresuas.github.io/ru-direct/",
+            "sameAs": "https://github.com/kyoresuas/ru-direct",
+            "identifier": "https://github.com/kyoresuas/ru-direct",
             "license": "https://opensource.org/license/mit",
             "isAccessibleForFree": true,
             "inLanguage": "ru",
@@ -106,35 +106,35 @@
                 "@type": "DataDownload",
                 "name": "ru-lite.amnezia.json",
                 "encodingFormat": "application/json",
-                "contentUrl": "https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-lite.amnezia.json"
+                "contentUrl": "https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-lite.amnezia.json"
               },
               {
                 "@type": "DataDownload",
                 "name": "ru-standard.amnezia.json",
                 "encodingFormat": "application/json",
-                "contentUrl": "https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-standard.amnezia.json"
+                "contentUrl": "https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-standard.amnezia.json"
               },
               {
                 "@type": "DataDownload",
                 "name": "ru-full.amnezia.json",
                 "encodingFormat": "application/json",
-                "contentUrl": "https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-full.amnezia.json"
+                "contentUrl": "https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-full.amnezia.json"
               },
               {
                 "@type": "DataDownload",
                 "name": "manifest.json",
                 "encodingFormat": "application/json",
-                "contentUrl": "https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/manifest.json"
+                "contentUrl": "https://github.com/kyoresuas/ru-direct/releases/latest/download/manifest.json"
               }
             ],
             "isBasedOn": ["https://stat.ripe.net/", "https://www.rustore.ru/"]
           },
           {
             "@type": "SoftwareSourceCode",
-            "@id": "https://kyoresuas.github.io/amnezia-split-tunneling/#generator",
+            "@id": "https://kyoresuas.github.io/ru-direct/#generator",
             "name": "RU Direct generator",
             "description": "Генератор списков: RIPE Stat, DNS, аудит APK, guard от чужих CDN, 27 форматов из одного источника",
-            "codeRepository": "https://github.com/kyoresuas/amnezia-split-tunneling",
+            "codeRepository": "https://github.com/kyoresuas/ru-direct",
             "programmingLanguage": "TypeScript",
             "runtimePlatform": "Node.js >= 20",
             "license": "https://opensource.org/license/mit"
@@ -165,7 +165,7 @@
         <a href="#check">Проверить адрес</a>
         <a href="#how">Как это работает</a>
         <a href="#faq">FAQ</a>
-        <a href="https://github.com/kyoresuas/amnezia-split-tunneling"
+        <a href="https://github.com/kyoresuas/ru-direct"
           >GitHub</a
         >
       </nav>
@@ -356,7 +356,7 @@
               Сначала проверьте адрес формой выше. Если его нет в списке,
               откройте
               <a
-                href="https://github.com/kyoresuas/amnezia-split-tunneling/issues/new/choose"
+                href="https://github.com/kyoresuas/ru-direct/issues/new/choose"
                 >issue</a
               >
               с доменом и IP или пришлите pull request в каталог
@@ -380,14 +380,14 @@
 
     <footer class="container footer">
       <div class="links">
-        <a href="https://github.com/kyoresuas/amnezia-split-tunneling"
+        <a href="https://github.com/kyoresuas/ru-direct"
           >GitHub</a
         >
-        <a href="https://github.com/kyoresuas/amnezia-split-tunneling/issues"
+        <a href="https://github.com/kyoresuas/ru-direct/issues"
           >Issues</a
         >
         <a
-          href="https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest"
+          href="https://github.com/kyoresuas/ru-direct/releases/latest"
           >Релиз</a
         >
         <a href="https://t.me/stercuss">Telegram</a>

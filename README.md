@@ -2,34 +2,34 @@
 
 Готовые списки российских подсетей и доменов для раздельного туннелирования. Банки, Госуслуги, Ozon, Wildberries, Яндекс и VK работают напрямую, весь остальной трафик идёт через VPN. Три уровня, 27 форматов для AmneziaVPN, WireGuard, sing-box, Xray, Clash, MikroTik, Keenetic и OpenWrt. Обновляется каждый день.
 
-[![Списки](https://github.com/kyoresuas/amnezia-split-tunneling/actions/workflows/update.yml/badge.svg)](https://github.com/kyoresuas/amnezia-split-tunneling/actions/workflows/update.yml)
-[![CI](https://github.com/kyoresuas/amnezia-split-tunneling/actions/workflows/ci.yml/badge.svg)](https://github.com/kyoresuas/amnezia-split-tunneling/actions/workflows/ci.yml)
-[![Lite](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkyoresuas%2Famnezia-split-tunneling%2Frelease%2Fmanifest.json&query=%24.tiers%5B%27ru-lite%27%5D.ipv4&label=ru-lite&suffix=%20CIDR&color=0f766e)](https://kyoresuas.github.io/amnezia-split-tunneling/)
-[![Standard](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkyoresuas%2Famnezia-split-tunneling%2Frelease%2Fmanifest.json&query=%24.tiers%5B%27ru-standard%27%5D.ipv4&label=ru-standard&suffix=%20CIDR&color=0f766e)](https://kyoresuas.github.io/amnezia-split-tunneling/)
-[![Full](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkyoresuas%2Famnezia-split-tunneling%2Frelease%2Fmanifest.json&query=%24.tiers%5B%27ru-full%27%5D.ipv4&label=ru-full&suffix=%20CIDR&color=0f766e)](https://kyoresuas.github.io/amnezia-split-tunneling/)
-[![Скачивания](https://img.shields.io/github/downloads/kyoresuas/amnezia-split-tunneling/total?label=%D1%81%D0%BA%D0%B0%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9&color=lightgrey)](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest)
+[![Списки](https://github.com/kyoresuas/ru-direct/actions/workflows/update.yml/badge.svg)](https://github.com/kyoresuas/ru-direct/actions/workflows/update.yml)
+[![CI](https://github.com/kyoresuas/ru-direct/actions/workflows/ci.yml/badge.svg)](https://github.com/kyoresuas/ru-direct/actions/workflows/ci.yml)
+[![Lite](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkyoresuas%2Fru-direct%2Frelease%2Fmanifest.json&query=%24.tiers%5B%27ru-lite%27%5D.ipv4&label=ru-lite&suffix=%20CIDR&color=0f766e)](https://kyoresuas.github.io/ru-direct/)
+[![Standard](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkyoresuas%2Fru-direct%2Frelease%2Fmanifest.json&query=%24.tiers%5B%27ru-standard%27%5D.ipv4&label=ru-standard&suffix=%20CIDR&color=0f766e)](https://kyoresuas.github.io/ru-direct/)
+[![Full](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkyoresuas%2Fru-direct%2Frelease%2Fmanifest.json&query=%24.tiers%5B%27ru-full%27%5D.ipv4&label=ru-full&suffix=%20CIDR&color=0f766e)](https://kyoresuas.github.io/ru-direct/)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/gh/kyoresuas/ru-direct/badge?style=rounded)](https://www.jsdelivr.com/package/gh/kyoresuas/ru-direct)
 [![License](https://img.shields.io/badge/License-MIT-2ea44f.svg)](LICENSE)
 
 **Русский** · [English](README_EN.md)
 
 ## Скачать
 
-**[Страница скачивания](https://kyoresuas.github.io/amnezia-split-tunneling/)**: выбираете клиент и уровень, получаете кнопку, ссылку для подписки и инструкцию. Там же проверка, входит ли адрес в список.
+**[Страница скачивания](https://kyoresuas.github.io/ru-direct/)**: выбираете клиент и уровень, получаете кнопку, ссылку для подписки и инструкцию. Там же проверка, входит ли адрес в список.
 
 Если нужен файл для AmneziaVPN прямо сейчас:
 
 | Уровень | Что внутри | Файл |
 | --- | --- | --- |
-| **ru-lite** | Банки, Мир и СБП, Госуслуги, ФНС, ведомства, VK, ОК, Mail.ru, MAX, Дзен, Rutube. До 500 подсетей, подходит любому клиенту. **Рекомендуется** | [ru-lite.amnezia.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-lite.amnezia.json) |
-| **ru-standard** | Lite плюс Ozon, Wildberries, Яндекс, Авито, 2ГИС, операторы, стриминги, доставка, ритейл, путешествия. До 2000 подсетей | [ru-standard.amnezia.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-standard.amnezia.json) |
-| **ru-full** | Standard плюс вся российская зона по данным RIPE. Тысячи подсетей, только для роутеров и десктопов | [ru-full.amnezia.json](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/ru-full.amnezia.json) |
+| **ru-lite** | Банки, Мир и СБП, Госуслуги, ФНС, ведомства, VK, ОК, Mail.ru, MAX, Дзен, Rutube. До 500 подсетей, подходит любому клиенту. **Рекомендуется** | [ru-lite.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-lite.amnezia.json) |
+| **ru-standard** | Lite плюс Ozon, Wildberries, Яндекс, Авито, 2ГИС, операторы, стриминги, доставка, ритейл, путешествия. До 2000 подсетей | [ru-standard.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-standard.amnezia.json) |
+| **ru-full** | Standard плюс вся российская зона по данным RIPE. Тысячи подсетей, только для роутеров и десктопов | [ru-full.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-full.amnezia.json) |
 
-Все форматы лежат в [последнем релизе](https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest). Имена файлов одинаковые во всех источниках:
+Все форматы лежат в [последнем релизе](https://github.com/kyoresuas/ru-direct/releases/latest). Имена файлов одинаковые во всех источниках:
 
 ```text
-https://github.com/kyoresuas/amnezia-split-tunneling/releases/latest/download/<файл>
-https://cdn.jsdelivr.net/gh/kyoresuas/amnezia-split-tunneling@release/<файл>
-https://raw.githubusercontent.com/kyoresuas/amnezia-split-tunneling/release/<файл>
+https://github.com/kyoresuas/ru-direct/releases/latest/download/<файл>
+https://cdn.jsdelivr.net/gh/kyoresuas/ru-direct@release/<файл>
+https://raw.githubusercontent.com/kyoresuas/ru-direct/release/<файл>
 ```
 
 Первая ссылка без кэша, вторая через CDN для подписок в клиентах, третья с задержкой до пяти минут. Контрольные суммы в `SHA256SUMS`, описание всех файлов в `manifest.json`.
@@ -94,14 +94,14 @@ AmneziaVPN понимает только IPv4, и IPv6-трафик к росс�
 
 ### Сайт не открывается напрямую. Как добавить?
 
-Проверьте адрес на [сайте](https://kyoresuas.github.io/amnezia-split-tunneling/#check) или локально:
+Проверьте адрес на [сайте](https://kyoresuas.github.io/ru-direct/#check) или локально:
 
 ```bash
 npm run check -- ozon.ru
 npm run check -- 185.73.193.68
 ```
 
-Если адреса нет в списке, откройте [issue](https://github.com/kyoresuas/amnezia-split-tunneling/issues/new/choose) с доменом и IP или пришлите pull request в `config/services`.
+Если адреса нет в списке, откройте [issue](https://github.com/kyoresuas/ru-direct/issues/new/choose) с доменом и IP или пришлите pull request в `config/services`.
 
 ### Почему в списке нет Cloudflare, AWS или Selectel целиком?
 
@@ -154,7 +154,7 @@ Node.js 20 и новее. CI прогоняет lint, тесты и провер
 
 ## Связаться
 
-- [GitHub Issues](https://github.com/kyoresuas/amnezia-split-tunneling/issues)
+- [GitHub Issues](https://github.com/kyoresuas/ru-direct/issues)
 - Telegram: [@stercuss](https://t.me/stercuss)
 - Email: [hey@kyoresuas.com](mailto:hey@kyoresuas.com)
 
