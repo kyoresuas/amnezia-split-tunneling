@@ -135,7 +135,7 @@ jobs:
 
       - name: Upload manifest for pages
         if: steps.diff.outputs.changed == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: manifest
           path: dist/manifest.json
