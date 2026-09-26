@@ -6,7 +6,7 @@ Ready-made lists of Russian networks and domains for VPN split tunneling. Banks,
 
 ## Download
 
-**[Download page](https://kyoresuas.github.io/ru-direct/)**: pick a client and a tier, get a button, a subscription URL and import steps. The page also checks whether an address is on a list.
+**[Download page](https://kyoresuas.github.io/ru-direct/)**: pick a client and a tier, get a button, a subscription URL and import steps.
 
 For AmneziaVPN right away:
 
@@ -77,7 +77,7 @@ AmneziaVPN is IPv4 only, so IPv6 traffic to Russian sites goes through the tunne
 
 ### A site still goes through the VPN
 
-Check the address on the [site](https://kyoresuas.github.io/ru-direct/#check) or locally with `npm run check -- example.ru`. If it is missing, open an [issue](https://github.com/kyoresuas/ru-direct/issues/new/choose) or send a pull request to `config/services`.
+Check the address locally with `npm run check -- example.ru`. If it is missing, open an [issue](https://github.com/kyoresuas/ru-direct/issues/new/choose) or send a pull request to `config/services`.
 
 ### Why are Cloudflare, AWS or hosting providers not included?
 

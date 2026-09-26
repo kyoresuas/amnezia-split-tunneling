@@ -14,7 +14,7 @@
 
 ## Скачать
 
-- [Страница скачивания](https://kyoresuas.github.io/ru-direct/): выбор клиента и уровня, ссылки, инструкции, проверка адреса
+- [Страница скачивания](https://kyoresuas.github.io/ru-direct/): выбор клиента и уровня, ссылки и инструкции
 - [ru-lite.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-lite.amnezia.json): рекомендуемый список для AmneziaVPN
 - [ru-standard.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-standard.amnezia.json): с маркетплейсами и Яндексом
 - [ru-full.amnezia.json](https://github.com/kyoresuas/ru-direct/releases/latest/download/ru-full.amnezia.json): вся российская зона

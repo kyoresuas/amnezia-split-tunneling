@@ -144,260 +144,33 @@
     </script>
   </head>
   <body>
-    <a class="skip" href="#clients">К выбору клиента</a>
-    <header class="container topbar">
-      <a class="brand" href="./" aria-label="RU Direct">
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <rect width="32" height="32" rx="8" fill="#0f766e" />
-          <path
-            d="M9 16h14M17 10l6 6-6 6"
-            fill="none"
-            stroke="#fff"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-        RU Direct
-      </a>
-      <nav aria-label="Разделы">
-        <a href="#clients">Скачать</a>
-        <a href="#check">Проверить адрес</a>
-        <a href="#how">Как это работает</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://github.com/kyoresuas/ru-direct"
-          >GitHub</a
-        >
-      </nav>
-    </header>
-
-    <main class="container">
-      <section class="hero">
-        <h1>Российские сайты напрямую, остальное через VPN</h1>
-        <p>
-          Готовые списки подсетей и доменов для раздельного туннелирования.
-          Банки, Госуслуги, Ozon, Wildberries, Яндекс и VK работают без VPN,
-          весь остальной трафик идёт через туннель. Выберите клиент и уровень,
-          скачайте файл.
-        </p>
-        <ul class="pills" aria-label="Особенности">
-          <li>Обновляется каждый день</li>
-          <li>Три уровня: от 350 до 8 600 подсетей</li>
-          <li>27 форматов для 20 клиентов</li>
-          <li>Guard: чужие CDN вычтены</li>
-          <li>MIT, без рекламы</li>
-        </ul>
-      </section>
-
-      <section id="clients" aria-labelledby="clients-title">
-        <h2 id="clients-title"><span class="step">1</span>Выберите клиент</h2>
-        <p class="lead">
-          Список подстроится под формат, который понимает ваш клиент или роутер.
-        </p>
-        <div
-          class="chips"
-          id="client-chips"
-          role="group"
-          aria-label="Клиенты"
-        ></div>
-      </section>
-
-      <section id="tiers" aria-labelledby="tiers-title">
-        <h2 id="tiers-title"><span class="step">2</span>Выберите уровень</h2>
-        <p class="lead">
-          Lite подходит любому клиенту, Full нужен только тем, кто уверен, что
-          клиент держит тысячи маршрутов.
-        </p>
-        <div
-          class="tiers"
-          id="tier-cards"
-          role="group"
-          aria-label="Уровни"
-        ></div>
-        <p class="status" id="manifest-status">
-          Загружаю статистику последней сборки…
-        </p>
-      </section>
-
-      <section id="files" aria-labelledby="files-title">
-        <h2 id="files-title">
-          <span class="step">3</span>Скачайте и подключите
-        </h2>
-        <p class="lead" id="files-lead"></p>
-        <div class="cards" id="file-cards"></div>
-      </section>
-
-      <section id="check" aria-labelledby="check-title">
-        <h2 id="check-title">Проверить адрес</h2>
-        <p class="lead">
-          Введите IPv4-адрес или домен и узнайте, в какие уровни он входит.
-          Проверка идёт в браузере по последней сборке.
-        </p>
-        <form class="check" id="check-form">
-          <label class="skip" for="check-input">Адрес или домен</label>
-          <input
-            id="check-input"
-            type="text"
-            inputmode="url"
-            autocomplete="off"
-            spellcheck="false"
-            placeholder="ozon.ru или 185.73.193.68"
-            required
-          />
-          <button class="btn primary" type="submit">Проверить</button>
-        </form>
-        <div class="result" id="check-result" aria-live="polite"></div>
-      </section>
-
-      <section id="how" aria-labelledby="how-title">
-        <h2 id="how-title">Как это работает</h2>
-        <div class="how">
-          <div class="card">
-            <h3>Источники</h3>
-            <p>
-              Полная зона: официальные данные RIPE о подсетях,
-              зарегистрированных за Россией. Сервисы: их собственные автономные
-              системы и домены, снятые из приложений RuStore.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Точность</h3>
-            <p>
-              Префикс целиком берётся только у собственной сети сервиса. Хосты
-              на чужих сетях попадают точными адресами, и только если они
-              российские.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Guard</h3>
-            <p>
-              Cloudflare, AWS, Fastly, Google и другие anycast-сети вычитаются
-              из каждого уровня. Хостинги и anti-DDoS запрещены как источники
-              сервисов.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Один генератор</h3>
-            <p>
-              Все форматы собираются из одних данных, поэтому AmneziaVPN,
-              sing-box и MikroTik получают ровно один и тот же список.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Ежедневно</h3>
-            <p>
-              Сборка запускается каждое утро. Если что-то изменилось,
-              обновляются релиз, ветка release и эта страница.
-            </p>
-          </div>
+    <main class="page">
+      <header class="top">
+        <div>
+          <h1>RU Direct</h1>
+          <p>Российские сайты напрямую, остальное через VPN</p>
         </div>
+        <a class="repo" href="https://github.com/kyoresuas/ru-direct" aria-label="Репозиторий на GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" />
+          </svg>
+          GitHub
+        </a>
+      </header>
+
+      <section aria-labelledby="client-title">
+        <h2 id="client-title">Клиент</h2>
+        <div class="options" id="clients" role="radiogroup" aria-labelledby="client-title"></div>
       </section>
 
-      <section id="faq" aria-labelledby="faq-title">
-        <h2 id="faq-title">Вопросы</h2>
-        <details>
-          <summary>Ozon или Wildberries пишут «выключите VPN». Почему?</summary>
-          <div class="body">
-            <p>
-              Список закрывает серверную проверку по IP и утечки через туннель:
-              сайт и API видят ваш домашний адрес. Но приложения на Android
-              дополнительно смотрят на само устройство: есть ли tun-интерфейс,
-              установлены ли VPN-клиенты. Это списком не лечится, никаким.
-            </p>
-            <p>
-              Что помогает: VPN на роутере, а не на телефоне; рабочий профиль
-              Android с маркетплейсами вне VPN; app-based split tunneling в
-              AmneziaVPN, когда приложения Ozon и WB исключены из туннеля. На
-              iOS app-based режима нет, остаётся список плюс отключённый IPv6.
-            </p>
-          </div>
-        </details>
-        <details>
-          <summary>Какой уровень выбрать?</summary>
-          <div class="body">
-            <p>
-              Lite, если вам нужны банки, платежи, госуслуги и соцсети: он
-              влезает в любой клиент. Standard, если пользуетесь маркетплейсами,
-              Яндексом, доставкой и стримингами. Full только для роутеров и
-              десктопов, где тысячи маршрутов не проблема.
-            </p>
-          </div>
-        </details>
-        <details>
-          <summary>
-            AmneziaVPN на Windows долго подключается с большим списком
-          </summary>
-          <div class="body">
-            <p>
-              Известная проблема клиента: маршруты ставятся по одному, и на
-              тысячах записей это минуты. Обсуждение в
-              <a
-                href="https://github.com/amnezia-vpn/amnezia-client/issues/2248"
-                >amnezia-client #2248</a
-              >. Берите Lite или Standard.
-            </p>
-          </div>
-        </details>
-        <details>
-          <summary>У меня IPv6, что делать?</summary>
-          <div class="body">
-            <p>
-              AmneziaVPN понимает только IPv4, поэтому IPv6-трафик к российским
-              сайтам пойдёт через туннель. Либо отключите IPv6 на устройстве,
-              либо используйте клиент с IPv6-списками: WireGuard, sing-box,
-              Clash, MikroTik и OpenWrt получают их в тех же файлах.
-            </p>
-          </div>
-        </details>
-        <details>
-          <summary>Сайт не открывается напрямую. Как добавить?</summary>
-          <div class="body">
-            <p>
-              Сначала проверьте адрес формой выше. Если его нет в списке,
-              откройте
-              <a
-                href="https://github.com/kyoresuas/ru-direct/issues/new/choose"
-                >issue</a
-              >
-              с доменом и IP или пришлите pull request в каталог
-              config/services.
-            </p>
-          </div>
-        </details>
-        <details>
-          <summary>Как часто обновляются списки и как подписаться?</summary>
-          <div class="body">
-            <p>
-              Каждый день. Ссылки не меняются: клиенты с автообновлением, такие
-              как sing-box, Clash или MikroTik по расписанию, подхватывают
-              свежий файл сами. Для ручных клиентов повторите импорт раз в
-              неделю.
-            </p>
-          </div>
-        </details>
+      <section aria-labelledby="tier-title">
+        <h2 id="tier-title">Уровень</h2>
+        <div class="segmented" id="tiers" role="radiogroup" aria-labelledby="tier-title"></div>
+        <p class="hint" id="tier-hint"></p>
       </section>
+
+      <section class="result" id="result" aria-live="polite"></section>
     </main>
-
-    <footer class="container footer">
-      <div class="links">
-        <a href="https://github.com/kyoresuas/ru-direct"
-          >GitHub</a
-        >
-        <a href="https://github.com/kyoresuas/ru-direct/issues"
-          >Issues</a
-        >
-        <a
-          href="https://github.com/kyoresuas/ru-direct/releases/latest"
-          >Релиз</a
-        >
-        <a href="https://t.me/stercuss">Telegram</a>
-        <a href="llms.txt">llms.txt</a>
-      </div>
-      <p>
-        MIT. Независимый проект, не связан с Amnezia и другими упомянутыми
-        клиентами. Без рекламы VPN-сервисов.
-      </p>
-    </footer>
 
     <script src="assets/app.js" defer></script>
   </body>
