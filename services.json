@@ -1,0 +1,857 @@
+{
+  "generatedAt": "2026-09-26T08:14:44.555Z",
+  "categories": [
+    {
+      "id": "banks",
+      "title": "Банки",
+      "description": "Мобильные и интернет-банки: приложения и сайты работают напрямую, СМС и push доходят без VPN",
+      "services": [
+        {
+          "name": "Сбербанк",
+          "tier": "lite",
+          "domains": 54,
+          "asns": [
+            35237,
+            43396,
+            44408,
+            45000,
+            47457,
+            60122,
+            205161,
+            206673,
+            42974
+          ],
+          "apps": [
+            "ru.sberbankmobile"
+          ]
+        },
+        {
+          "name": "Т-Банк",
+          "tier": "lite",
+          "domains": 40,
+          "asns": [
+            43399,
+            12686
+          ],
+          "apps": [
+            "com.idamob.tinkoff.android"
+          ]
+        },
+        {
+          "name": "ВТБ",
+          "tier": "lite",
+          "domains": 13,
+          "asns": [
+            24823,
+            41226,
+            41430,
+            41551
+          ],
+          "apps": [
+            "ru.vtb24.mobilebanking.android"
+          ]
+        },
+        {
+          "name": "Альфа-Банк",
+          "tier": "lite",
+          "domains": 12,
+          "asns": [
+            15632,
+            59840
+          ],
+          "apps": [
+            "ru.alfabank.mobile.android"
+          ]
+        },
+        {
+          "name": "Газпромбанк",
+          "tier": "lite",
+          "domains": 15,
+          "asns": [
+            35022,
+            48033,
+            51536
+          ],
+          "apps": [
+            "ru.gazprombank.android.mobilebank.app"
+          ]
+        },
+        {
+          "name": "Совкомбанк и Халва",
+          "tier": "lite",
+          "domains": 9,
+          "asns": [
+            51136,
+            197258,
+            209973
+          ],
+          "apps": [
+            "ru.sovcomcard.halva.v1"
+          ]
+        },
+        {
+          "name": "ПСБ",
+          "tier": "lite",
+          "domains": 4,
+          "asns": [
+            42231
+          ],
+          "apps": []
+        },
+        {
+          "name": "Россельхозбанк",
+          "tier": "lite",
+          "domains": 3,
+          "asns": [
+            41615
+          ],
+          "apps": []
+        },
+        {
+          "name": "МКБ",
+          "tier": "lite",
+          "domains": 3,
+          "asns": [
+            39267,
+            50464,
+            202273
+          ],
+          "apps": []
+        },
+        {
+          "name": "Райффайзенбанк",
+          "tier": "lite",
+          "domains": 3,
+          "asns": [
+            31174
+          ],
+          "apps": []
+        },
+        {
+          "name": "Банк Санкт-Петербург",
+          "tier": "lite",
+          "domains": 3,
+          "asns": [
+            24913
+          ],
+          "apps": []
+        },
+        {
+          "name": "Ак Барс Банк",
+          "tier": "lite",
+          "domains": 3,
+          "asns": [
+            201757
+          ],
+          "apps": []
+        },
+        {
+          "name": "Банк ДОМ.РФ",
+          "tier": "lite",
+          "domains": 3,
+          "asns": [
+            60343
+          ],
+          "apps": []
+        },
+        {
+          "name": "Банк Россия",
+          "tier": "lite",
+          "domains": 2,
+          "asns": [
+            50640,
+            196796,
+            210113,
+            212254
+          ],
+          "apps": []
+        },
+        {
+          "name": "Другие банки",
+          "tier": "lite",
+          "domains": 41,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "classifieds",
+      "title": "Объявления и работа",
+      "description": "Авито, Циан и hh.ru",
+      "services": [
+        {
+          "name": "Авито",
+          "tier": "standard",
+          "domains": 25,
+          "asns": [
+            201012
+          ],
+          "apps": [
+            "com.avito.android"
+          ]
+        },
+        {
+          "name": "Циан",
+          "tier": "standard",
+          "domains": 30,
+          "asns": [],
+          "apps": [
+            "ru.cian.main"
+          ]
+        },
+        {
+          "name": "hh.ru",
+          "tier": "standard",
+          "domains": 14,
+          "asns": [
+            47724
+          ],
+          "apps": [
+            "ru.hh.android"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delivery",
+      "title": "Доставка",
+      "description": "Самокат, Купер и СДЭК",
+      "services": [
+        {
+          "name": "Самокат",
+          "tier": "standard",
+          "domains": 15,
+          "asns": [],
+          "apps": [
+            "ru.sbcs.store"
+          ]
+        },
+        {
+          "name": "Купер",
+          "tier": "standard",
+          "domains": 10,
+          "asns": [],
+          "apps": [
+            "ru.instamart"
+          ]
+        },
+        {
+          "name": "СДЭК",
+          "tier": "standard",
+          "domains": 4,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "title": "Образование",
+      "description": "Учи.ру, Skillbox и Skillfactory",
+      "services": [
+        {
+          "name": "Учи.ру",
+          "tier": "standard",
+          "domains": 3,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "Skillbox",
+          "tier": "standard",
+          "domains": 3,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "Skillfactory",
+          "tier": "standard",
+          "domains": 3,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "government",
+      "title": "Госуслуги и госорганы",
+      "description": "Госуслуги, ЕСИА, Госключ, ФНС, ведомства, региональные порталы и Почта России",
+      "services": [
+        {
+          "name": "Госуслуги и Госключ",
+          "tier": "lite",
+          "domains": 30,
+          "asns": [
+            196747,
+            212575
+          ],
+          "apps": [
+            "ru.rostel",
+            "ru.gosuslugi.goskey"
+          ]
+        },
+        {
+          "name": "ФНС и Мой налог",
+          "tier": "lite",
+          "domains": 9,
+          "asns": [],
+          "apps": [
+            "com.gnivts.selfemployed"
+          ]
+        },
+        {
+          "name": "Федеральные ведомства",
+          "tier": "lite",
+          "domains": 35,
+          "asns": [
+            8291,
+            43797,
+            199922
+          ],
+          "apps": []
+        },
+        {
+          "name": "Москва и регионы",
+          "tier": "lite",
+          "domains": 17,
+          "asns": [
+            8901
+          ],
+          "apps": []
+        },
+        {
+          "name": "Почта России",
+          "tier": "lite",
+          "domains": 15,
+          "asns": [],
+          "apps": [
+            "com.octopod.russianpost.client.android"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maps",
+      "title": "Карты и навигация",
+      "description": "2ГИС: карты, справочник, навигация и картинки",
+      "services": [
+        {
+          "name": "2ГИС",
+          "tier": "standard",
+          "domains": 80,
+          "asns": [
+            197482
+          ],
+          "apps": [
+            "ru.dublgis.dgismobile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marketplaces",
+      "title": "Маркетплейсы",
+      "description": "Ozon, Wildberries, Lamoda, Мегамаркет, AliExpress и Юла: сайт, приложение, картинки и оплата",
+      "services": [
+        {
+          "name": "Ozon",
+          "tier": "standard",
+          "domains": 69,
+          "asns": [
+            44386,
+            207986
+          ],
+          "apps": [
+            "ru.ozon.app.android"
+          ]
+        },
+        {
+          "name": "Wildberries",
+          "tier": "standard",
+          "domains": 150,
+          "asns": [
+            57073
+          ],
+          "apps": [
+            "com.wildberries.ru"
+          ]
+        },
+        {
+          "name": "Lamoda",
+          "tier": "standard",
+          "domains": 12,
+          "asns": [],
+          "apps": [
+            "com.lamoda.lite"
+          ]
+        },
+        {
+          "name": "Мегамаркет",
+          "tier": "standard",
+          "domains": 3,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "AliExpress Россия",
+          "tier": "standard",
+          "domains": 5,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "Юла",
+          "tier": "standard",
+          "domains": 5,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "payments",
+      "title": "Платёжные системы",
+      "description": "Мир, СБП, ЮMoney, QR-платежи: оплата и переводы без VPN",
+      "services": [
+        {
+          "name": "Мир и СБП",
+          "tier": "lite",
+          "domains": 7,
+          "asns": [
+            21292,
+            41185,
+            41187,
+            50339,
+            60967
+          ],
+          "apps": []
+        },
+        {
+          "name": "ЮMoney и ЮKassa",
+          "tier": "lite",
+          "domains": 10,
+          "asns": [
+            43247
+          ],
+          "apps": []
+        },
+        {
+          "name": "QR-платежи",
+          "tier": "lite",
+          "domains": 5,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "retail",
+      "title": "Ритейл",
+      "description": "Продуктовые сети и магазины электроники: доставка, карты лояльности и оплата",
+      "services": [
+        {
+          "name": "X5: Пятёрочка и Перекрёсток",
+          "tier": "standard",
+          "domains": 28,
+          "asns": [
+            44704
+          ],
+          "apps": [
+            "ru.pyaterochka.app.browser",
+            "ru.perekrestok.app"
+          ]
+        },
+        {
+          "name": "Магнит",
+          "tier": "standard",
+          "domains": 27,
+          "asns": [],
+          "apps": [
+            "ru.tander.magnit"
+          ]
+        },
+        {
+          "name": "Лента",
+          "tier": "standard",
+          "domains": 4,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "ВкусВилл",
+          "tier": "standard",
+          "domains": 4,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "Лемана ПРО",
+          "tier": "standard",
+          "domains": 3,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "DNS",
+          "tier": "standard",
+          "domains": 4,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "М.Видео и Эльдорадо",
+          "tier": "standard",
+          "domains": 6,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "title": "Соцсети и мессенджеры",
+      "description": "VK, Одноклассники, Mail.ru, MAX, Сферум, Дзен, Rutube и TenChat",
+      "services": [
+        {
+          "name": "VK",
+          "tier": "lite",
+          "domains": 48,
+          "asns": [
+            47541,
+            47542,
+            47764,
+            28709,
+            62243
+          ],
+          "apps": [
+            "com.vkontakte.android"
+          ]
+        },
+        {
+          "name": "Одноклассники и Mail.ru",
+          "tier": "lite",
+          "domains": 35,
+          "asns": [],
+          "apps": [
+            "ru.ok.android"
+          ]
+        },
+        {
+          "name": "MAX и Сферум",
+          "tier": "lite",
+          "domains": 13,
+          "asns": [],
+          "apps": [
+            "ru.oneme.app"
+          ]
+        },
+        {
+          "name": "Дзен",
+          "tier": "lite",
+          "domains": 20,
+          "asns": [],
+          "apps": [
+            "ru.zen.android"
+          ]
+        },
+        {
+          "name": "Rutube",
+          "tier": "lite",
+          "domains": 10,
+          "asns": [
+            207353
+          ],
+          "apps": [
+            "ru.rutube.app"
+          ]
+        },
+        {
+          "name": "TenChat",
+          "tier": "lite",
+          "domains": 2,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "streaming",
+      "title": "Стриминги и ТВ",
+      "description": "Иви, Okko, Wink, KION, START, PREMIER и Витрина ТВ",
+      "services": [
+        {
+          "name": "Иви",
+          "tier": "standard",
+          "domains": 17,
+          "asns": [
+            57629
+          ],
+          "apps": [
+            "ru.ivi.client"
+          ]
+        },
+        {
+          "name": "Okko",
+          "tier": "standard",
+          "domains": 31,
+          "asns": [
+            211609
+          ],
+          "apps": [
+            "ru.more.play"
+          ]
+        },
+        {
+          "name": "Wink",
+          "tier": "standard",
+          "domains": 9,
+          "asns": [],
+          "apps": [
+            "ru.rt.video.app.mobile"
+          ]
+        },
+        {
+          "name": "KION",
+          "tier": "standard",
+          "domains": 15,
+          "asns": [],
+          "apps": [
+            "ru.mts.mtstv"
+          ]
+        },
+        {
+          "name": "START",
+          "tier": "standard",
+          "domains": 3,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "PREMIER",
+          "tier": "standard",
+          "domains": 2,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "Витрина ТВ",
+          "tier": "standard",
+          "domains": 3,
+          "asns": [
+            41718
+          ],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "title": "Технологии и сервисы",
+      "description": "RuStore, Хабр, Saby и Битрикс24",
+      "services": [
+        {
+          "name": "RuStore",
+          "tier": "standard",
+          "domains": 18,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "Хабр",
+          "tier": "standard",
+          "domains": 6,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "Saby и СБИС",
+          "tier": "standard",
+          "domains": 5,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "Битрикс24",
+          "tier": "standard",
+          "domains": 4,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "telecom",
+      "title": "Операторы связи",
+      "description": "Личные кабинеты, оплата, Mobile ID и push операторов. Абонентские сети целиком в full через RU-зону",
+      "services": [
+        {
+          "name": "МТС",
+          "tier": "standard",
+          "domains": 60,
+          "asns": [],
+          "apps": [
+            "ru.mts.mymts"
+          ]
+        },
+        {
+          "name": "Билайн",
+          "tier": "standard",
+          "domains": 33,
+          "asns": [],
+          "apps": [
+            "ru.beeline.services"
+          ]
+        },
+        {
+          "name": "МегаФон",
+          "tier": "standard",
+          "domains": 16,
+          "asns": [],
+          "apps": [
+            "ru.megafon.mlk"
+          ]
+        },
+        {
+          "name": "T2",
+          "tier": "standard",
+          "domains": 34,
+          "asns": [],
+          "apps": [
+            "ru.tele2.mytele2"
+          ]
+        },
+        {
+          "name": "Ростелеком",
+          "tier": "standard",
+          "domains": 6,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "title": "Путешествия и транспорт",
+      "description": "Aviasales, Туту, РЖД и Аэрофлот",
+      "services": [
+        {
+          "name": "Aviasales",
+          "tier": "standard",
+          "domains": 6,
+          "asns": [],
+          "apps": [
+            "ru.aviasales"
+          ]
+        },
+        {
+          "name": "Туту",
+          "tier": "standard",
+          "domains": 60,
+          "asns": [],
+          "apps": [
+            "ru.tutu.tutu_emp"
+          ]
+        },
+        {
+          "name": "РЖД",
+          "tier": "standard",
+          "domains": 9,
+          "asns": [],
+          "apps": [
+            "ru.rzd.pass"
+          ]
+        },
+        {
+          "name": "Аэрофлот",
+          "tier": "standard",
+          "domains": 3,
+          "asns": [],
+          "apps": []
+        }
+      ]
+    },
+    {
+      "id": "yandex",
+      "title": "Яндекс",
+      "description": "Поиск, Карты, Go, Маркет, Музыка, Кинопоиск, Еда, Диск, Почта и Cloud",
+      "services": [
+        {
+          "name": "Кинопоиск",
+          "tier": "standard",
+          "domains": 15,
+          "asns": [],
+          "apps": [
+            "ru.kinopoisk"
+          ]
+        },
+        {
+          "name": "Яндекс Маркет",
+          "tier": "standard",
+          "domains": 17,
+          "asns": [],
+          "apps": [
+            "ru.beru.android"
+          ]
+        },
+        {
+          "name": "Яндекс Go",
+          "tier": "standard",
+          "domains": 11,
+          "asns": [],
+          "apps": [
+            "ru.yandex.taxi"
+          ]
+        },
+        {
+          "name": "Яндекс Карты",
+          "tier": "standard",
+          "domains": 10,
+          "asns": [],
+          "apps": [
+            "ru.yandex.yandexmaps"
+          ]
+        },
+        {
+          "name": "Яндекс Музыка",
+          "tier": "standard",
+          "domains": 8,
+          "asns": [],
+          "apps": [
+            "ru.yandex.music"
+          ]
+        },
+        {
+          "name": "Яндекс Еда и Лавка",
+          "tier": "standard",
+          "domains": 6,
+          "asns": [],
+          "apps": [
+            "ru.foodfox.client"
+          ]
+        },
+        {
+          "name": "Auto.ru",
+          "tier": "standard",
+          "domains": 3,
+          "asns": [],
+          "apps": []
+        },
+        {
+          "name": "Яндекс",
+          "tier": "standard",
+          "domains": 150,
+          "asns": [
+            13238,
+            208398,
+            200350,
+            215013
+          ],
+          "apps": [
+            "ru.yandex.searchplugin"
+          ]
+        }
+      ]
+    }
+  ]
+}
