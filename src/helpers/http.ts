@@ -1,18 +1,8 @@
 import { sleep } from "@/utils/limit";
 import { appLogger } from "@/config/logger";
+import { IFetchOptions } from "@/types/http";
 import appConfig from "@/constants/appConfig";
 import { HttpContract } from "@/contracts/http";
-
-export interface IFetchOptions {
-  // Заголовки запроса
-  headers?: Record<string, string>;
-  // Таймаут одного запроса
-  timeout?: number;
-  // Число повторов
-  retries?: number;
-  // Не логировать повторы
-  quiet?: boolean;
-}
 
 /**
  * Выполнить HTTP-запрос с таймаутом и повторами, вернуть Response

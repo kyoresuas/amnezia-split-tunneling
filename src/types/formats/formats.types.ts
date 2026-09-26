@@ -96,3 +96,5 @@ export interface IFormatOutput {
   // Содержимое
   content: string | Buffer;
 }
+
+export type FormatWriter = (input: IFormatInput, file: string) => IFormatOutput;

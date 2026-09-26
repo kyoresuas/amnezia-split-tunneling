@@ -1,4 +1,4 @@
-import { TierId } from "@/types/shared";
+import { Tier, TierId } from "@/types/shared";
 import { FormatId, FormatGroup } from "@/types/formats";
 
 export interface IManifestFile {
@@ -74,4 +74,11 @@ export interface IManifest {
   formats: IManifestFormat[];
   // Сколько чужих подсетей вычел guard
   guard: { subtracted4: number; subtracted6: number };
+}
+
+export interface IWrittenFiles {
+  // Файлы по уровням
+  tiers: Record<Tier, IManifestFile[]>;
+  // Общие файлы
+  shared: IManifestFile[];
 }

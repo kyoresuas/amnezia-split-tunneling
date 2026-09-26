@@ -8,20 +8,7 @@ import { TimeContract } from "@/contracts/time";
 import { fetchJson, fetchText } from "@/helpers/http";
 import { aggregate, normalizeCidr } from "@/helpers/cidr";
 import { IGuardConfig, IGuardSource, IServiceCategory } from "@/types/config";
-
-interface IFastlyResponse {
-  addresses?: string[];
-  ipv6_addresses?: string[];
-}
-
-interface IAwsResponse {
-  prefixes?: Array<{ ip_prefix?: string; service?: string }>;
-  ipv6_prefixes?: Array<{ ipv6_prefix?: string; service?: string }>;
-}
-
-interface IGoogleResponse {
-  prefixes?: Array<{ ipv4Prefix?: string; ipv6Prefix?: string }>;
-}
+import { IAwsResponse, IFastlyResponse, IGoogleResponse } from "@/types/guard";
 
 /**
  * Guard: чужие CDN, anycast и хостинги, которым не место в списках

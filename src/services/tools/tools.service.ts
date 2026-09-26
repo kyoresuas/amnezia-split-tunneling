@@ -5,14 +5,8 @@ import appConfig from "@/constants/appConfig";
 import { spawnSync } from "node:child_process";
 import { SourcesContract } from "@/contracts/sources";
 import { fetchJson, fetchBuffer } from "@/helpers/http";
+import { ToolName, IGithubRelease } from "@/types/tools";
 import { chmodSync, existsSync, unlinkSync, writeFileSync } from "node:fs";
-
-interface IGithubRelease {
-  tag_name?: string;
-  assets?: Array<{ name?: string; browser_download_url?: string }>;
-}
-
-export type ToolName = "sing-box" | "mihomo";
 
 /**
  * Внешние бинарники для бинарных форматов: sing-box и mihomo

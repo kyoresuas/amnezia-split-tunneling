@@ -13,19 +13,12 @@ import { IBuildResult } from "@/types/build";
 import appConfig from "@/constants/appConfig";
 import { TIER_ORDER } from "@/contracts/tiers";
 import { ToolsService } from "@/services/tools";
-import { IManifestFile } from "@/types/manifest";
 import { ensureDir, writeFile } from "@/utils/files";
 import { FormatsContract } from "@/contracts/formats";
 import { FORMAT_WRITERS } from "@/services/formats/writers";
+import { IManifestFile, IWrittenFiles } from "@/types/manifest";
 import { IFormat, FormatId, IFormatInput } from "@/types/formats";
 import { buildGeoip, buildGeosite } from "@/services/formats/geodata";
-
-export interface IWrittenFiles {
-  // Файлы по уровням
-  tiers: Record<Tier, IManifestFile[]>;
-  // Общие файлы
-  shared: IManifestFile[];
-}
 
 /**
  * Запись всех форматов в каталог dist

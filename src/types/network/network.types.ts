@@ -30,3 +30,12 @@ export interface IDohProvider {
   url: string;
   headers: Record<string, string>;
 }
+
+export interface IDohAnswer {
+  type?: number;
+  data?: string;
+}
+
+export interface IDohResponse {
+  Answer?: IDohAnswer[];
+}

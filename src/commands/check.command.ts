@@ -1,10 +1,11 @@
 import chalk from "chalk";
 import { Tier } from "@/types/shared";
 import { DnsService } from "@/services/dns";
+import { ICheckResult } from "@/types/check";
 import { RipeService } from "@/services/ripe";
 import { CacheService } from "@/services/cache";
+import { CheckService } from "@/services/check";
 import { TIER_ORDER, TiersContract } from "@/contracts/tiers";
-import { CheckService, ICheckResult } from "@/services/check";
 
 /**
  * Напечатать результат проверки одного адреса

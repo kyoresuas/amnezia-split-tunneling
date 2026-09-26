@@ -1,4 +1,13 @@
 import {
+  IRipeWhois,
+  IRipeResponse,
+  IRipeAsOverview,
+  IRipeNetworkInfo,
+  ICountryResources,
+  IRipeCountryResources,
+  IRipeAnnouncedPrefixes,
+} from "@/types/ripe";
+import {
   IAsnOverview,
   INetworkInfo,
   IAnnouncedPrefixes,
@@ -8,38 +17,6 @@ import { normalizeCidr } from "@/helpers/cidr";
 import { CacheService } from "@/services/cache";
 import { TimeContract } from "@/contracts/time";
 import { SourcesContract } from "@/contracts/sources";
-
-interface IRipeResponse<T> {
-  data?: T;
-  status?: string;
-}
-
-interface IRipeAsOverview {
-  holder?: string;
-  announced?: boolean;
-}
-
-interface IRipeAnnouncedPrefixes {
-  prefixes?: Array<{ prefix?: string }>;
-}
-
-interface IRipeNetworkInfo {
-  prefix?: string;
-  asns?: Array<number | string>;
-}
-
-interface IRipeCountryResources {
-  resources?: { ipv4?: string[]; ipv6?: string[]; asn?: string[] };
-}
-
-interface IRipeWhois {
-  records?: Array<Array<{ key?: string; value?: string }>>;
-}
-
-export interface ICountryResources {
-  ipv4: string[];
-  ipv6: string[];
-}
 
 /**
  * Клиент RIPE Stat с файловым кэшем

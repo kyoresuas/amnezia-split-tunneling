@@ -6,16 +6,7 @@ import appConfig from "@/constants/appConfig";
 import { CacheService } from "@/services/cache";
 import { TimeContract } from "@/contracts/time";
 import { SourcesContract } from "@/contracts/sources";
-import { IDohProvider, IResolvedDomain } from "@/types/network";
-
-interface IDohAnswer {
-  type?: number;
-  data?: string;
-}
-
-interface IDohResponse {
-  Answer?: IDohAnswer[];
-}
+import { IDohProvider, IResolvedDomain, IDohResponse } from "@/types/network";
 
 // Типы DNS-записей
 const RECORD_A = 1;

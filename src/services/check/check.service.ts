@@ -2,22 +2,13 @@ import { resolve } from "node:path";
 import { Tier } from "@/types/shared";
 import { fetchText } from "@/helpers/http";
 import { DnsService } from "@/services/dns";
+import { ICheckResult } from "@/types/check";
 import { RipeService } from "@/services/ripe";
 import appConfig from "@/constants/appConfig";
 import { readText, parseLines } from "@/utils/files";
 import { ipFamily, CidrIndex } from "@/helpers/cidr";
 import { RepositoryContract } from "@/contracts/repository";
 import { TIER_ORDER, TiersContract } from "@/contracts/tiers";
-
-export interface ICheckResult {
-  ip: string;
-  // Подсеть, содержащая адрес, по уровням
-  tiers: Record<Tier, string | null>;
-  // Префикс и владелец по данным RIPE
-  prefix: string | null;
-  asn: number | null;
-  holder: string | null;
-}
 
 /**
  * Проверка адреса или домена на вхождение в уровни

@@ -2,12 +2,11 @@ import { chunk } from "@/utils/primitive";
 import { IpFamily } from "@/types/shared";
 import { RepositoryContract } from "@/contracts/repository";
 import { invert, parseCidr, prefixToMask } from "@/helpers/cidr";
-import { FormatId, IFormatInput, IFormatOutput } from "@/types/formats";
+import { FormatId, IFormatInput, FormatWriter } from "@/types/formats";
 
 /**
  * Функция, превращающая данные уровня в содержимое файла
  */
-export type FormatWriter = (input: IFormatInput, file: string) => IFormatOutput;
 
 /**
  * Заголовок текстового файла с комментариями

@@ -1,4 +1,9 @@
 import { Tier, TierId } from "@/types/shared";
+import type { DnsService } from "@/services/dns";
+import type { RipeService } from "@/services/ripe";
+import type { GuardService } from "@/services/guard";
+import type { ZonesService } from "@/services/zones";
+import { IExcludeEntry, IServiceCategory } from "@/types/config";
 
 export interface IZone {
   // Название зоны
@@ -62,4 +67,19 @@ export interface IGuardResult {
 export interface IBuildResult {
   tiers: Record<Tier, ITierData>;
   guard: IGuardResult;
+}
+
+export interface IBuildDeps {
+  // Резолвер доменов
+  dns: DnsService;
+  // Клиент RIPE Stat
+  ripe: RipeService;
+  // Чужие сети, которые вычитаются
+  guard: GuardService;
+  // Зона страны
+  zones: ZonesService;
+  // Подсети, которые обязаны идти через VPN
+  exclude: IExcludeEntry[];
+  // Категории сервисов
+  categories: IServiceCategory[];
 }

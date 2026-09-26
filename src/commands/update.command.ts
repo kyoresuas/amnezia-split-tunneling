@@ -8,16 +8,10 @@ import { GuardService } from "@/services/guard";
 import { ZonesService } from "@/services/zones";
 import { BuildService } from "@/services/build";
 import { ToolsService } from "@/services/tools";
+import { IUpdateOptions } from "@/types/commands";
 import { ConfigService } from "@/services/config";
 import { FormatsService } from "@/services/formats";
 import { ManifestService } from "@/services/manifest";
-
-export interface IUpdateOptions {
-  // Не ходить в сеть, собирать из кэша
-  offline: boolean;
-  // Не проверять ASN через RIPE
-  skipAsnCheck: boolean;
-}
 
 /**
  * Полный пайплайн

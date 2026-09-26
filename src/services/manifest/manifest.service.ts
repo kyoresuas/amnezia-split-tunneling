@@ -3,6 +3,12 @@ import {
   CHECKSUMS_FILE,
   FormatsContract,
 } from "@/contracts/formats";
+import {
+  IManifest,
+  IManifestDiff,
+  IManifestTier,
+  IWrittenFiles,
+} from "@/types/manifest";
 import { resolve } from "node:path";
 import { Tier } from "@/types/shared";
 import { fetchText } from "@/helpers/http";
@@ -12,11 +18,9 @@ import { IBuildResult } from "@/types/build";
 import appConfig from "@/constants/appConfig";
 import { formatNumber } from "@/utils/primitive";
 import { IServiceCategory } from "@/types/config";
-import { IWrittenFiles } from "@/services/formats";
 import { writeFile, writeJson } from "@/utils/files";
 import { RepositoryContract } from "@/contracts/repository";
 import { TIER_ORDER, TiersContract } from "@/contracts/tiers";
-import { IManifest, IManifestDiff, IManifestTier } from "@/types/manifest";
 
 // Имя файла со сводкой по сервисам
 const SERVICES_FILE = "services.json";

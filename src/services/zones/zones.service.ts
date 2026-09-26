@@ -2,12 +2,13 @@ import { IZone } from "@/types/build";
 import { fetchText } from "@/helpers/http";
 import { parseLines } from "@/utils/files";
 import { appLogger } from "@/config/logger";
+import { IZoneSource } from "@/types/sources";
 import { RipeService } from "@/services/ripe";
 import { CacheService } from "@/services/cache";
 import { TimeContract } from "@/contracts/time";
 import { formatNumber } from "@/utils/primitive";
+import { SourcesContract } from "@/contracts/sources";
 import { aggregate, normalizeCidr } from "@/helpers/cidr";
-import { IZoneSource, SourcesContract } from "@/contracts/sources";
 
 /**
  * Российская зона для полного списка: RIPE как источник, ipdeny как фолбэк

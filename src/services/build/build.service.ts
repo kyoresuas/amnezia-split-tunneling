@@ -8,6 +8,13 @@ import {
   splitByFamily,
   countIntersecting,
 } from "@/helpers/cidr";
+import {
+  IZone,
+  ITierData,
+  IBuildDeps,
+  IBuildResult,
+  IServiceRoutes,
+} from "@/types/build";
 import { pLimit } from "@/utils/limit";
 import { DnsService } from "@/services/dns";
 import { appLogger } from "@/config/logger";
@@ -20,22 +27,6 @@ import { formatNumber } from "@/utils/primitive";
 import { TiersContract } from "@/contracts/tiers";
 import { SourcesContract } from "@/contracts/sources";
 import { IService, IExcludeEntry, IServiceCategory } from "@/types/config";
-import { IZone, ITierData, IBuildResult, IServiceRoutes } from "@/types/build";
-
-export interface IBuildDeps {
-  // Резолвер доменов
-  dns: DnsService;
-  // Клиент RIPE Stat
-  ripe: RipeService;
-  // Чужие сети, которые вычитаются
-  guard: GuardService;
-  // Зона страны
-  zones: ZonesService;
-  // Подсети, которые обязаны идти через VPN
-  exclude: IExcludeEntry[];
-  // Категории сервисов
-  categories: IServiceCategory[];
-}
 
 /**
  * Сборка уровней: сервисы, зона страны, guard, исключения, лимиты
